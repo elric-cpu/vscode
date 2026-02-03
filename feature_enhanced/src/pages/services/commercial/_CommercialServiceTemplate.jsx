@@ -4,6 +4,8 @@ import { ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import FaqSection from "@/components/faq/FaqSection";
+import { buildFaqSchema } from "@/lib/seo/faqSchema";
 
 export default function CommercialServiceTemplate({
   title,
@@ -12,10 +14,18 @@ export default function CommercialServiceTemplate({
   seoTitle,
   seoDescription,
   keywords,
+  faqs = [],
 }) {
+  const faqSchema = faqs.length ? buildFaqSchema(faqs) : null;
+
   return (
     <>
-      <SEO title={seoTitle} description={seoDescription} keywords={keywords} />
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        keywords={keywords}
+        schema={faqSchema ? [faqSchema] : undefined}
+      />
       <Breadcrumbs />
 
       <section className="bg-contractor-black text-white py-16">
@@ -77,6 +87,8 @@ export default function CommercialServiceTemplate({
           </div>
         </div>
       </section>
+
+      <FaqSection items={faqs} className="bg-white" />
     </>
   );
 }

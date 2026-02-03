@@ -7,8 +7,10 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PricingMatrix from "@/components/services/PricingMatrix";
 import ServiceMenu from "@/components/services/ServiceMenu";
+import FaqSection from "@/components/faq/FaqSection";
 import { NICHE_MENUS } from "@/data/nicheMenus";
 import CommercialMaintenancePlannerModule from "@/components/maintenance-planner/CommercialMaintenancePlannerModule";
+import { buildFaqSchema } from "@/lib/seo/faqSchema";
 
 const CommercialMaintenance = () => {
   const schema = {
@@ -52,12 +54,57 @@ const CommercialMaintenance = () => {
     },
   ];
 
+  const faqs = [
+    {
+      question: "What size commercial properties do you serve?",
+      answer:
+        "We focus on small commercial and light industrial properties under 50,000 sq ft across Oregon.",
+    },
+    {
+      question: "Do you offer scheduled preventive maintenance?",
+      answer:
+        "Yes. We build quarterly or monthly walkthroughs that reduce emergency repairs and improve compliance.",
+    },
+    {
+      question: "How fast is your response time for urgent issues?",
+      answer:
+        "Service agreement clients receive priority response. Typical turnaround is same-day or next-day depending on scope.",
+    },
+    {
+      question: "Can you handle tenant turns end-to-end?",
+      answer:
+        "Yes. We provide punch lists, repairs, paint, flooring, and closeout documentation for property managers.",
+    },
+    {
+      question: "Do you provide documentation for compliance?",
+      answer:
+        "Yes. We provide photo documentation, maintenance logs, and repair notes suitable for property records.",
+    },
+    {
+      question: "Do you coordinate specialized trades?",
+      answer:
+        "We can coordinate licensed trade partners for HVAC, electrical, and plumbing as needed.",
+    },
+    {
+      question: "What does pricing look like?",
+      answer:
+        "Pricing depends on building size, condition, and response tier. Use the ZIP-smart planner for budget ranges.",
+    },
+    {
+      question: "How do we start a service agreement?",
+      answer:
+        "Complete the service agreement funnel and we will schedule a walkthrough to finalize scope and pricing.",
+    },
+  ];
+
+  const faqSchema = buildFaqSchema(faqs);
+
   return (
     <>
       <SEO
         title="Commercial Property Maintenance Oregon"
         description="Small commercial & light industrial maintenance for properties under 50k sq ft: tenant turns, preventive maintenance, emergency repairs, ADA compliance fixes."
-        schema={schema}
+        schema={[schema, faqSchema]}
         keywords="commercial maintenance Oregon, tenant turns, preventive maintenance, emergency facility repairs, ADA compliance contractor"
       />
 
@@ -179,6 +226,8 @@ const CommercialMaintenance = () => {
           </div>
         </div>
       </section>
+
+      <FaqSection items={faqs} className="bg-white" />
 
       <section className="py-20 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

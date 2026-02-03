@@ -117,7 +117,7 @@ export const PROGRAM_FAQS = [
     a: "Yes. Each visit includes photos and checklist notes. Members can also use our Home Maintenance Recordbook PDF for organized home records.",
   },
   {
-    q: "What counts as “included” vs. a quoted repair?",
+    q: "What counts as \"included\" vs. a quoted repair?",
     a: "Included work is the checklist-based maintenance plus minor touch-ups. Anything requiring specialty trades, significant materials, or extended time is quoted separately—with member priority for scheduling.",
   },
   {
@@ -127,5 +127,13 @@ export const PROGRAM_FAQS = [
   {
     q: "How do I get pricing?",
     a: "Pricing is based on home size and the tier you choose. Use the Home Maintenance Estimator for a fast estimate and we will confirm details before enrollment.",
+  },
+  {
+    q: "Do you offer service for rentals or second homes?",
+    a: "Yes. The Priority tier is built for second homes and rentals that need faster response and clearer documentation.",
+  },
+  {
+    q: "What if I have an urgent issue between visits?",
+    a: "Members receive priority response windows. We will triage the issue quickly and schedule the fastest available visit.",
   },
 ];

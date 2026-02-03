@@ -38,6 +38,16 @@ import AgingInPlaceGuide from "@/pages/resources/AgingInPlaceGuide";
 import HomeMaintenanceEstimator from "@/pages/resources/HomeMaintenanceEstimator";
 import HomeMaintenanceRecordbook from "@/pages/resources/HomeMaintenanceRecordbook";
 import HomeRestorationResourceGuide from "@/pages/resources/HomeRestorationResourceGuide";
+import CalculatorsHub from "@/pages/resources/CalculatorsHub";
+import HVACLoadCalculator from "@/pages/resources/calculators/HVACLoadCalculator";
+import PreventiveMaintenanceROICalculator from "@/pages/resources/calculators/PreventiveMaintenanceROICalculator";
+import InstantRepairCostCalculator from "@/pages/resources/calculators/InstantRepairCostCalculator";
+import EnergySavingsCalculator from "@/pages/resources/calculators/EnergySavingsCalculator";
+import ACHCalculator from "@/pages/resources/calculators/ACHCalculator";
+import MaterialsEstimatorCalculator from "@/pages/resources/calculators/MaterialsEstimatorCalculator";
+import AssetLifecycleCalculator from "@/pages/resources/calculators/AssetLifecycleCalculator";
+import LaborSavingsCalculator from "@/pages/resources/calculators/LaborSavingsCalculator";
+import PropertyValueCalculator from "@/pages/resources/calculators/PropertyValueCalculator";
 import WaterDamageInsuranceOregon from "@/pages/blog/WaterDamageInsuranceOregon";
 import HiddenWaterDamageSigns from "@/pages/blog/HiddenWaterDamageSigns";
 import ClientPortal from "@/pages/ClientPortal";
@@ -149,6 +159,7 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources-help" element={<ResourcesHelp />} />
             <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/resources/calculators" element={<CalculatorsHub />} />
             <Route
               path="/resources/bathroom-remodel-roi"
               element={<BathroomRemodelROI />}
@@ -176,6 +187,42 @@ function App() {
             <Route
               path="/resources/home-restoration-resource-guide"
               element={<HomeRestorationResourceGuide />}
+            />
+            <Route
+              path="/resources/calculators/hvac-load"
+              element={<HVACLoadCalculator />}
+            />
+            <Route
+              path="/resources/calculators/preventive-maintenance-roi"
+              element={<PreventiveMaintenanceROICalculator />}
+            />
+            <Route
+              path="/resources/calculators/instant-repair-cost"
+              element={<InstantRepairCostCalculator />}
+            />
+            <Route
+              path="/resources/calculators/energy-savings"
+              element={<EnergySavingsCalculator />}
+            />
+            <Route
+              path="/resources/calculators/ach"
+              element={<ACHCalculator />}
+            />
+            <Route
+              path="/resources/calculators/materials-estimator"
+              element={<MaterialsEstimatorCalculator />}
+            />
+            <Route
+              path="/resources/calculators/asset-lifecycle"
+              element={<AssetLifecycleCalculator />}
+            />
+            <Route
+              path="/resources/calculators/labor-savings"
+              element={<LaborSavingsCalculator />}
+            />
+            <Route
+              path="/resources/calculators/property-value-rent"
+              element={<PropertyValueCalculator />}
             />
 
             <Route path="/auth/callback" element={<AuthCallback />} />

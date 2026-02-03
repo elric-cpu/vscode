@@ -30,6 +30,49 @@ export default function MoistureEnvelope() {
     primaryCtaHref: "/contact",
   };
 
+  const faqs = [
+    {
+      question: "What are the early signs of water intrusion?",
+      answer:
+        "Staining around windows, musty smells, bubbling paint, soft drywall, and persistent condensation are common indicators.",
+    },
+    {
+      question: "Do you handle crawlspace moisture issues?",
+      answer:
+        "Yes. We inspect ventilation, vapor barriers, grading, and drainage to reduce moisture buildup.",
+    },
+    {
+      question: "Can you fix flashing and window leaks?",
+      answer:
+        "Yes. We perform targeted flashing corrections and seal failures to prevent repeat leaks.",
+    },
+    {
+      question: "Will you provide a moisture report?",
+      answer:
+        "Yes. We document findings with photos and recommendations for repair or monitoring.",
+    },
+    {
+      question: "Is this covered by insurance?",
+      answer:
+        "Most moisture intrusion repairs are preventive and not insurance claims. We can advise if damage qualifies.",
+    },
+    {
+      question: "How long does an assessment take?",
+      answer:
+        "Most inspections take 1-2 hours depending on access and the number of suspected entry points.",
+    },
+    {
+      question: "Can you coordinate with roofers or plumbers?",
+      answer:
+        "Yes. We coordinate specialized trades when needed for a complete fix.",
+    },
+    {
+      question: "What is the next step after the assessment?",
+      answer:
+        "We provide a prioritized scope and recommend the smallest reliable fix first.",
+    },
+  ];
+
   return (
     <NichePageTemplate
       meta={meta}
@@ -39,6 +82,7 @@ export default function MoistureEnvelope() {
         "Small, targeted scopes with strong long-term reliability.",
         "Documentation for homeowners, property managers, and future resale.",
       ]}
+      faqs={faqs}
       menu={data.serviceMenu}
       pricing={data.pricingMatrix}
     />

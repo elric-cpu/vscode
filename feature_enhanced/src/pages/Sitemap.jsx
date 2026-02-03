@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { serviceAreaData } from "@/data/serviceAreas";
+import { CALCULATOR_ROUTES } from "@/data/calculators";
 
 const Sitemap = () => {
   // Static Routes
@@ -67,6 +68,7 @@ const Sitemap = () => {
   ];
 
   const resourceRoutes = [
+    { path: "/resources/calculators", name: "ZIP-Smart Calculators" },
     {
       path: "/resources/home-maintenance-estimator",
       name: "Home Maintenance Estimator",
@@ -89,6 +91,7 @@ const Sitemap = () => {
       path: "/resources/ada-aging-in-place-guide",
       name: "ADA & Aging in Place Guide",
     },
+    ...CALCULATOR_ROUTES,
   ];
 
   const landingRoutes = [

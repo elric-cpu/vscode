@@ -6,6 +6,10 @@ export function isPhone(value) {
   return /^\+?[0-9()\-\s]{7,}$/.test(String(value || "").trim());
 }
 
+export function isZip(value) {
+  return /^\d{5}(-\d{4})?$/.test(String(value || "").trim());
+}
+
 export function sanitizeText(value) {
   return String(value || "").replace(/[<>]/g, "");
 }

@@ -8,6 +8,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import PricingMatrix from "@/components/services/PricingMatrix";
 import ServiceMenu from "@/components/services/ServiceMenu";
 import { PRICING_NOTES } from "@/data/nicheMenus";
+import FaqSection from "@/components/faq/FaqSection";
+import { buildFaqSchema } from "@/lib/seo/faqSchema";
 
 function buildServiceSchema({ schemaType, title, description, serviceType }) {
   return {
@@ -29,6 +31,7 @@ export default function NichePageTemplate({
   menu,
   pricing,
   highlights,
+  faqs = [],
   faqSchema,
 }) {
   const schema = buildServiceSchema({
@@ -38,8 +41,9 @@ export default function NichePageTemplate({
     serviceType: meta.serviceType,
   });
 
+  const resolvedFaqSchema = faqSchema || (faqs.length ? buildFaqSchema(faqs) : null);
   const schemaList = [schema];
-  if (faqSchema) schemaList.push(faqSchema);
+  if (resolvedFaqSchema) schemaList.push(resolvedFaqSchema);
 
   return (
     <>
@@ -147,6 +151,8 @@ export default function NichePageTemplate({
           </div>
         </div>
       </section>
+
+      <FaqSection items={faqs} className="bg-white" />
 
       <section className="py-16 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

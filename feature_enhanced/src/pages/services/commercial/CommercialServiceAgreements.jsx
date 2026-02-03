@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CommercialAgreementFunnel from "@/components/commercial-agreements/CommercialAgreementFunnel";
+import FaqSection from "@/components/faq/FaqSection";
+import { buildFaqSchema } from "@/lib/seo/faqSchema";
 
 export default function CommercialServiceAgreements() {
   const schema = {
@@ -23,12 +25,57 @@ export default function CommercialServiceAgreements() {
     "Less tenant churn and fewer surprises",
   ];
 
+  const faqs = [
+    {
+      question: "What is included in a service agreement?",
+      answer:
+        "Response tiers, scheduled walkthroughs, defined scopes, and documentation for maintenance records.",
+    },
+    {
+      question: "Is there a minimum term?",
+      answer:
+        "Agreements are typically annual to allow for seasonal planning and predictable budgeting.",
+    },
+    {
+      question: "Can we customize the scope?",
+      answer:
+        "Yes. We tailor scopes to your property type, tenant mix, and budget priorities.",
+    },
+    {
+      question: "Do agreements include emergency response?",
+      answer:
+        "Yes. Priority response is a core benefit of service agreements.",
+    },
+    {
+      question: "How do you price agreements?",
+      answer:
+        "Pricing is based on building size, condition, and response tier. We confirm after a walkthrough.",
+    },
+    {
+      question: "Do you provide documentation?",
+      answer:
+        "Yes. We provide photos, maintenance logs, and closeout notes for your records.",
+    },
+    {
+      question: "Can agreements cover multiple locations?",
+      answer:
+        "Yes. We support multi-site property managers with consolidated scheduling.",
+    },
+    {
+      question: "What happens after I submit the funnel?",
+      answer:
+        "We schedule a walkthrough, confirm scope, and provide a final agreement proposal.",
+    },
+  ];
+
+  const faqSchema = buildFaqSchema(faqs);
+
   return (
     <>
       <SEO
         title="Commercial Service Agreements Oregon"
         description="Annual commercial maintenance agreements with priority response, scheduled walkthroughs, and documentation. Built for properties under 50k sq ft."
-        schema={schema}
+        schema={[schema, faqSchema]}
         keywords="commercial service agreement, facility maintenance contract Oregon, priority response contractor"
       />
 
@@ -135,6 +182,8 @@ export default function CommercialServiceAgreements() {
           </div>
         </div>
       </section>
+
+      <FaqSection items={faqs} className="bg-white" />
     </>
   );
 }

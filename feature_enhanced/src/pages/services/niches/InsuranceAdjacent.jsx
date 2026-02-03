@@ -30,6 +30,49 @@ export default function InsuranceAdjacent() {
     primaryCtaHref: "/contact",
   };
 
+  const faqs = [
+    {
+      question: "What does \"insurance-adjacent\" mean?",
+      answer:
+        "We handle repairs that fall outside or after an insurance claim—partial approvals, denied claims, or small scopes.",
+    },
+    {
+      question: "Can you help with documentation for my claim?",
+      answer:
+        "Yes. We provide photos, moisture logs, and scope documentation that can support claim discussions.",
+    },
+    {
+      question: "Do you handle post-leak rebuilds?",
+      answer:
+        "Yes. We repair drywall, flooring, trim, and finishes after the drying phase is complete.",
+    },
+    {
+      question: "Will you coordinate with my adjuster?",
+      answer:
+        "We can communicate with adjusters to clarify scope, but final coverage decisions are made by the insurer.",
+    },
+    {
+      question: "What if the claim is denied?",
+      answer:
+        "We can still complete the repair with a clear, homeowner-funded scope and fair pricing.",
+    },
+    {
+      question: "Do you provide mold remediation for small areas?",
+      answer:
+        "Yes. We handle small, contained remediation projects and recommend specialists for large-scale issues.",
+    },
+    {
+      question: "How fast can you start?",
+      answer:
+        "Most small scopes can start within 1-2 weeks depending on materials and scheduling.",
+    },
+    {
+      question: "What is the first step?",
+      answer:
+        "Contact us for a triage walkthrough and we will outline the smallest reliable fix.",
+    },
+  ];
+
   return (
     <NichePageTemplate
       meta={meta}
@@ -39,6 +82,7 @@ export default function InsuranceAdjacent() {
         "Capture both insurance-paid and homeowner-pay portions cleanly.",
         "Small scopes executed to code with a professional closeout.",
       ]}
+      faqs={faqs}
       menu={data.serviceMenu}
       pricing={data.pricingMatrix}
     />

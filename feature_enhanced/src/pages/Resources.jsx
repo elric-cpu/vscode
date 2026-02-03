@@ -10,6 +10,7 @@ import {
   Phone,
   ExternalLink,
   CheckCircle,
+  Calculator,
   HelpCircle,
   MapPin,
   BookOpen,
@@ -140,7 +141,7 @@ const Resources = () => {
                 </h2>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Link
                   to="/resources/home-maintenance-estimator"
                   className="group block bg-white p-6 rounded-xl border border-gray-200 hover:border-maroon hover:shadow-md transition-all"
@@ -159,6 +160,26 @@ const Resources = () => {
                   <p className="text-sm text-gray-600 mt-3 mb-0">
                     Choose home size, enter your info, and view results
                     instantly.
+                  </p>
+                </Link>
+
+                <Link
+                  to="/resources/calculators"
+                  className="group block bg-white p-6 rounded-xl border border-gray-200 hover:border-maroon hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
+                        ZIP-Smart Tools
+                      </p>
+                      <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
+                        Maintenance & ROI Calculators
+                      </h3>
+                    </div>
+                    <Calculator className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
+                  </div>
+                  <p className="text-sm text-gray-600 mt-3 mb-0">
+                    HVAC sizing, energy savings, repair costs, and more—localized by ZIP.
                   </p>
                 </Link>
 

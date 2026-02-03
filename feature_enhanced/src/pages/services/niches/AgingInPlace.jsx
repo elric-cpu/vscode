@@ -30,6 +30,49 @@ export default function AgingInPlace() {
     primaryCtaHref: "/contact",
   };
 
+  const faqs = [
+    {
+      question: "What are the most common aging-in-place upgrades?",
+      answer:
+        "Grab bars, curbless showers, non-slip flooring, stair safety improvements, and wider door clearances are the most common.",
+    },
+    {
+      question: "Do you offer ADA-compliant modifications?",
+      answer:
+        "Yes. We can align the scope with ADA guidelines and accessibility best practices.",
+    },
+    {
+      question: "How long does a bathroom retrofit take?",
+      answer:
+        "Most bathroom safety upgrades take 1-2 weeks depending on scope and material availability.",
+    },
+    {
+      question: "Can you stage the work for budget reasons?",
+      answer:
+        "Yes. We can prioritize safety-critical items first and schedule additional upgrades later.",
+    },
+    {
+      question: "Will you help us choose products?",
+      answer:
+        "Yes. We recommend safe, durable products and can work with family or caregiver preferences.",
+    },
+    {
+      question: "Is financing available?",
+      answer:
+        "We can discuss payment options and provide guidance on local assistance programs where available.",
+    },
+    {
+      question: "Do you coordinate with occupational therapists?",
+      answer:
+        "We can collaborate with therapists or care teams to ensure upgrades meet mobility needs.",
+    },
+    {
+      question: "What is the first step?",
+      answer:
+        "Schedule a safety walk-through and we will provide a prioritized scope and estimate.",
+    },
+  ];
+
   return (
     <NichePageTemplate
       meta={meta}
@@ -39,6 +82,7 @@ export default function AgingInPlace() {
         "Safety-first installation details and clean closeout documentation.",
         "Bundles that reduce fall risk and improve daily comfort.",
       ]}
+      faqs={faqs}
       menu={data.serviceMenu}
       pricing={data.pricingMatrix}
     />
