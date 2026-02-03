@@ -1,0 +1,148 @@
+name: QA Pipeline
+
+on:
+  pull_request:
+    branches: ["main"]
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "20"
+  PLAYWRIGHT_BROWSERS_PATH: "0"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: feature_enhanced
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: feature_enhanced/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+  smoke:
+    runs-on: ubuntu-latest
+    needs: build
+    defaults:
+      run:
+        working-directory: feature_enhanced
+    env:
+      BASE_URL: ${{ vars.STAGING_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: feature_enhanced/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test tests/smoke --project=chromium
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-smoke-report
+          path: feature_enhanced/playwright-report
+
+  a11y:
+    runs-on: ubuntu-latest
+    needs: build
+    defaults:
+      run:
+        working-directory: feature_enhanced
+    env:
+      BASE_URL: ${{ vars.STAGING_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: feature_enhanced/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test tests/a11y --project=chromium
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-a11y-report
+          path: feature_enhanced/playwright-report
+
+  regression:
+    runs-on: ubuntu-latest
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, firefox, webkit, edge]
+    defaults:
+      run:
+        working-directory: feature_enhanced
+    env:
+      BASE_URL: ${{ vars.STAGING_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: feature_enhanced/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: npx playwright test tests/regression --project=${{ matrix.project }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-regression-${{ matrix.project }}
+          path: feature_enhanced/playwright-report
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: build
+    defaults:
+      run:
+        working-directory: feature_enhanced
+    env:
+      BASE_URL: ${{ vars.STAGING_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: feature_enhanced/package-lock.json
+      - run: npm ci
+      - run: |
+          npx lhci autorun \
+            --config=../lighthouse/lighthouserc.json \
+            --collect.url="$BASE_URL/" \
+            --collect.url="$BASE_URL/services" \
+            --collect.url="$BASE_URL/contact" \
+            --collect.url="$BASE_URL/resources"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-report
+          path: lighthouse/report
+
+  security:
+    runs-on: ubuntu-latest
+    needs: build
+    continue-on-error: true
+    env:
+      STAGING_URL: ${{ vars.STAGING_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash qa/security-baseline.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: zap-baseline-report
+          path: qa/security-reports

@@ -1,0 +1,11 @@
+Page/Feature,Browsers,Devices,Notes
+Home,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Hero + CTA + media
+Services Overview,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Card layout and links
+Residential Maintenance,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Planner module
+Commercial Maintenance,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Planner module
+Contact Form,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Validation + submit
+Resources Hub,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Long-form content
+Home Maintenance Estimator,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Estimator UI
+Blog Index/Post,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Images + typography
+Service Area (dynamic),Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,Route params
+Sitemap,Chrome/Firefox/Safari/Edge,360|768|1024|1280|1440,All links available
