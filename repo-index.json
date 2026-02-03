@@ -1,0 +1,6376 @@
+{
+  "root": "C:\\Users\\ElricBenson\\Benson Enterprises\\vscode",
+  "generated_at": "2026-02-03T15:03:05.113454Z",
+  "modules": [
+    {
+      "name": "base_code",
+      "path": "base_code",
+      "type": "vite-react",
+      "metrics": {
+        "loc": 20542,
+        "file_count": 67,
+        "complexity": null
+      },
+      "tests": {
+        "count": 0,
+        "files": []
+      }
+    },
+    {
+      "name": "feature_enhanced",
+      "path": "feature_enhanced",
+      "type": "vite-react",
+      "metrics": {
+        "loc": 39572,
+        "file_count": 542,
+        "complexity": null
+      },
+      "tests": {
+        "count": 18,
+        "files": [
+          "feature_enhanced/tests/a11y/basic-a11y.spec.ts",
+          "feature_enhanced/tests/fixtures/users.ts",
+          "feature_enhanced/tests/integration/portalData.spec.ts",
+          "feature_enhanced/tests/regression/content.spec.ts",
+          "feature_enhanced/tests/regression/maintenance-planners.spec.js",
+          "feature_enhanced/tests/setup/vitest.setup.ts",
+          "feature_enhanced/tests/smoke/contact-form.spec.ts",
+          "feature_enhanced/tests/smoke/home.spec.ts",
+          "feature_enhanced/tests/smoke/navigation.spec.ts",
+          "feature_enhanced/tests/unit/csp.spec.ts",
+          "feature_enhanced/tests/unit/leadUtils.spec.ts",
+          "feature_enhanced/tests/unit/permissions.spec.ts",
+          "feature_enhanced/tests/unit/ProtectedRoute.spec.tsx",
+          "feature_enhanced/tests/unit/security.spec.ts",
+          "feature_enhanced/tests/unit/submitCommercialAgreementLead.spec.ts",
+          "feature_enhanced/tests/unit/validators.spec.ts",
+          "feature_enhanced/tests/utils/routes.ts",
+          "feature_enhanced/tests/visual/templates.spec.ts"
+        ]
+      }
+    },
+    {
+      "name": "feature_enhanced-workers",
+      "path": "feature_enhanced/workers",
+      "type": "cloudflare-worker",
+      "metrics": {
+        "loc": 253,
+        "file_count": 2,
+        "complexity": null
+      },
+      "tests": {
+        "count": 0,
+        "files": []
+      }
+    },
+    {
+      "name": "feature_enhanced-supabase",
+      "path": "feature_enhanced/supabase",
+      "type": "supabase-sql",
+      "metrics": {
+        "loc": 255,
+        "file_count": 2,
+        "complexity": null
+      },
+      "tests": {
+        "count": 0,
+        "files": []
+      }
+    },
+    {
+      "name": "qa",
+      "path": "qa",
+      "type": "qa-assets",
+      "metrics": {
+        "loc": 234,
+        "file_count": 9,
+        "complexity": null
+      },
+      "tests": {
+        "count": 0,
+        "files": []
+      }
+    },
+    {
+      "name": "lighthouse",
+      "path": "lighthouse",
+      "type": "lighthouse-config",
+      "metrics": {
+        "loc": 31,
+        "file_count": 1,
+        "complexity": null
+      },
+      "tests": {
+        "count": 0,
+        "files": []
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "module": "",
+      "language": "Markdown",
+      "loc": 29,
+      "bytes": 1430,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "repo-index.json",
+      "module": "",
+      "language": "JSON",
+      "loc": 0,
+      "bytes": 0,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "tmp_repo_map.py",
+      "module": "",
+      "language": "Python",
+      "loc": 0,
+      "bytes": 0,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/.nvmrc",
+      "module": "base_code",
+      "language": null,
+      "loc": null,
+      "bytes": 8,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/.version",
+      "module": "base_code",
+      "language": null,
+      "loc": null,
+      "bytes": 3,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/eslint.config.mjs",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 53,
+      "bytes": 2321,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/index.html",
+      "module": "base_code",
+      "language": "HTML",
+      "loc": 14,
+      "bytes": 407,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/package-lock.json",
+      "module": "base_code",
+      "language": "JSON",
+      "loc": 9466,
+      "bytes": 345160,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/package.json",
+      "module": "base_code",
+      "language": "JSON",
+      "loc": 51,
+      "bytes": 1547,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/postcss.config.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 6,
+      "bytes": 74,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/tailwind.config.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 76,
+      "bytes": 1862,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/vite.config.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 266,
+      "bytes": 6276,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/vite-plugin-iframe-route-restoration.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 125,
+      "bytes": 3969,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/selection-mode/selection-mode-script.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 430,
+      "bytes": 10154,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/selection-mode/vite-plugin-selection-mode.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 27,
+      "bytes": 628,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/utils/ast-utils.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 279,
+      "bytes": 8022,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/visual-editor/edit-mode-script.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 357,
+      "bytes": 9512,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/visual-editor/visual-editor-config.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 137,
+      "bytes": 2572,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/visual-editor/vite-plugin-edit-mode.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 32,
+      "bytes": 751,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/plugins/visual-editor/vite-plugin-react-inline-editor.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 365,
+      "bytes": 11534,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/public/.htaccess",
+      "module": "base_code",
+      "language": null,
+      "loc": null,
+      "bytes": 508,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/App.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 71,
+      "bytes": 3709,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/index.css",
+      "module": "base_code",
+      "language": "CSS",
+      "loc": 69,
+      "bytes": 1302,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/main.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 8,
+      "bytes": 189,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/Breadcrumbs.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 65,
+      "bytes": 2218,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/CallToAction.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 17,
+      "bytes": 399,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/HeroImage.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 31,
+      "bytes": 2121,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ScrollToTop.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 14,
+      "bytes": 322,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/SEO.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 82,
+      "bytes": 2588,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/WelcomeMessage.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 17,
+      "bytes": 399,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/layout/Footer.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 127,
+      "bytes": 5648,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/layout/Header.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 308,
+      "bytes": 14570,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ui/button.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 47,
+      "bytes": 1512,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ui/checkbox.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 22,
+      "bytes": 923,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ui/input.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 19,
+      "bytes": 665,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ui/label.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 19,
+      "bytes": 535,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ui/toast.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 101,
+      "bytes": 3784,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ui/toaster.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 34,
+      "bytes": 712,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/components/ui/use-toast.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 103,
+      "bytes": 2032,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/contexts/SupabaseAuthContext.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 105,
+      "bytes": 2552,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/data/reviews.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 59,
+      "bytes": 1737,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/data/serviceAreas.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 98,
+      "bytes": 4656,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/lib/utils.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 6,
+      "bytes": 134,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/About.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 234,
+      "bytes": 12077,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/Blog.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 131,
+      "bytes": 5876,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/BlogPost.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 415,
+      "bytes": 26217,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/Contact.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 297,
+      "bytes": 12360,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/Home.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 581,
+      "bytes": 28164,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/HomePage.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 30,
+      "bytes": 1199,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/Resources.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 469,
+      "bytes": 27845,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/ResourcesHelp.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 419,
+      "bytes": 17335,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/Reviews.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 119,
+      "bytes": 4911,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/ServiceArea.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 341,
+      "bytes": 17964,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/ServicesOverview.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 149,
+      "bytes": 7298,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/Sitemap.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 158,
+      "bytes": 5778,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/blog/HiddenWaterDamageSigns.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 212,
+      "bytes": 12562,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/blog/WaterDamageInsuranceOregon.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 424,
+      "bytes": 26546,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/resources/AgingInPlaceGuide.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 203,
+      "bytes": 11761,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/resources/BathroomRemodelROI.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 228,
+      "bytes": 13973,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/resources/KitchenRemodelROI.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 221,
+      "bytes": 13120,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/resources/WaterDamageMitigationGuide.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 197,
+      "bytes": 11732,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/service-areas/BurnsOR.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 282,
+      "bytes": 13708,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/service-areas/HinesOR.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 263,
+      "bytes": 12168,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/service-areas/SweetHomeOR.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 268,
+      "bytes": 12642,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/services/BathroomRemodels.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 300,
+      "bytes": 14477,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/services/GeneralContracting.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 302,
+      "bytes": 14655,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/services/KitchenRemodels.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 300,
+      "bytes": 14620,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/services/MoldRemediation.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 328,
+      "bytes": 16323,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/src/pages/services/WaterDamageMitigation.jsx",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 383,
+      "bytes": 19011,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "base_code/tools/generate-llms.js",
+      "module": "base_code",
+      "language": "JavaScript",
+      "loc": 182,
+      "bytes": 5057,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/.env",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1092,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/.env.example",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 688,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/.gitignore",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 96,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/.nvmrc",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 8,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/.version",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/AGENTS.md",
+      "module": "feature_enhanced",
+      "language": "Markdown",
+      "loc": 39,
+      "bytes": 2144,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/dist.zip",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 291526,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/eslint.config.mjs",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 56,
+      "bytes": 2441,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/index.html",
+      "module": "feature_enhanced",
+      "language": "HTML",
+      "loc": 25,
+      "bytes": 1334,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/lighthouserc.json",
+      "module": "feature_enhanced",
+      "language": "JSON",
+      "loc": 18,
+      "bytes": 556,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/package-lock.json",
+      "module": "feature_enhanced",
+      "language": "JSON",
+      "loc": 14424,
+      "bytes": 515156,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/package.json",
+      "module": "feature_enhanced",
+      "language": "JSON",
+      "loc": 86,
+      "bytes": 2883,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/playwright.config.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 43,
+      "bytes": 1392,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/postcss.config.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 6,
+      "bytes": 81,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tailwind.config.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 76,
+      "bytes": 2127,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/test-results.json",
+      "module": "feature_enhanced",
+      "language": "JSON",
+      "loc": 115,
+      "bytes": 3414,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tsconfig.json",
+      "module": "feature_enhanced",
+      "language": "JSON",
+      "loc": 12,
+      "bytes": 314,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/vite.config.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 329,
+      "bytes": 8710,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/vitest.config.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 16,
+      "bytes": 439,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/zap-baseline.conf",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 111,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/e2e/auth.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 36,
+      "bytes": 1743,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/e2e/portal-client-crud.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 18,
+      "bytes": 842,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/e2e/public-lead.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 22,
+      "bytes": 904,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/e2e/utils.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 51,
+      "bytes": 1651,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/k6/estimator.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 9,
+      "bytes": 251,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/k6/login-burst.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 10,
+      "bytes": 311,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/k6/upload-spike.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 12,
+      "bytes": 360,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/mocks/handlers.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 5,
+      "bytes": 149,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/mocks/server.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 4,
+      "bytes": 129,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/vite-plugin-iframe-route-restoration.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 125,
+      "bytes": 3972,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/selection-mode/selection-mode-script.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 453,
+      "bytes": 10779,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/selection-mode/vite-plugin-selection-mode.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 27,
+      "bytes": 678,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/utils/ast-utils.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 296,
+      "bytes": 8557,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/visual-editor/edit-mode-script.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 367,
+      "bytes": 10068,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/visual-editor/visual-editor-config.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 137,
+      "bytes": 2573,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/visual-editor/vite-plugin-edit-mode.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 32,
+      "bytes": 828,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/plugins/visual-editor/vite-plugin-react-inline-editor.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 468,
+      "bytes": 14548,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/.htaccess",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 508,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/llms.txt",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": 9,
+      "bytes": 2003,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/_headers",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 151,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/_redirects",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 19,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/logo.svg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": 14,
+      "bytes": 739,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/og-default.svg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": 19,
+      "bytes": 944,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/placeholder.svg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": 26,
+      "bytes": 1327,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/65946385690__73001705-83C7-46CA-9D7F-B207F7C8FDBC.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1244888,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/71139958228__8A3020C3-F848-4B44-A138-0EF9B0435FBE.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3769199,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/Image.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 9437156,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0001.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 255778,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0002.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 222461,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0003.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 248923,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0004.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 152126,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0005-1.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 111085,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0005.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 111085,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0006-1.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 167300,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0006.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 167300,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0007.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 175761,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0008.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 123225,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0009.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 113048,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0010.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 110033,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0011-1.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 210926,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0011.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 210926,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0012.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 237810,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0013.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 281697,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0014.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 149800,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0015.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 107109,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0016.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 119632,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0017-1.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 121725,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0017.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 121725,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0018.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 219759,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0019.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 126678,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0020.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 208090,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0021.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 65604,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0022-1.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 63199,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0022.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 63199,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0023.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 87393,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0024.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 90709,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0025.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 185624,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0026.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1325042,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0027.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 517804,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0028.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 599368,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0031.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1281804,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0032.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1330286,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0034.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1300782,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0035.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1105209,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0036.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1521933,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0037.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1352964,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0038.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1456388,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0039.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1800897,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0040.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1395891,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0045.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1201582,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0046.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1069021,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0047.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1331861,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0049.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1359243,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0050.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1496566,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0051.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 893939,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0052.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1425723,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0055.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1780344,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0056.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1744415,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0060.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 808806,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0062.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1407472,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0063.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1174695,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0066.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1054844,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0067.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1035173,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0068.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1138440,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0068.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 416058,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0069.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 819965,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0071.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1089576,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0072.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1396861,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0072.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 6124170,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0073.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3348945,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0074.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 600839,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0074.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3179198,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0075.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 497320,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0076.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1202715,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0076.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 5285229,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0078.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 882801,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0078.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4228142,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0079.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 868546,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0080.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2823116,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0081.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 511981,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0082.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 416434,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0120.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1974502,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0123-1.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 478446,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0123.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1732094,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0124-1.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1964089,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0124.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 402686,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0131.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 555861,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0137.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1779938,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0166.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1323239,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0167-1.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 831214,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0167.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1402674,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0171.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 732913,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0174.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 685970,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0175.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 687745,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0206.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1742917,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0207.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2412869,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0208.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2291019,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0211.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 893788,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0214.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 813929,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0236.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1967080,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0237.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2260867,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0241.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1573423,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0243.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2041497,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0258.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3239555,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0259.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3005181,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0302.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 854630,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0303.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 933236,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0309.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 766864,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0312.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1234627,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0313.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1180139,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0321.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1012112,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0323.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1071062,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0327.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1464308,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0332.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1117813,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0333.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1057359,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0335.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 975248,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0337.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1129583,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0338.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1237416,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0363.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2197058,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0456.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3472861,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0457.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2596898,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0600.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 628214,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0600.MOV",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1375095,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0601.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 613870,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0601.MOV",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1661787,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0602.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 655405,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0602.MOV",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1423742,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0660.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 574750,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0660.MOV",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1212506,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0923.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 5556083,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0924.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 6174641,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0925.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 5652438,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0926.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4651757,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0927.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3910840,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0928.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4002827,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0929.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4139947,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0930.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4210673,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0931.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 5315139,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0932.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4382490,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0935.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4220619,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0936.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 5006158,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0937.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2323245,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0939.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3360897,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0940.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3364900,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0945.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 761444,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0959.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2817866,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0960.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3019573,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0961.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2691857,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0962.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2760520,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0963.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2955879,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_0964.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2752459,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1301.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1625181,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1351.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1008135,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1352.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 963416,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1353.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 904004,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1354.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 836412,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1367.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1095101,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1368.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 712056,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1369.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 715343,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1370.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 824752,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1371.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 823736,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1372.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 870958,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1373.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 709443,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1374.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 777322,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1375.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1284693,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1376.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 914353,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1408.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 995816,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1409.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 966957,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1414.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1683644,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1431.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1149561,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1432.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1070820,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1433.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1190171,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1442.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1431209,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1443.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1590555,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1483.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 996440,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1484.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 784762,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1581.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 620764,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1581.MOV",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1741458,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1583.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1558832,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1585.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 528561,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1585.MOV",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1492586,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1599.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1020519,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1600.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1033411,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1659.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 576312,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1971.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 951601,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1972.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 820541,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_1973.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 721626,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2018.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 869886,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2119.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1553924,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2451.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 877568,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2456.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1064072,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2561.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1017301,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2562.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 984828,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2859.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2663221,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2860.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2160721,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2861.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2960279,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2862.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2086270,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_2863.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2713368,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3115.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 858129,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3191.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 684256,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3626.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 949449,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3629.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1244869,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3630.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1202314,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3631.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1121381,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3632.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1117857,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3633.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1158130,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3637.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1052669,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3641.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1092596,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3643.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1237014,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3644.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1078125,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3645.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 854429,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3647.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1365503,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3648.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1256034,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3650.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1393519,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3656.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 726162,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3659.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1524891,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3662.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 753017,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3665.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 919900,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3666.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1171453,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3884.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1830376,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_3885.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3356694,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4019.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 964900,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4020.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 983749,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4021.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 973687,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4022.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 708634,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4023.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 716439,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4024.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 948177,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4025.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 952628,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4026.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 939181,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4027.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 935916,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4028.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1009030,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4029.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1008160,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4030.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1019582,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4039.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 815995,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4040.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1061447,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4091.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1378657,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4093.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1303181,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4095.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1310913,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4127.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 729762,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4182.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 849939,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4243.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1085929,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4307.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 707640,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4308.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 695742,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4399.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3255033,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4402.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2798540,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4607.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1336435,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4609.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 682101,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4610.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 602138,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4611.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 575134,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4612.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 499472,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4613.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 358701,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4614.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1049564,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4615.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1020655,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4616.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 685953,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4617.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 970495,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4618.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 605017,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4619.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1118944,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4620.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 651501,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4621.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 362608,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4622.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 923040,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4623.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 917577,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4624.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 950993,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4625.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1022284,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4626.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1076884,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4627.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 996004,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4628.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 935641,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4629.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 846224,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4630.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 508746,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4631.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 532543,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4632.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 516689,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4633.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 561372,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4634.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 574472,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4635.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 597555,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4636.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1024607,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4637.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 997836,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4638.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 658364,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4639.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 995057,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4640.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 925637,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4651.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1024661,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4652.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1105598,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4653.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1215760,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4654.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1094484,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4677.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2666687,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_4678.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2780731,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5113.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2056191,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5114.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2038559,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5115.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2091021,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5116.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1892802,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5117.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3343205,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5118.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3319968,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5119.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3912155,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5120.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3825520,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5125.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3100637,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5126.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3232201,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5418.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2335758,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5419.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1892879,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5477.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3614978,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5478.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2768331,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5480.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2000901,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5486.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2259349,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5487.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1906203,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5696.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4963379,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_5697.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4227950,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6087.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2049489,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6088.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1566660,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6471.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 454678,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6473.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 454139,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6476.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 653338,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6502.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 367300,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6542.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 230433,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6570.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3472164,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6571.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3545255,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6574.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4317732,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6575.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 5346000,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6576.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 5581168,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6577.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4806781,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6971.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 927933,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_6973.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1008334,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_7004.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 512572,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_7319.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4848892,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_7424.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4352803,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_7425.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3876783,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_7428.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4528809,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_7429.JPG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4770471,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9463.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1093653,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9464.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 923089,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9466.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 855189,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9471.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 554675,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9472.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 973733,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9474.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 722258,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9502.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1146086,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9503.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1193464,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9504.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1306626,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9515.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2329598,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9668.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1151153,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9669.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1304802,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9670.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 782088,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9671.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 892052,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9672.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1116146,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9687.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1226754,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9688.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 640208,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9691.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 575062,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9887.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 802398,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9888.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 751684,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9910.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 707574,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9911.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 789441,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9915.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 797449,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9929.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1725951,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9930.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1376709,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9931.jpeg",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1111157,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9962.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 848704,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/IMG_9963.JPEG",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 731230,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/image_metrics.csv",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 24544,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/landscape_page_1.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4613615,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/landscape_page_2.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 4218435,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/landscape_page_3.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3678663,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/landscape_page_4.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3655517,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/landscape_page_5.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 3402740,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/landscape_page_6.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 657175,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/portrait_page_1.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2486305,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/portrait_page_2.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2312030,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/portrait_page_3.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 2310553,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/portrait_page_4.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1923175,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/portrait_page_5.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1927015,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/portrait_page_6.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1916294,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/images/album/_analysis/portrait_page_7.png",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 377675,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/landing/residential-maintenance-pricing.html",
+      "module": "feature_enhanced",
+      "language": "HTML",
+      "loc": 364,
+      "bytes": 10607,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/landing/residential-maintenance-programs.html",
+      "module": "feature_enhanced",
+      "language": "HTML",
+      "loc": 882,
+      "bytes": 26684,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/resources/home-maintenance-recordbook.pdf",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1783,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/resources/home-restoration-resource-guide.pdf",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": null,
+      "bytes": 1784,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/public/resources/README.txt",
+      "module": "feature_enhanced",
+      "language": null,
+      "loc": 9,
+      "bytes": 318,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/scripts/seed/seed-test.sql",
+      "module": "feature_enhanced",
+      "language": "SQL",
+      "loc": 11,
+      "bytes": 448,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/App.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 235,
+      "bytes": 9562,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/index.css",
+      "module": "feature_enhanced",
+      "language": "CSS",
+      "loc": 74,
+      "bytes": 1295,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/main.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 11,
+      "bytes": 291,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/Analytics.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 69,
+      "bytes": 1836,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/Breadcrumbs.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 74,
+      "bytes": 2335,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/CallToAction.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 17,
+      "bytes": 400,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/HeroImage.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 31,
+      "bytes": 2111,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ScrollToTop.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 14,
+      "bytes": 312,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/SEO.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 96,
+      "bytes": 3073,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/WelcomeMessage.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 17,
+      "bytes": 400,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/auth/ProtectedRoute.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 39,
+      "bytes": 934,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/commercial-agreements/CommercialAgreementFunnel.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 441,
+      "bytes": 15223,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/estimator/EstimatorWizard.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 299,
+      "bytes": 9382,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/estimator/maintenanceEstimatorConfig.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 33,
+      "bytes": 1295,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/estimator/submitEstimatorLead.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 44,
+      "bytes": 1359,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/layout/Footer.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 178,
+      "bytes": 6348,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/layout/Header.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 394,
+      "bytes": 16197,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/maintenance-estimator/HomeMaintenanceEstimatorWizard.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 304,
+      "bytes": 11030,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/maintenance-planner/CommercialMaintenancePlannerModule.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 487,
+      "bytes": 19644,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/maintenance-planner/ResidentialMaintenancePlannerModule.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 424,
+      "bytes": 16637,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/residential-maintenance/ResidentialMaintenanceFunnel.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 554,
+      "bytes": 18849,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/services/PricingMatrix.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 68,
+      "bytes": 2213,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/services/ServiceMenu.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 61,
+      "bytes": 2204,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/button.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 49,
+      "bytes": 1621,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/checkbox.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 25,
+      "bytes": 946,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/input.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 19,
+      "bytes": 673,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/label.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 20,
+      "bytes": 547,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/tabs.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 44,
+      "bytes": 1543,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/toast.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 101,
+      "bytes": 3904,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/toaster.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 34,
+      "bytes": 806,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/components/ui/use-toast.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 99,
+      "bytes": 2031,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/contexts/SupabaseAuthContext.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 237,
+      "bytes": 5640,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/data/nicheMenus.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 472,
+      "bytes": 13556,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/data/reviews.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 59,
+      "bytes": 1742,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/data/serviceAreas.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 111,
+      "bytes": 4767,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/data/siteImages.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 15,
+      "bytes": 467,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/data/internal/oregon-cost-inputs.md",
+      "module": "feature_enhanced",
+      "language": "Markdown",
+      "loc": 31,
+      "bytes": 1463,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/hooks/useAuth.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 3,
+      "bytes": 79,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/hooks/useStripe.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 64,
+      "bytes": 1445,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/hooks/useSubcontractorAuth.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 32,
+      "bytes": 904,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/customSupabaseClient.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 12,
+      "bytes": 396,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/edgeClient.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 68,
+      "bytes": 1748,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/leadUtils.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 54,
+      "bytes": 1450,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/permissions.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 17,
+      "bytes": 573,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/portalData.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 35,
+      "bytes": 677,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/security.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 75,
+      "bytes": 1817,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/utils.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 6,
+      "bytes": 138,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/validators.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 16,
+      "bytes": 462,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/commercialAgreements/submitCommercialAgreementLead.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 47,
+      "bytes": 1449,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/maintenanceEstimator/config.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 34,
+      "bytes": 1137,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/maintenanceEstimator/submitEstimatorLead.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 38,
+      "bytes": 1156,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/maintenancePlanner/oregonCostFactors.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 134,
+      "bytes": 2980,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/lib/residentialMaintenance/submitResidentialMaintenanceLead.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 47,
+      "bytes": 1471,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/About.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 295,
+      "bytes": 12851,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/AuthCallback.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 73,
+      "bytes": 2182,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/AuthResetPassword.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 122,
+      "bytes": 4350,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/Blog.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 149,
+      "bytes": 5941,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/BlogPost.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 702,
+      "bytes": 29744,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ClientCompleteProfile.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 225,
+      "bytes": 7081,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ClientPortal.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 392,
+      "bytes": 17606,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ClientPortalForgotPassword.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 107,
+      "bytes": 3634,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ClientPortalLogin.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 168,
+      "bytes": 6101,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ClientPortalRegister.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 143,
+      "bytes": 5040,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/Contact.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 354,
+      "bytes": 13741,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/Home.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 859,
+      "bytes": 32358,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/HomePage.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 30,
+      "bytes": 1067,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/Resources.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 814,
+      "bytes": 36716,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ResourcesHelp.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 476,
+      "bytes": 18148,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/Reviews.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 135,
+      "bytes": 5162,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ServiceArea.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 497,
+      "bytes": 20642,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/ServicesOverview.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 281,
+      "bytes": 10629,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/Sitemap.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 282,
+      "bytes": 8720,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/SubcontractorCompleteProfile.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 263,
+      "bytes": 8528,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/SubcontractorPortal.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 115,
+      "bytes": 5217,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/SubcontractorPortalLogin.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 216,
+      "bytes": 8237,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/SubcontractorPortalRegister.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 259,
+      "bytes": 10918,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/blog/HiddenWaterDamageSigns.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 323,
+      "bytes": 14242,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/blog/WaterDamageInsuranceOregon.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 671,
+      "bytes": 30958,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/resources/AgingInPlaceGuide.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 305,
+      "bytes": 13403,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/resources/BathroomRemodelROI.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 377,
+      "bytes": 16632,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/resources/HomeMaintenanceEstimator.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 66,
+      "bytes": 2444,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/resources/HomeMaintenanceRecordbook.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 67,
+      "bytes": 2267,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/resources/HomeRestorationResourceGuide.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 72,
+      "bytes": 2549,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/resources/KitchenRemodelROI.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 353,
+      "bytes": 15410,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/resources/WaterDamageMitigationGuide.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 299,
+      "bytes": 13367,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/service-areas/BurnsOR.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 351,
+      "bytes": 14642,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/service-areas/HinesOR.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 318,
+      "bytes": 12912,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/service-areas/SweetHomeOR.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 326,
+      "bytes": 13409,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/BathroomRemodels.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 380,
+      "bytes": 15594,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/GeneralContracting.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 381,
+      "bytes": 15772,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/KitchenRemodels.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 375,
+      "bytes": 15672,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/MoldRemediation.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 411,
+      "bytes": 17469,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/WaterDamageMitigation.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 476,
+      "bytes": 20239,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/commercial/ADACompliance.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 22,
+      "bytes": 1011,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/commercial/CommercialMaintenance.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 210,
+      "bytes": 8350,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/commercial/CommercialServiceAgreements.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 140,
+      "bytes": 5523,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/commercial/EmergencyRepairs.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 22,
+      "bytes": 1017,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/commercial/PreventiveMaintenance.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 22,
+      "bytes": 980,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/commercial/TenantTurns.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 22,
+      "bytes": 919,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/commercial/_CommercialServiceTemplate.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 82,
+      "bytes": 2996,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/niches/AgingInPlace.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 46,
+      "bytes": 1718,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/niches/EnergyComfort.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 46,
+      "bytes": 1687,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/niches/InsuranceAdjacent.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 46,
+      "bytes": 1734,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/niches/MoistureEnvelope.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 46,
+      "bytes": 1804,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/niches/NichePageTemplate.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 188,
+      "bytes": 6463,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/residential/residentialMaintenanceData.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 131,
+      "bytes": 4824,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/src/pages/services/residential/ResidentialMaintenancePrograms.jsx",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 432,
+      "bytes": 17242,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/supabase/seed.sql",
+      "module": "feature_enhanced/supabase",
+      "language": "SQL",
+      "loc": 38,
+      "bytes": 773,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/supabase/migrations/20260203090000_init.sql",
+      "module": "feature_enhanced/supabase",
+      "language": "SQL",
+      "loc": 217,
+      "bytes": 6606,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/a11y/basic-a11y.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 37,
+      "bytes": 1282,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/fixtures/users.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 7,
+      "bytes": 256,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/integration/portalData.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 25,
+      "bytes": 658,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/regression/content.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 46,
+      "bytes": 1404,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/regression/maintenance-planners.spec.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 34,
+      "bytes": 1266,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/setup/vitest.setup.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 1,
+      "bytes": 37,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/smoke/contact-form.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 22,
+      "bytes": 868,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/smoke/home.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 15,
+      "bytes": 485,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/smoke/navigation.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 32,
+      "bytes": 882,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/unit/csp.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 14,
+      "bytes": 406,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/unit/leadUtils.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 13,
+      "bytes": 429,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/unit/permissions.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 12,
+      "bytes": 388,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/unit/ProtectedRoute.spec.tsx",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 48,
+      "bytes": 1805,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/unit/security.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 20,
+      "bytes": 659,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/unit/submitCommercialAgreementLead.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 23,
+      "bytes": 1043,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/unit/validators.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 23,
+      "bytes": 705,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/utils/routes.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 15,
+      "bytes": 476,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tests/visual/templates.spec.ts",
+      "module": "feature_enhanced",
+      "language": "TypeScript",
+      "loc": 19,
+      "bytes": 602,
+      "is_test": true,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tools/generate-llms.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 199,
+      "bytes": 5378,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tools/image_audit.py",
+      "module": "feature_enhanced",
+      "language": "Python",
+      "loc": 144,
+      "bytes": 4429,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tools/sync-worker-secrets.js",
+      "module": "feature_enhanced",
+      "language": "JavaScript",
+      "loc": 66,
+      "bytes": 1446,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tools/_tmp_metrics.py",
+      "module": "feature_enhanced",
+      "language": "Python",
+      "loc": 29,
+      "bytes": 842,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/tools/supabase/portal.sql",
+      "module": "feature_enhanced",
+      "language": "SQL",
+      "loc": 152,
+      "bytes": 4834,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/workers/wrangler.toml",
+      "module": "feature_enhanced/workers",
+      "language": "TOML",
+      "loc": 10,
+      "bytes": 192,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "feature_enhanced/workers/src/index.js",
+      "module": "feature_enhanced/workers",
+      "language": "JavaScript",
+      "loc": 243,
+      "bytes": 7707,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "lighthouse/lighthouserc.json",
+      "module": "lighthouse",
+      "language": "JSON",
+      "loc": 31,
+      "bytes": 883,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/ACCESSIBILITY_GUIDE.md",
+      "module": "qa",
+      "language": "Markdown",
+      "loc": 32,
+      "bytes": 1219,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/BUG_TEMPLATE.md",
+      "module": "qa",
+      "language": "Markdown",
+      "loc": 39,
+      "bytes": 603,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/QA_CHECKLIST.md",
+      "module": "qa",
+      "language": "Markdown",
+      "loc": 54,
+      "bytes": 2483,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/README.md",
+      "module": "qa",
+      "language": "Markdown",
+      "loc": 35,
+      "bytes": 1276,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/sanity.sh",
+      "module": "qa",
+      "language": null,
+      "loc": null,
+      "bytes": 703,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/security-baseline.sh",
+      "module": "qa",
+      "language": null,
+      "loc": null,
+      "bytes": 529,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/SECURITY.md",
+      "module": "qa",
+      "language": "Markdown",
+      "loc": 18,
+      "bytes": 507,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/test-matrix.csv",
+      "module": "qa",
+      "language": null,
+      "loc": null,
+      "bytes": 883,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    },
+    {
+      "path": "qa/TEST_PLAN.md",
+      "module": "qa",
+      "language": "Markdown",
+      "loc": 56,
+      "bytes": 2172,
+      "is_test": false,
+      "imports": [],
+      "exports": []
+    }
+  ],
+  "ownership": {
+    "source": "CODEOWNERS",
+    "entries": [],
+    "note": "CODEOWNERS not found in scanned paths (excluded .github/)."
+  }
+}

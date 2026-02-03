@@ -39,7 +39,7 @@ export default function EnergyComfort() {
         "Bundled scopes that pair well with maintenance programs.",
         "Better comfort now and lower bills over time.",
       ]}
-      menu={data.menu}
+      menu={data.serviceMenu}
       pricing={data.pricingMatrix}
     />
   );

@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import siteImages from "@/data/siteImages";
+
 const Home = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -74,6 +75,13 @@ const Home = () => {
   };
   const services = [
     {
+      title: "Residential Maintenance Programs",
+      description:
+        "Subscription home maintenance with predictable pricing, photos & logs, and one trusted provider for recurring small jobs.",
+      icon: "🧾",
+      link: "/services/residential-maintenance",
+    },
+    {
       title: "Water Damage Mitigation & Dry-Out",
       description:
         "Fast emergency response to extract water, dry structures, and prevent secondary damage. We work directly with insurance companies.",
@@ -107,14 +115,7 @@ const Home = () => {
         "Home additions, remodels, ADA/aging-in-place modifications, exterior improvements, and insurance restoration work.",
       icon: "🔨",
       link: "/services/general-contracting",
-    },
-    {
-      title: "Residential Maintenance Programs",
-      description:
-        "Subscription home maintenance with predictable pricing, photos & logs, and one trusted provider for recurring small jobs.",
-      icon: "🧾",
-      link: "/services/residential-maintenance",
-    },
+    }
   ];
   const processSteps = [
     {
@@ -164,7 +165,7 @@ const Home = () => {
         title="Benson Home Solutions | Water Damage & Restoration Services"
         description="Professional water damage restoration, mold remediation, and home remodeling services in Harney County and Mid-Valley Oregon. 24/7 emergency response."
         schema={schema}
-        keywords="Oregon construction, restoration company, water damage mitigation, mold remediation, bathroom remodel, kitchen remodel, Burns OR contractor, Sweet Home OR contractor"
+        keywords="Home Maintenance, Small commercial maintenance, church maintenance, light industrial maintenance, Oregon construction, restoration company, water damage mitigation, mold remediation, bathroom remodel, kitchen remodel, Burns OR contractor, Sweet Home OR contractor"
       />
 
       {/* H1 Heading Hidden Visually but Present for SEO Structure if needed, or integrated into Hero */}
@@ -202,7 +203,7 @@ const Home = () => {
               <p className="text-lg mb-8 text-structural-gray">
                 Serving Harney County (Burns, Hines) and the Mid-Willamette
                 Valley (Sweet Home, Lebanon, Albany) with licensed, professional
-                restoration and construction services.
+                restoration, maintenance and construction services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="tel:5413215115">
@@ -336,7 +337,7 @@ const Home = () => {
             </h2>
             <p className="text-xl text-restoration-gray max-w-3xl mx-auto">
               Comprehensive maintenance, restoration, and remodeling solutions
-              tailored to your home's needs.
+              tailored to your home or business needs.
             </p>
           </div>
 
@@ -401,13 +402,8 @@ const Home = () => {
               Why Choose Benson Home Solutions?
             </h2>
             <p className="mb-6">
-              At Benson Home Solutions, we understand that your home is more
-              than just a building—it’s your sanctuary. Whether you’re facing
-              the sudden stress of water damage or planning a dream kitchen
-              remodel, you need a partner you can trust. We are a locally owned
-              and operated construction and restoration company dedicated to
-              serving our neighbors in Harney County and the Mid-Willamette
-              Valley.
+              Benson Home Solutions knows a house is not just a structure, but the place your life happens. When water damage disrupts your home or you are ready to invest in a kitchen remodel, you need a contractor who is reliable, clear, and accountable. We are a locally owned construction and restoration company serving homeowners throughout Harney County and the Mid-Willamette Valley, focused on practical solutions, quality workmanship, and straightforward communication.
+
             </p>
             <p className="mb-6">
               Our team brings years of experience and a commitment to excellence

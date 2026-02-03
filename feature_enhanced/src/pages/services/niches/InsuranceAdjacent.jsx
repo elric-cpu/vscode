@@ -39,7 +39,7 @@ export default function InsuranceAdjacent() {
         "Capture both insurance-paid and homeowner-pay portions cleanly.",
         "Small scopes executed to code with a professional closeout.",
       ]}
-      menu={data.menu}
+      menu={data.serviceMenu}
       pricing={data.pricingMatrix}
     />
   );

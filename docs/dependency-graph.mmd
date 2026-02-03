@@ -1,0 +1,50 @@
+graph TD
+  subgraph Apps
+    base_code["base_code\nVite React"]
+    feature_enhanced["feature_enhanced\nVite React"]
+    worker["feature_enhanced/workers\nCloudflare Worker"]
+    supabase["feature_enhanced/supabase\nDB schema"]
+    qa["qa\nQA scripts"]
+    lighthouse["lighthouse\nLighthouse config"]
+  end
+  subgraph External_Libs
+    react[react]
+    reactdom[react-dom]
+    rr[react-router-dom]
+    framer[framer-motion]
+    tailwind[tailwindcss]
+    supa[@supabase/supabase-js]
+    playwright[@playwright/test]
+    vitest[vitest]
+    k6[k6]
+    lhci[@lhci/cli]
+  end
+  subgraph External_Services
+    supabase_api[Supabase Auth API]
+    stripe[Stripe API]
+    resend[Resend API]
+  end
+
+  base_code --> react
+  base_code --> reactdom
+  base_code --> rr
+  base_code --> framer
+  base_code --> tailwind
+
+  feature_enhanced --> react
+  feature_enhanced --> reactdom
+  feature_enhanced --> rr
+  feature_enhanced --> framer
+  feature_enhanced --> tailwind
+  feature_enhanced --> supa
+  feature_enhanced --> playwright
+  feature_enhanced --> vitest
+  feature_enhanced --> k6
+  feature_enhanced --> lhci
+
+  feature_enhanced --> worker
+  feature_enhanced --> supabase
+
+  worker --> supabase_api
+  worker --> stripe
+  worker --> resend

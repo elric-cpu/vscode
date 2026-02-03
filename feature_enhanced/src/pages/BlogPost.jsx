@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import siteImages from "@/data/siteImages";
-import siteImages from "@/data/siteImages";
 
 const BlogPost = () => {
   const { slug } = useParams();

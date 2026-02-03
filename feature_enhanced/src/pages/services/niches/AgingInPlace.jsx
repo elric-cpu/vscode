@@ -39,7 +39,7 @@ export default function AgingInPlace() {
         "Safety-first installation details and clean closeout documentation.",
         "Bundles that reduce fall risk and improve daily comfort.",
       ]}
-      menu={data.menu}
+      menu={data.serviceMenu}
       pricing={data.pricingMatrix}
     />
   );

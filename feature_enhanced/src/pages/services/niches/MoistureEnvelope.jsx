@@ -39,7 +39,7 @@ export default function MoistureEnvelope() {
         "Small, targeted scopes with strong long-term reliability.",
         "Documentation for homeowners, property managers, and future resale.",
       ]}
-      menu={data.menu}
+      menu={data.serviceMenu}
       pricing={data.pricingMatrix}
     />
   );
