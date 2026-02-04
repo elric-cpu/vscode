@@ -9,6 +9,7 @@ Pyramid
 - Unit: pure functions, validation/formatting, permission helpers, component error/empty states.
 - Integration: Supabase query wrappers + RLS negatives using seeded fixtures.
 - E2E: P0 journeys in Playwright (Chromium/WebKit/Firefox) with trace/video on failure.
+ - Estimating: math totals + labor hours in unit tests; RLS isolation for staff orgs in integration tests.
 
 Environments
 - Local: Vite dev server + MSW; optional local Supabase for deeper RLS checks.

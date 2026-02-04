@@ -5,11 +5,13 @@ import { useAuth } from "@/contexts/SupabaseAuthContext";
 const loginRouteMap = {
   client: "/client-portal-login",
   subcontractor: "/subcontractor-portal-login",
+  staff: "/staff-portal-login",
 };
 
 const portalRouteMap = {
   client: "/client-portal",
   subcontractor: "/subcontractor-portal",
+  staff: "/staff-portal",
 };
 
 const ProtectedRoute = ({ children, role }) => {
