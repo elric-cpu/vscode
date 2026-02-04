@@ -28,6 +28,7 @@ export default function QuestionEngine({ questions, onSubmit, loading }) {
         };
       })
       .filter((entry) => entry.value !== undefined && entry.value !== null && entry.value !== "");
+    if (!payload.length) return;
     onSubmit(payload);
   };
 

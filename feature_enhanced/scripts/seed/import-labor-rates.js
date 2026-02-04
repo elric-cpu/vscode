@@ -60,8 +60,10 @@ const upsertLaborCards = async (rows) => {
 };
 
 const args = process.argv.slice(2);
-const ratesPath = args[args.indexOf("--rates") + 1];
-const cardsPath = args[args.indexOf("--cards") + 1];
+const ratesIndex = args.indexOf("--rates");
+const cardsIndex = args.indexOf("--cards");
+const ratesPath = ratesIndex >= 0 ? args[ratesIndex + 1] : null;
+const cardsPath = cardsIndex >= 0 ? args[cardsIndex + 1] : null;
 
 if (!ratesPath || !cardsPath) {
   console.log("Usage: node scripts/seed/import-labor-rates.js --rates rates.csv --cards cards.csv");

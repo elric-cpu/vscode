@@ -91,13 +91,16 @@ export default function StaffPortal() {
     const loadEstimate = async () => {
       if (!status?.estimate_id || !status?.estimate_version_id) return;
       setLoading(true);
-      const data = await fetchEstimate({ estimate_id: status.estimate_id });
-      setEstimateData(data);
-      const questionData = await fetchQuestions({
-        estimate_version_id: status.estimate_version_id,
-      });
-      setQuestions(questionData?.questions || []);
-      setLoading(false);
+      try {
+        const data = await fetchEstimate({ estimate_id: status.estimate_id });
+        setEstimateData(data);
+        const questionData = await fetchQuestions({
+          estimate_version_id: status.estimate_version_id,
+        });
+        setQuestions(questionData?.questions || []);
+      } finally {
+        setLoading(false);
+      }
     };
     loadEstimate();
   }, [status?.estimate_id, status?.estimate_version_id]);
@@ -105,17 +108,20 @@ export default function StaffPortal() {
   const handleSubmitAnswers = async (answers) => {
     if (!status?.estimate_version_id) return;
     setQuestionLoading(true);
-    const response = await submitAnswers({
-      estimate_version_id: status.estimate_version_id,
-      answers,
-    });
-    if (response?.version_id) {
-      setStatus((prev) => ({
-        ...prev,
-        estimate_version_id: response.version_id,
-      }));
+    try {
+      const response = await submitAnswers({
+        estimate_version_id: status.estimate_version_id,
+        answers,
+      });
+      if (response?.version_id) {
+        setStatus((prev) => ({
+          ...prev,
+          estimate_version_id: response.version_id,
+        }));
+      }
+    } finally {
+      setQuestionLoading(false);
     }
-    setQuestionLoading(false);
   };
 
   return (
@@ -142,6 +148,10 @@ export default function StaffPortal() {
                   onChange={(event) => {
                     const nextOrg = event.target.value;
                     setActiveOrg(nextOrg);
+                    setSelectedProject(null);
+                    setStatus(null);
+                    setEstimateData(null);
+                    setQuestions([]);
                     loadProjects(nextOrg);
                   }}
                 >

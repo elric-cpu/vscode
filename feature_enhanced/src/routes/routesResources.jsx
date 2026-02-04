@@ -28,6 +28,7 @@ import MaterialsEstimatorCalculator from "@/pages/resources/calculators/Material
 import AssetLifecycleCalculator from "@/pages/resources/calculators/AssetLifecycleCalculator";
 import LaborSavingsCalculator from "@/pages/resources/calculators/LaborSavingsCalculator";
 import PropertyValueCalculator from "@/pages/resources/calculators/PropertyValueCalculator";
+import AIEstimatingWorkspace from "@/pages/resources/AIEstimatingWorkspace";
 
 export const resourceRoutes = [
   { path: "/resources", element: <Resources /> },
@@ -62,4 +63,5 @@ export const resourceRoutes = [
   { path: "/resources/calculators/asset-lifecycle", element: <AssetLifecycleCalculator /> },
   { path: "/resources/calculators/labor-savings", element: <LaborSavingsCalculator /> },
   { path: "/resources/calculators/property-value-rent", element: <PropertyValueCalculator /> },
+  { path: "/resources/ai-estimating-workspace", element: <AIEstimatingWorkspace /> },
 ];

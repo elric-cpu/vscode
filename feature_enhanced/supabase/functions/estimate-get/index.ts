@@ -57,6 +57,9 @@ serve(async (req) => {
     if (!memberCheck.ok) return jsonResponse({ error: memberCheck.error }, 403);
 
     const activeVersionId = versionId || estimate.current_version;
+    if (!activeVersionId) {
+      return jsonResponse({ estimate, version: null, tasks: [], line_items: [], excerpts: [] });
+    }
 
     const { data: version } = await supabase
       .from("estimate_versions")

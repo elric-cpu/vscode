@@ -1,62 +1,103 @@
-# Benson Enterprises - Feature Enhanced
+# Benson Estimating Workspace
 
-## Local Development
+This repo ships the AI-native estimating workflow for inspection reports. The flow:
 
-### 1) Install dependencies
-```
+1. Upload an inspection PDF.
+2. Parse pages into anchored text.
+3. Extract task candidates with citations.
+4. Ask targeted questions for missing fields.
+5. Build line-item estimates with labor + material pricing.
+
+## Local development
+
+1. Install dependencies:
+
+```bash
 npm install
 ```
 
-### 2) Configure environment
-Copy `.env.example` to `.env` and fill in required values:
-- `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`
-- `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`
-- `ORCHESTRATOR_URL`, `ORCHESTRATOR_SHARED_SECRET`
-- `PRICING_API_URL`, `PRICING_API_KEY` (optional for external pricing)
+2. Start Supabase locally (requires Supabase CLI):
 
-### 3) Supabase local setup
-```
-cd supabase
+```bash
 supabase start
 supabase db reset
 ```
-This applies migrations and seeds demo staff/org/project data for estimating.
 
-### 4) Run Edge Functions (local)
-```
-supabase functions serve estimate-upload-init
-supabase functions serve estimate-upload-complete
-supabase functions serve estimate-status
-supabase functions serve estimate-get
-supabase functions serve estimate-questions
-supabase functions serve estimate-recompute
+3. Create the storage bucket (one-time):
+
+```bash
+supabase storage create-bucket estimate-documents --public
 ```
 
-### 5) Run ai-orchestrator
+4. Serve Supabase Edge Functions locally:
+
+```bash
+supabase functions serve --env-file .env
 ```
+
+5. Start the Vite app:
+
+```bash
+npm run dev
+```
+
+Open `http://127.0.0.1:3000/resources/ai-estimating-workspace`.
+
+## AI orchestrator (optional but recommended)
+
+The orchestrator provides extraction and scraping endpoints that the Edge Functions can call.
+
+```bash
 cd ai-orchestrator
 npm install
-cp .env.example .env
 npm run dev
 ```
 
-### 6) Run the Vite app
+Set these environment variables (see `.env.example`):
+
+- `ORCHESTRATOR_URL=http://localhost:8787`
+- `SCRAPE_PROVIDER_URL=http://localhost:8787`
+- `ALLOW_SCRAPE=true` to enable live scraping.
+
+## Pricing sources
+
+Populate pricing sources through one of these:
+
+1. Environment-based scraping:
+
 ```
-npm run dev
+PRICING_SOURCE_URLS=[
+  {"source_name":"homewyse","source_url":"https://www.homewyse.com/"},
+  {"source_name":"homedepot","source_url":"https://www.homedepot.com/"},
+  {"source_name":"lowes","source_url":"https://www.lowes.com/"}
+]
 ```
 
-## Estimating Workflow (Staff)
-- Login at `/staff-portal-login` with a staff account (`role=staff`).
-- Create/select a project.
-- Upload a PDF inspection report.
-- Review extracted tasks, provide missing fields, and finalize estimate.
+2. Database sources:
+
+- Insert rows into `estimate_pricing_sources` for each item key.
+- The scraping service can be extended to query those URLs directly.
+
+Always confirm the target site’s terms of service and robots policy before enabling scraping.
 
 ## Tests
-- Unit tests: `npm run test:unit`
-- Integration tests: `npm run test:integration`
 
-## Labor Rate Import
-Provide CSV or JSON files and run:
+Unit tests:
+
+```bash
+npm run test:unit
 ```
-node scripts/seed/import-labor-rates.js --rates path/to/production_rates.csv --cards path/to/labor_rate_cards.csv
+
+Integration tests (requires local or hosted Supabase with service role key):
+
+```bash
+SUPABASE_URL=... SUPABASE_ANON_KEY=... SUPABASE_SERVICE_ROLE_KEY=... npm run test:integration
 ```
+
+## Key files
+
+- `supabase/migrations/20260204090000_estimating_core.sql`
+- `supabase/functions/extract-estimate/index.ts`
+- `supabase/functions/price-lookup/index.ts`
+- `src/components/estimating/EstimateWorkspace.tsx`
+- `src/lib/estimating/estimateApi.ts`
