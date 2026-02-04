@@ -13,9 +13,9 @@ major_version = 15
 enabled = true
 port = 54323
 
-[functions]
+[edge_runtime]
 enabled = true
-port = 54324
+policy = "per_worker"
 
 [storage]
 enabled = true
