@@ -218,13 +218,13 @@ create index if not exists document_pages_document_idx on public.document_pages 
 create index if not exists document_excerpts_document_idx on public.document_excerpts (document_id);
 create index if not exists extraction_runs_document_idx on public.extraction_runs (document_id);
 create index if not exists estimates_project_idx on public.estimates (project_id);
-create index if not exists estimate_versions_estimate_idx on public.estimate_versions (estimate_id);
-create unique index if not exists estimate_versions_unique on public.estimate_versions (estimate_id, version_number);
+create index if not exists estimate_versions_project_idx on public.estimate_versions (project_id);
+create index if not exists estimate_versions_org_idx on public.estimate_versions (org_id);
 create unique index if not exists question_definitions_global_unique
   on public.question_definitions (scope, field_key)
   where organization_id is null;
 create index if not exists estimate_tasks_version_idx on public.estimate_tasks (estimate_version_id);
-create index if not exists estimate_line_items_version_idx on public.estimate_line_items (estimate_version_id);
+create index if not exists estimate_line_items_task_idx on public.estimate_line_items (estimate_task_id);
 create index if not exists pricing_cache_lookup_idx on public.pricing_cache (organization_id, item_key, location_zip, unit);
 
 create or replace function public.is_org_member(org_id uuid)
@@ -233,6 +233,7 @@ language sql
 stable
 security definer
 set search_path = public
+set row_security = off
 as $$
   select exists (
     select 1 from public.workspace_members wm
@@ -298,16 +299,44 @@ create policy "Org members manage estimates" on public.estimates
   with check (public.is_org_member(organization_id));
 
 create policy "Org members manage estimate versions" on public.estimate_versions
-  for all using (public.is_org_member(organization_id))
-  with check (public.is_org_member(organization_id));
+  for all using (public.is_org_member(org_id))
+  with check (public.is_org_member(org_id));
 
 create policy "Org members manage estimate tasks" on public.estimate_tasks
-  for all using (public.is_org_member(organization_id))
-  with check (public.is_org_member(organization_id));
+  for all using (
+    exists (
+      select 1 from public.estimate_versions ev
+      where ev.id = estimate_version_id
+        and public.is_org_member(ev.org_id)
+    )
+  )
+  with check (
+    exists (
+      select 1 from public.estimate_versions ev
+      where ev.id = estimate_version_id
+        and public.is_org_member(ev.org_id)
+    )
+  );
 
 create policy "Org members manage estimate line items" on public.estimate_line_items
-  for all using (public.is_org_member(organization_id))
-  with check (public.is_org_member(organization_id));
+  for all using (
+    exists (
+      select 1
+      from public.estimate_tasks t
+      join public.estimate_versions ev on ev.id = t.estimate_version_id
+      where t.id = estimate_task_id
+        and public.is_org_member(ev.org_id)
+    )
+  )
+  with check (
+    exists (
+      select 1
+      from public.estimate_tasks t
+      join public.estimate_versions ev on ev.id = t.estimate_version_id
+      where t.id = estimate_task_id
+        and public.is_org_member(ev.org_id)
+    )
+  );
 
 create policy "Org members manage questions" on public.question_definitions
   for all using (organization_id is null or public.is_org_member(organization_id))
@@ -318,14 +347,14 @@ create policy "Org members manage answers" on public.question_answers
     exists (
       select 1 from public.estimate_versions ev
       where ev.id = estimate_version_id
-        and public.is_org_member(ev.organization_id)
+        and public.is_org_member(ev.org_id)
     )
   )
   with check (
     exists (
       select 1 from public.estimate_versions ev
       where ev.id = estimate_version_id
-        and public.is_org_member(ev.organization_id)
+        and public.is_org_member(ev.org_id)
     )
   );
 

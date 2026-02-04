@@ -190,12 +190,12 @@ on conflict do nothing;
 insert into public.question_definitions (organization_id, scope, field_key, prompt, input_type, options, depends_on)
 values
   (null, 'task', 'quantity', 'What quantity is required for this task?', 'number', null, null),
-  (null, 'task', 'unit', 'Select the unit for this task.', 'select', '[{\"label\":\"each\",\"value\":\"each\"},{\"label\":\"sqft\",\"value\":\"sqft\"},{\"label\":\"lf\",\"value\":\"lf\"}]'::jsonb, null),
+  (null, 'task', 'unit', 'Select the unit for this task.', 'select', '[{"label":"each","value":"each"},{"label":"sqft","value":"sqft"},{"label":"lf","value":"lf"}]'::jsonb, null),
   (null, 'task', 'item_key', 'Confirm the pricing item key.', 'text', null, null),
   (null, 'task', 'room', 'Which room or area is impacted?', 'text', null, null),
-  (null, 'task', 'access', 'Access difficulty multiplier', 'select', '[{\"label\":\"Standard (1.0)\",\"value\":1.0},{\"label\":\"Tight (1.15)\",\"value\":1.15},{\"label\":\"Hard (1.3)\",\"value\":1.3}]'::jsonb, null),
-  (null, 'task', 'finish', 'Finish level multiplier', 'select', '[{\"label\":\"Standard (1.0)\",\"value\":1.0},{\"label\":\"Premium (1.2)\",\"value\":1.2}]'::jsonb, null),
-  (null, 'task', 'occupancy', 'Occupancy multiplier', 'select', '[{\"label\":\"Vacant (1.0)\",\"value\":1.0},{\"label\":\"Occupied (1.1)\",\"value\":1.1}]'::jsonb, null),
-  (null, 'task', 'height', 'Working height multiplier', 'select', '[{\"label\":\"Under 10ft (1.0)\",\"value\":1.0},{\"label\":\"10-14ft (1.15)\",\"value\":1.15},{\"label\":\"14ft+ (1.3)\",\"value\":1.3}]'::jsonb, null),
-  (null, 'task', 'protection', 'Protection/containment multiplier', 'select', '[{\"label\":\"None (1.0)\",\"value\":1.0},{\"label\":\"Light (1.1)\",\"value\":1.1},{\"label\":\"Full (1.25)\",\"value\":1.25}]'::jsonb, null)
+  (null, 'task', 'access', 'Access difficulty multiplier', 'select', '[{"label":"Standard (1.0)","value":1.0},{"label":"Tight (1.15)","value":1.15},{"label":"Hard (1.3)","value":1.3}]'::jsonb, null),
+  (null, 'task', 'finish', 'Finish level multiplier', 'select', '[{"label":"Standard (1.0)","value":1.0},{"label":"Premium (1.2)","value":1.2}]'::jsonb, null),
+  (null, 'task', 'occupancy', 'Occupancy multiplier', 'select', '[{"label":"Vacant (1.0)","value":1.0},{"label":"Occupied (1.1)","value":1.1}]'::jsonb, null),
+  (null, 'task', 'height', 'Working height multiplier', 'select', '[{"label":"Under 10ft (1.0)","value":1.0},{"label":"10-14ft (1.15)","value":1.15},{"label":"14ft+ (1.3)","value":1.3}]'::jsonb, null),
+  (null, 'task', 'protection', 'Protection/containment multiplier', 'select', '[{"label":"None (1.0)","value":1.0},{"label":"Light (1.1)","value":1.1},{"label":"Full (1.25)","value":1.25}]'::jsonb, null)
 on conflict do nothing;

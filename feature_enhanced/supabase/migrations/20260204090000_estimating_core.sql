@@ -211,6 +211,9 @@ create or replace function public.current_user_orgs()
 returns setof uuid
 language sql
 stable
+security definer
+set search_path = public
+set row_security = off
 as $$
   select org_id from public.organization_members where user_id = auth.uid()
 $$;
