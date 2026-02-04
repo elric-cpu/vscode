@@ -87,7 +87,7 @@ export default function EstimateReview({ estimateData }) {
                 const task = taskMap[item.task_id];
                 if (!task) return acc;
                 if (!acc[item.task_id]) {
-                  acc[item.task_id] = { label: `${task.trade} · ${task.room || \"General\"}`, hours: 0, cost: 0 };
+                acc[item.task_id] = { label: `${task.trade} · ${task·room || "General"}`, hours: 0, cost: 0 };
                 }
                 acc[item.task_id].hours += Number(item.labor_hours || 0);
                 acc[item.task_id].cost += Number(item.labor_cost || 0);
