@@ -32,7 +32,6 @@ const EstimateWorkspace = () => {
   const [projectZip, setProjectZip] = useState("");
   const [projectAddress, setProjectAddress] = useState("");
   const [projectId, setProjectId] = useState<string | null>(null);
-  const [documentId, setDocumentId] = useState<string | null>(null);
   const [estimateVersionId, setEstimateVersionId] = useState<string | null>(null);
   const [tasks, setTasks] = useState<EstimateTask[]>([]);
   const [lineItems, setLineItems] = useState<EstimateLineItem[]>([]);
@@ -53,54 +52,66 @@ const EstimateWorkspace = () => {
 
   const handleCreateProject = async () => {
     if (!user) return;
-    setStatus("Creating project...");
-    setError(null);
-    const org = await ensureOrg();
-    if (!org) return;
-    const project = await createProject({
-      orgId: org,
-      name: projectName || "Inspection Estimate",
-      propertyAddress: projectAddress,
-      locationZip: projectZip,
-      createdBy: user.id,
-    });
-    setProjectId(project.id);
-    setStatus(null);
+    try {
+      setStatus("Creating project...");
+      setError(null);
+      const org = await ensureOrg();
+      if (!org) return;
+      const project = await createProject({
+        orgId: org,
+        name: projectName || "Inspection Estimate",
+        propertyAddress: projectAddress,
+        locationZip: projectZip,
+        createdBy: user.id,
+      });
+      setProjectId(project.id);
+      setStatus(null);
+    } catch (err) {
+      setError(err.message || "Failed to create project.");
+      setStatus(null);
+    }
   };
 
   const handleFileUpload = async (file: File) => {
     if (!user || !projectId) return;
-    setStatus("Uploading and parsing PDF...");
-    setError(null);
-    const org = await ensureOrg();
-    if (!org) return;
-    const document = await uploadDocument({
-      orgId: org,
-      projectId,
-      file,
-      userId: user.id,
-    });
-    setDocumentId(document.id);
-    const parseResult = await parsePdfToText(file);
-    const extraction = await invokeExtraction({
-      documentId: document.id,
-      projectId,
-      parseResult,
-    });
-    setEstimateVersionId(extraction.estimate_version_id);
-    setStatus("Loading tasks...");
-    const [taskRows, questionRows] = await Promise.all([
-      fetchEstimateTasks(extraction.estimate_version_id),
-      fetchEstimateQuestions(extraction.estimate_version_id),
-    ]);
-    const lineItemRows = await fetchEstimateLineItems(taskRows.map((task) => task.id));
-    setTasks(taskRows);
-    setLineItems(lineItemRows);
-    setQuestions(questionRows);
-    const [rateRows, laborRows] = await Promise.all([fetchProductionRates(), fetchLaborRates()]);
-    setProductionRates(rateRows);
-    setLaborRates(laborRows);
-    setStatus(null);
+    try {
+      setStatus("Uploading and parsing PDF...");
+      setError(null);
+      const org = await ensureOrg();
+      if (!org) return;
+      const document = await uploadDocument({
+        orgId: org,
+        projectId,
+        file,
+        userId: user.id,
+      });
+      const parseResult = await parsePdfToText(file);
+      const extraction = await invokeExtraction({
+        documentId: document.id,
+        projectId,
+        parseResult,
+      });
+      setEstimateVersionId(extraction.estimate_version_id);
+      setStatus("Loading tasks...");
+      const [taskRows, questionRows] = await Promise.all([
+        fetchEstimateTasks(extraction.estimate_version_id),
+        fetchEstimateQuestions(extraction.estimate_version_id),
+      ]);
+      const lineItemRows = await fetchEstimateLineItems(taskRows.map((task) => task.id));
+      setTasks(taskRows);
+      setLineItems(lineItemRows);
+      setQuestions(questionRows);
+      const [rateRows, laborRows] = await Promise.all([
+        fetchProductionRates(),
+        fetchLaborRates(),
+      ]);
+      setProductionRates(rateRows);
+      setLaborRates(laborRows);
+      setStatus(null);
+    } catch (err) {
+      setError(err.message || "Failed to process document.");
+      setStatus(null);
+    }
   };
 
   const answersByKey = useMemo(() => {
@@ -128,72 +139,79 @@ const EstimateWorkspace = () => {
     setError(null);
     const updatedItems: EstimateLineItem[] = [];
 
-    for (const item of lineItems) {
-      const task = tasks.find((t) => t.id === item.estimate_task_id);
-      const taskQuestions = questions.filter((q) => q.task_id === task?.id);
-      const globalQuestions = questions.filter((q) => q.scope === "global");
+    try {
+      for (const item of lineItems) {
+        const task = tasks.find((t) => t.id === item.estimate_task_id);
+        const taskQuestions = questions.filter((q) => q.task_id === task?.id);
+        const globalQuestions = questions.filter((q) => q.scope === "global");
 
-      const getAnswer = (field: string) => {
-        const q = taskQuestions.find((question) => question.derived_field === field);
-        return q ? answersById[q.id] : null;
-      };
+        const getAnswer = (field: string) => {
+          const q = taskQuestions.find((question) => question.derived_field === field);
+          return q ? answersById[q.id] : null;
+        };
 
-      const getGlobal = (field: string) => {
-        const q = globalQuestions.find((question) => question.derived_field === field);
-        return q ? answersById[q.id] : null;
-      };
+        const getGlobal = (field: string) => {
+          const q = globalQuestions.find((question) => question.derived_field === field);
+          return q ? answersById[q.id] : null;
+        };
 
-      const quantity = Number(getAnswer("quantity") ?? item.quantity ?? 0);
-      const unit = String(getAnswer("unit") ?? item.unit ?? "sqft");
-      const access = String(getGlobal("access") ?? "standard");
-      const occupancy = String(getGlobal("occupancy") ?? "occupied");
-      const finish = String(getAnswer("finish") ?? "standard");
+        const quantity = Number(getAnswer("quantity") ?? item.quantity ?? 0);
+        const unit = String(getAnswer("unit") ?? item.unit ?? "sqft");
+        const access = String(getGlobal("access") ?? "standard");
+        const occupancy = String(getGlobal("occupancy") ?? "occupied");
+        const finish = String(getAnswer("finish") ?? "standard");
 
-      const rate = productionRates.find((rate) => rate.task_key === item.item_key);
-      const laborRateCard = laborRates.find((rate) => rate.trade === task?.trade);
-      const laborRate = Number(laborRateCard?.loaded_rate ?? laborRateCard?.base_rate ?? 0);
-      const laborHours = rate
-        ? calculateLaborHours(quantity, Number(rate.base_rate), {
-            access: access as any,
-            occupancy: occupancy as any,
-            finish: finish as any,
-          })
-        : 0;
+        const rate = productionRates.find((rate) => rate.task_key === item.item_key);
+        const laborRateCard = laborRates.find((rate) => rate.trade === task?.trade);
+        const laborRate = Number(laborRateCard?.loaded_rate ?? laborRateCard?.base_rate ?? 0);
+        const laborHours = rate
+          ? calculateLaborHours(quantity, Number(rate.base_rate), {
+              access: access as any,
+              occupancy: occupancy as any,
+              finish: finish as any,
+            })
+          : 0;
 
-      const price = await getPrice({
-        itemKey: item.item_key || "general",
-        locationZip: String(getGlobal("location_zip") ?? projectZip ?? ""),
-        unit,
-        quantity,
-      }).catch(() => null);
+        const price = await getPrice({
+          itemKey: item.item_key || "general",
+          locationZip: String(getGlobal("location_zip") ?? projectZip ?? ""),
+          unit,
+          quantity,
+        }).catch(() => null);
 
-      const unitPrice = price?.unit_price ? Number(price.unit_price) : Number(item.material_unit_price ?? 0);
-      const materialCost = calculateMaterialCost(quantity, unitPrice);
-      const laborCost = laborHours * laborRate;
-      const totalCost = calculateLineItemTotal({
-        materialCost,
-        laborCost,
-        equipmentCost: Number(item.equipment_cost ?? 0),
-        disposalCost: Number(item.disposal_cost ?? 0),
-        markupPct: Number(item.markup_pct ?? 0),
-      });
+        const unitPrice = price?.unit_price
+          ? Number(price.unit_price)
+          : Number(item.material_unit_price ?? 0);
+        const materialCost = calculateMaterialCost(quantity, unitPrice);
+        const laborCost = laborHours * laborRate;
+        const totalCost = calculateLineItemTotal({
+          materialCost,
+          laborCost,
+          equipmentCost: Number(item.equipment_cost ?? 0),
+          disposalCost: Number(item.disposal_cost ?? 0),
+          markupPct: Number(item.markup_pct ?? 0),
+        });
 
-      const updated = {
-        ...item,
-        quantity,
-        unit,
-        material_unit_price: unitPrice,
-        labor_hours: laborHours,
-        labor_rate: laborRate,
-        total_cost: totalCost,
-      };
+        const updated = {
+          ...item,
+          quantity,
+          unit,
+          material_unit_price: unitPrice,
+          labor_hours: laborHours,
+          labor_rate: laborRate,
+          total_cost: totalCost,
+        };
 
-      await updateLineItem(item.id, updated);
-      updatedItems.push(updated);
+        await updateLineItem(item.id, updated);
+        updatedItems.push(updated);
+      }
+
+      setLineItems(updatedItems);
+      setStatus(null);
+    } catch (err) {
+      setError(err.message || "Failed to calculate estimate.");
+      setStatus(null);
     }
-
-    setLineItems(updatedItems);
-    setStatus(null);
   };
 
   if (loading) {

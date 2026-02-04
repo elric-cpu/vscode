@@ -13,9 +13,9 @@ export const ensureOrgForUser = async (userId: string) => {
     .from("organization_members")
     .select("org_id")
     .eq("user_id", userId)
-    .maybeSingle();
+    .limit(1);
 
-  if (existing?.org_id) return existing.org_id;
+  if (existing && existing.length > 0) return existing[0].org_id;
 
   const { data: org } = await supabase
     .from("organizations")
@@ -168,11 +168,14 @@ export const upsertAnswer = async ({
   value: string | number | null;
   answeredBy: string;
 }) => {
-  await supabase.from("estimate_answers").insert({
-    question_id: questionId,
-    value,
-    answered_by: answeredBy,
-  });
+  await supabase.from("estimate_answers").upsert(
+    {
+      question_id: questionId,
+      value,
+      answered_by: answeredBy,
+    },
+    { onConflict: "question_id" },
+  );
 };
 
 export const updateTask = async (

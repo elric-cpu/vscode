@@ -49,7 +49,11 @@ Deno.serve(async (request) => {
       );
     }
 
-    const seed = getSeedPrice(item_key);
+    const seed = await getSeedPrice({
+      itemKey: item_key,
+      locationZip: location_zip,
+      unit,
+    });
     if (seed) {
       await upsertCache(
         supabaseUrl,

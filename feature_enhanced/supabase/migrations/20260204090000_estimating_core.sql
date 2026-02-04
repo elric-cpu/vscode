@@ -133,7 +133,8 @@ create table if not exists public.estimate_answers (
   question_id uuid not null references public.estimate_questions (id) on delete cascade,
   value jsonb,
   answered_by uuid references auth.users (id) on delete set null,
-  answered_at timestamptz not null default now()
+  answered_at timestamptz not null default now(),
+  unique (question_id)
 );
 
 create table if not exists public.estimate_pricing_cache (

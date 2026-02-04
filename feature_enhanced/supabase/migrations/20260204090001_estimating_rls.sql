@@ -41,7 +41,10 @@ create policy "Org members view memberships"
 create policy "Users add self to org"
   on public.organization_members
   for insert
-  with check (user_id = auth.uid());
+  with check (
+    (user_id = auth.uid() and org_id in (select id from public.organizations where created_by = auth.uid()))
+    or (org_id in (select public.current_user_orgs()))
+  );
 
 create policy "Org members view projects"
   on public.estimate_projects

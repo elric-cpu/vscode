@@ -1,5 +1,17 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.4";
 
+export type PricingResult = {
+  unit_price: number;
+  unit: string;
+  source_meta: Record<string, unknown>;
+};
+
+export type PricingProvider = (args: {
+  itemKey: string;
+  locationZip: string | null;
+  unit: string | null;
+}) => Promise<PricingResult | null>;
+
 const SEED_PRICES: Record<string, { unit: string; price: number }> = {
   drywall_patch: { unit: "sqft", price: 3.5 },
   flooring_remove: { unit: "sqft", price: 2.1 },
@@ -70,7 +82,7 @@ export const upsertCache = async (
   );
 };
 
-export const getSeedPrice = (itemKey: string) => {
+export const seedPricingProvider: PricingProvider = async ({ itemKey }) => {
   const seed = SEED_PRICES[itemKey];
   if (!seed) return null;
   return {
@@ -80,11 +92,11 @@ export const getSeedPrice = (itemKey: string) => {
   };
 };
 
-export const fetchScrapedPrice = async (
-  itemKey: string,
-  locationZip: string | null,
-  unit: string | null,
-) => {
+export const externalPricingProvider: PricingProvider = async ({
+  itemKey,
+  locationZip,
+  unit,
+}) => {
   const allow = Deno.env.get("ALLOW_SCRAPE") === "true";
   const scrapeUrl = Deno.env.get("SCRAPE_PROVIDER_URL");
   if (!allow || !scrapeUrl) return null;
@@ -96,5 +108,23 @@ export const fetchScrapedPrice = async (
   });
 
   if (!response.ok) return null;
-  return response.json();
+  const data = await response.json();
+  if (!data?.unit_price) return null;
+  return {
+    unit_price: data.unit_price,
+    unit: data.unit || unit || "ea",
+    source_meta: data.source_meta || { provider: "scrape" },
+  };
 };
+
+export const getSeedPrice = async (args: {
+  itemKey: string;
+  locationZip: string | null;
+  unit: string | null;
+}) => seedPricingProvider(args);
+
+export const fetchScrapedPrice = async (
+  itemKey: string,
+  locationZip: string | null,
+  unit: string | null,
+) => externalPricingProvider({ itemKey, locationZip, unit });
