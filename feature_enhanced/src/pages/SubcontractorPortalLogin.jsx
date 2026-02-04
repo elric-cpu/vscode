@@ -198,7 +198,13 @@ const SubcontractorPortalLogin = () => {
                 Don't have an account? <Link to="/subcontractor-portal-register" className="text-[#3C0008] font-bold hover:underline">Register here</Link>
               </p>
                <p className="text-sm text-[#4A4A4A]">
-                Want to partner with us? <Link to="/subcontractor-onboarding" className="text-[#3C0008] font-bold hover:underline">Apply Now</Link>
+                Want to partner with us?{" "}
+                <Link
+                  to="/subcontractor-portal-register"
+                  className="text-[#3C0008] font-bold hover:underline"
+                >
+                  Apply Now
+                </Link>
               </p>
             </div>
           </div>

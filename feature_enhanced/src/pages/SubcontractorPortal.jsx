@@ -54,7 +54,7 @@ const SubcontractorPortal = () => {
             </div>
             {!hasOnboarded && (
               <Button 
-                onClick={() => navigate('/subcontractor-onboarding')}
+                onClick={() => navigate("/subcontractor-portal-register")}
                 className="bg-maroon-800 text-white hover:bg-maroon-900 shadow-lg animate-pulse"
               >
                 Apply to Join Our Team <ArrowRight className="ml-2 w-4 h-4" />

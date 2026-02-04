@@ -9,10 +9,12 @@ import FaqSection from "@/components/faq/FaqSection";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
 import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LinkGrid from "@/components/internal-links/LinkGrid";
 import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import {
   GEO_HUB_LINKS,
   MAINTENANCE_LINKS,
+  SERVICE_DIRECTORY_LINKS,
   SERVICE_PILLAR_LINKS,
   TOP_TOOL_LINKS,
   TOOLS_HUB_LINK,
@@ -99,6 +101,13 @@ export default function CommercialServiceAgreements() {
       cta: "Request service",
     },
   ];
+
+  const commercialServiceLinks = SERVICE_DIRECTORY_LINKS.filter(
+    (link) => link.to.startsWith("/commercial/") || link.to === "/commercial-maintenance",
+  ).map((link) => ({
+    ...link,
+    cta: link.cta || "View scope",
+  }));
 
   const faqSchema = buildFaqSchema(faqs);
 
@@ -223,6 +232,12 @@ export default function CommercialServiceAgreements() {
           <RelatedToolsBlock
             links={[TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[4], TOP_TOOL_LINKS[2], TOOLS_HUB_LINK]}
             subtitle="Support budgeting, replacement timing, and ROI comparisons."
+          />
+          <LinkGrid
+            title="Commercial service scopes"
+            subtitle="Tenant turns, compliance fixes, and preventive repair paths."
+            links={commercialServiceLinks}
+            columns={2}
           />
           <LocationsServedBlock links={GEO_HUB_LINKS} />
         </div>

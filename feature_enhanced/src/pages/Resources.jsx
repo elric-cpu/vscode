@@ -21,13 +21,18 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import siteImages from "@/data/siteImages";
 import VisualBlock from "@/components/VisualBlock";
+import LinkGrid from "@/components/internal-links/LinkGrid";
 import { GUIDES } from "@/data/guides";
+import { BLOG_POSTS } from "@/data/blogPosts";
 import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
 import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import {
+  ALL_TOOL_LINKS,
   GEO_HUB_LINKS,
   MAINTENANCE_LINKS,
   SERVICE_PILLAR_LINKS,
+  SERVICE_DIRECTORY_LINKS,
+  RESOURCE_LIBRARY_LINKS,
 } from "@/data/internalLinks";
 
 const Resources = () => {
@@ -100,6 +105,29 @@ const Resources = () => {
       cta: "Inspection repairs",
     },
   ];
+
+  const toolDirectoryLinks = ALL_TOOL_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "Open tool",
+  }));
+
+  const serviceDirectoryLinks = SERVICE_DIRECTORY_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "View service",
+  }));
+
+  const resourceLibraryLinks = RESOURCE_LIBRARY_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "View resource",
+  }));
+
+  const blogLinks = BLOG_POSTS.map((post) => ({
+    label: post.title,
+    to: `/blog/${post.slug}`,
+    description: post.excerpt,
+    intent: "guide",
+    cta: "Read article",
+  }));
 
   return (
     <>
@@ -865,14 +893,36 @@ const Resources = () => {
               </div>
             </section>
 
-            <section className="bg-white border border-gray-200 rounded-xl p-8">
+            <section className="bg-white border border-gray-200 rounded-xl p-8 space-y-10">
+              <LinkGrid
+                title="Tools directory"
+                subtitle="Every calculator and estimator in one place."
+                links={toolDirectoryLinks}
+                columns={3}
+              />
+              <LinkGrid
+                title="Resource library"
+                subtitle="Downloads and reference guides for Oregon owners."
+                links={resourceLibraryLinks}
+                columns={3}
+              />
+              <LinkGrid
+                title="Service pathways"
+                subtitle="Connect resources to the right service team."
+                links={serviceDirectoryLinks}
+                columns={3}
+              />
+              <LinkGrid
+                title="Latest insights"
+                subtitle="Recent guidance from our restoration team."
+                links={blogLinks}
+                columns={2}
+              />
               <NextStepsBlock
                 links={nextSteps}
                 subtitle="Use these resources to choose the right service or maintenance plan."
               />
-              <div className="mt-10">
-                <LocationsServedBlock links={GEO_HUB_LINKS} />
-              </div>
+              <LocationsServedBlock links={GEO_HUB_LINKS} />
             </section>
           </main>
 

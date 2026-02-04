@@ -17,11 +17,17 @@ import SEO from "@/components/SEO";
 import VisualBlock from "@/components/VisualBlock";
 import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
 import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import LinkGrid from "@/components/internal-links/LinkGrid";
 import {
+  ALL_GUIDE_LINKS,
+  ALL_TOOL_LINKS,
   GEO_HUB_LINKS,
   MAINTENANCE_LINKS,
   SERVICE_PILLAR_LINKS,
+  SERVICE_DIRECTORY_LINKS,
+  RESOURCE_LIBRARY_LINKS,
 } from "@/data/internalLinks";
+import { BLOG_POSTS } from "@/data/blogPosts";
 
 const ResourcesHelp = () => {
   useEffect(() => {
@@ -253,6 +259,34 @@ const ResourcesHelp = () => {
     },
   ];
 
+  const toolDirectoryLinks = ALL_TOOL_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "Open tool",
+  }));
+
+  const guideDirectoryLinks = ALL_GUIDE_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "Read guide",
+  }));
+
+  const serviceDirectoryLinks = SERVICE_DIRECTORY_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "View service",
+  }));
+
+  const resourceLibraryLinks = RESOURCE_LIBRARY_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "View resource",
+  }));
+
+  const blogLinks = BLOG_POSTS.map((post) => ({
+    label: post.title,
+    to: `/blog/${post.slug}`,
+    description: post.excerpt,
+    intent: "guide",
+    cta: "Read article",
+  }));
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -401,6 +435,41 @@ const ResourcesHelp = () => {
           ))}
         </div>
       </div>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <LinkGrid
+            title="Tools directory"
+            subtitle="Every calculator and estimator in one place."
+            links={toolDirectoryLinks}
+            columns={3}
+          />
+          <LinkGrid
+            title="Guides & checklists"
+            subtitle="Detailed guides to help you plan repairs and maintenance."
+            links={guideDirectoryLinks}
+            columns={3}
+          />
+          <LinkGrid
+            title="Resource library"
+            subtitle="Downloads and reference guides for homeowners."
+            links={resourceLibraryLinks}
+            columns={3}
+          />
+          <LinkGrid
+            title="Service pathways"
+            subtitle="Pick the service team that matches your situation."
+            links={serviceDirectoryLinks}
+            columns={3}
+          />
+          <LinkGrid
+            title="Latest insights"
+            subtitle="Recent articles from our restoration team."
+            links={blogLinks}
+            columns={2}
+          />
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="bg-gray-900 text-white py-16">

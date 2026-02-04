@@ -111,6 +111,7 @@ const ServiceArea = () => {
         keywords={`${townData.name} OR water damage restoration, ${townData.name} maintenance plans, mold remediation ${townData.name}, moisture control ${townData.name}, inspection repairs ${townData.name}, emergency water removal ${townData.name}`}
         schema={schema}
         type="website"
+        robots="noindex, follow"
       />
 
       {/* Hero Section */}

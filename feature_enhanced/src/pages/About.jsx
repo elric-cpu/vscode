@@ -57,6 +57,20 @@ const About = () => {
       ...SERVICE_PILLAR_LINKS.inspection,
       cta: "Inspection repairs",
     },
+    {
+      label: "insurance claims repairs",
+      to: "/insurance-claims-repairs",
+      description: "Documentation, scopes, and coordination for claims.",
+      intent: "service",
+      cta: "View service",
+    },
+    {
+      label: "accessibility retrofits",
+      to: "/accessibility-retrofits",
+      description: "Safety upgrades and aging-in-place planning.",
+      intent: "service",
+      cta: "View service",
+    },
   ];
 
   return (

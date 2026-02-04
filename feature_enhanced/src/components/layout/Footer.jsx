@@ -141,6 +141,48 @@ const Footer = () => {
                 Resources
               </Link>
               <Link
+                to="/resources/home-maintenance-recordbook"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Home Maintenance Recordbook
+              </Link>
+              <Link
+                to="/resources/home-restoration-resource-guide"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Restoration Resource Guide
+              </Link>
+              <Link
+                to="/resources-help"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Resources Help
+              </Link>
+              <Link
+                to="/blog"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/reviews"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Reviews
+              </Link>
+              <a
+                href="/landing/residential-maintenance-programs.html"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Maintenance Programs Overview
+              </a>
+              <a
+                href="/landing/residential-maintenance-pricing.html"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Maintenance Pricing Sheet
+              </a>
+              <Link
                 to="/client-portal-login"
                 className="block text-structural-gray hover:text-white transition-colors"
               >

@@ -1,3 +1,6 @@
+import { CALCULATORS } from "./calculators.js";
+import { GUIDES } from "./guides.js";
+
 export const GEO_HUB_LINKS = [
   {
     label: "Harney County service area",
@@ -124,6 +127,141 @@ export const GUIDE_LINKS = [
     label: "Hidden water damage signs",
     to: "/resources/guides/signs-of-hidden-water-damage",
     description: "Symptoms, risks, and when to call a pro.",
+    intent: "guide",
+  },
+];
+
+export const ALL_TOOL_LINKS = [
+  {
+    label: "Home maintenance estimator",
+    to: "/resources/home-maintenance-estimator",
+    description: "Annual budget range with ZIP-based pricing.",
+    intent: "estimate",
+  },
+  ...CALCULATORS.map((tool) => ({
+    label: tool.title,
+    to: `/resources/calculators/${tool.slug}`,
+    description: tool.description,
+    intent: "tool",
+  })),
+];
+
+export const ALL_GUIDE_LINKS = GUIDES.map((guide) => ({
+  label: guide.title,
+  to: `/resources/guides/${guide.slug}`,
+  description: guide.description,
+  intent: "guide",
+}));
+
+export const SERVICE_DIRECTORY_LINKS = [
+  SERVICE_PILLAR_LINKS.water,
+  SERVICE_PILLAR_LINKS.mold,
+  SERVICE_PILLAR_LINKS.fire,
+  SERVICE_PILLAR_LINKS.inspection,
+  SERVICE_PILLAR_LINKS.moisture,
+  {
+    label: "bathroom remodels",
+    to: "/bathroom-remodels",
+    description: "Durable, accessible bathrooms with clear scopes.",
+    intent: "service",
+  },
+  {
+    label: "kitchen remodels",
+    to: "/kitchen-remodels",
+    description: "Layouts, cabinetry, and finishes tailored for daily use.",
+    intent: "service",
+  },
+  {
+    label: "accessibility retrofits",
+    to: "/accessibility-retrofits",
+    description: "Safety upgrades, grab bars, and barrier-free access.",
+    intent: "service",
+  },
+  {
+    label: "insurance claims repairs",
+    to: "/insurance-claims-repairs",
+    description: "Scope documentation, repairs, and claims coordination.",
+    intent: "service",
+  },
+  {
+    label: "energy comfort retrofits",
+    to: "/energy-comfort-retrofits",
+    description: "Air sealing and comfort improvements.",
+    intent: "service",
+  },
+  {
+    label: "commercial maintenance",
+    to: "/commercial-maintenance",
+    description: "Facilities maintenance for properties under 50k sq ft.",
+    intent: "service",
+  },
+  {
+    label: "commercial tenant turns",
+    to: "/commercial/tenant-turns",
+    description: "Turnover scopes, refreshes, and punch lists.",
+    intent: "service",
+  },
+  {
+    label: "commercial preventive maintenance",
+    to: "/commercial/preventive-maintenance",
+    description: "Scheduled checks that reduce emergencies.",
+    intent: "service",
+  },
+  {
+    label: "emergency commercial repairs",
+    to: "/commercial/emergency-repairs",
+    description: "Rapid response for urgent issues.",
+    intent: "service",
+  },
+  {
+    label: "ADA compliance fixes",
+    to: "/commercial/ada-compliance",
+    description: "Targeted accessibility upgrades.",
+    intent: "service",
+  },
+  {
+    label: "commercial service agreements",
+    to: "/commercial-service-agreements",
+    description: "Documented scopes, budgets, and response times.",
+    intent: "service",
+  },
+];
+
+export const RESOURCE_LIBRARY_LINKS = [
+  {
+    label: "Home maintenance recordbook",
+    to: "/resources/home-maintenance-recordbook",
+    description: "Track repairs, warranties, and seasonal tasks.",
+    intent: "download",
+  },
+  {
+    label: "Home restoration resource guide",
+    to: "/resources/home-restoration-resource-guide",
+    description: "Step-by-step restoration guide for Oregon homeowners.",
+    intent: "download",
+  },
+  {
+    label: "Water damage restoration guide",
+    to: "/resources/water-damage-restoration-guide",
+    description: "Mitigation steps and documentation checklist.",
+    intent: "guide",
+  },
+  {
+    label: "Bathroom remodel ROI",
+    to: "/resources/bathroom-remodel-roi",
+    description: "Estimate payback and planning ranges.",
+    intent: "estimate",
+  },
+  {
+    label: "Kitchen remodel ROI",
+    to: "/resources/kitchen-remodel-roi",
+    description: "Estimate payback and planning ranges.",
+    intent: "estimate",
+  },
+  {
+    label: "ADA & aging-in-place guide",
+    to: "/resources/ada-aging-in-place-guide",
+    description: "Accessibility priorities and retrofit planning.",
     intent: "guide",
   },
 ];

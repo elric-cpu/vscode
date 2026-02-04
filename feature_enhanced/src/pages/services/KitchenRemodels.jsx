@@ -128,6 +128,13 @@ const KitchenRemodels = () => {
       cta: "Plan moisture protection",
     },
     {
+      label: "Compare bathroom remodels",
+      to: "/bathroom-remodels",
+      description: "Layouts, finishes, and accessibility upgrades.",
+      intent: "service",
+      cta: "Explore bathrooms",
+    },
+    {
       label: "request a remodel scope",
       to: "/contact",
       description: "Confirm budget, finishes, and scheduling.",

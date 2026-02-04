@@ -4,6 +4,7 @@ import SEO from "@/components/SEO";
 import { serviceAreaData } from "@/data/serviceAreas";
 import { CALCULATOR_ROUTES } from "@/data/calculators";
 import { GUIDE_ROUTES } from "@/data/guides";
+import { BLOG_ROUTES } from "@/data/blogPosts";
 
 const Sitemap = () => {
   // Static Routes
@@ -116,16 +117,7 @@ const Sitemap = () => {
       path: "/blog/water-damage-insurance-oregon",
       name: "Water Damage Insurance Guide",
     },
-    {
-      path: "/blog/hidden-water-damage-signs",
-      name: "Hidden Water Damage Signs",
-    },
-    {
-      path: "/blog/first-24-hours-water-damage",
-      name: "First 24 Hours After Water Damage",
-    },
-    { path: "/blog/mold-vs-mildew", name: "Mold vs Mildew" },
-    { path: "/blog/bathroom-remodel-costs", name: "Bathroom Remodel Costs" },
+    ...BLOG_ROUTES,
   ];
 
   // Helper to flatten service area data

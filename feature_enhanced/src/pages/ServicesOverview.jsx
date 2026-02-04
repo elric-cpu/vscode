@@ -18,11 +18,13 @@ import SEO from "@/components/SEO";
 import VisualBlock from "@/components/VisualBlock";
 import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
 import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LinkGrid from "@/components/internal-links/LinkGrid";
 import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import { BLOG_POSTS } from "@/data/blogPosts";
 import {
+  ALL_GUIDE_LINKS,
   GEO_HUB_LINKS,
-  GUIDE_LINKS,
   MAINTENANCE_LINKS,
   SERVICE_PILLAR_LINKS,
   TOP_TOOL_LINKS,
@@ -186,6 +188,46 @@ const ServicesOverview = () => {
         },
       ],
     },
+    {
+      title: "Commercial Services",
+      description:
+        "Focused scopes for tenant turns, preventive work, and compliance fixes.",
+      visual: {
+        variant: "clay",
+        title: "Commercial Support",
+        subtitle: "Turnover, compliance, and preventive work for small facilities.",
+      },
+      items: [
+        {
+          title: "Commercial Tenant Turns",
+          description:
+            "Turnover scopes, refreshes, and punch lists to get units ready.",
+          icon: Building2,
+          link: "/commercial/tenant-turns",
+        },
+        {
+          title: "Commercial Preventive Maintenance",
+          description:
+            "Scheduled checks and repairs to reduce emergencies and downtime.",
+          icon: ShieldCheck,
+          link: "/commercial/preventive-maintenance",
+        },
+        {
+          title: "Emergency Commercial Repairs",
+          description:
+            "Rapid response for leaks, access issues, and urgent damage.",
+          icon: Shield,
+          link: "/commercial/emergency-repairs",
+        },
+        {
+          title: "ADA Compliance Fixes",
+          description:
+            "Targeted accessibility upgrades that reduce liability.",
+          icon: ClipboardList,
+          link: "/commercial/ada-compliance",
+        },
+      ],
+    },
   ];
   const nextSteps = [
     {
@@ -212,6 +254,14 @@ const ServicesOverview = () => {
       cta: "Request service",
     },
   ];
+
+  const blogLinks = BLOG_POSTS.map((post) => ({
+    label: post.title,
+    to: `/blog/${post.slug}`,
+    description: post.excerpt,
+    intent: "guide",
+    cta: "Read article",
+  }));
 
   return (
     <>
@@ -312,8 +362,14 @@ const ServicesOverview = () => {
             subtitle="High-intent tools for budgets, replacement timing, and ROI."
           />
           <RelatedGuidesBlock
-            links={GUIDE_LINKS}
+            links={ALL_GUIDE_LINKS}
             subtitle="Planning guidance for maintenance, repairs, and prevention."
+          />
+          <LinkGrid
+            title="Latest insights"
+            subtitle="Restoration and maintenance guidance from our team."
+            links={blogLinks}
+            columns={2}
           />
           <NextStepsBlock
             links={nextSteps}

@@ -15,12 +15,13 @@ import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
 import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
 import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LinkGrid from "@/components/internal-links/LinkGrid";
 import {
+  ALL_GUIDE_LINKS,
+  ALL_TOOL_LINKS,
   GEO_HUB_LINKS,
-  GUIDE_LINKS,
   SERVICE_PILLAR_LINKS,
-  TOP_TOOL_LINKS,
-  TOOLS_HUB_LINK,
+  RESOURCE_LIBRARY_LINKS,
 } from "@/data/internalLinks";
 
 const CommercialMaintenance = () => {
@@ -89,6 +90,11 @@ const CommercialMaintenance = () => {
       cta: "Request service",
     },
   ];
+
+  const resourceLibraryLinks = RESOURCE_LIBRARY_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "View resource",
+  }));
 
   const faqs = [
     {
@@ -244,12 +250,18 @@ const CommercialMaintenance = () => {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <FeaturedToolsBlock
-            links={[TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[4], TOP_TOOL_LINKS[2], TOOLS_HUB_LINK]}
+            links={ALL_TOOL_LINKS}
             subtitle="Budget ranges, replacement timing, and ROI scenarios."
           />
           <RelatedGuidesBlock
-            links={GUIDE_LINKS}
+            links={ALL_GUIDE_LINKS}
             subtitle="Planning guidance for facilities teams and property managers."
+          />
+          <LinkGrid
+            title="Resource library"
+            subtitle="Downloads and reference guides for facilities teams."
+            links={resourceLibraryLinks}
+            columns={3}
           />
           <NextStepsBlock
             links={nextSteps}

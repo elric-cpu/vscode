@@ -92,6 +92,13 @@ const WaterDamageMitigation = () => {
       cta: "Repair damaged areas",
     },
     {
+      label: "Insurance claims repairs",
+      to: "/insurance-claims-repairs",
+      description: "Documentation support and scope alignment for claims.",
+      intent: "service",
+      cta: "Coordinate claims",
+    },
+    {
       label: "request emergency service",
       to: "/contact",
       description: "Start mitigation with documented scope and photo logs.",

@@ -96,6 +96,7 @@ const SEO = ({
       <meta name="author" content="Benson Home Solutions" />
       <meta name="publisher" content="Benson Home Solutions" />
       <meta name="language" content="en" />
+      <meta name="theme-color" content="#3C0008" />
       <meta name="geo.region" content="US-OR" />
       <meta
         name="geo.placename"

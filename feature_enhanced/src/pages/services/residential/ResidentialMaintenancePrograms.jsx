@@ -21,12 +21,13 @@ import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
 import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
 import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LinkGrid from "@/components/internal-links/LinkGrid";
 import {
+  ALL_GUIDE_LINKS,
+  ALL_TOOL_LINKS,
   GEO_HUB_LINKS,
-  GUIDE_LINKS,
+  RESOURCE_LIBRARY_LINKS,
   SERVICE_PILLAR_LINKS,
-  TOP_TOOL_LINKS,
-  TOOLS_HUB_LINK,
 } from "@/data/internalLinks";
 import {
   HIGH_DEMAND_SERVICES,
@@ -82,6 +83,11 @@ const ResidentialMaintenancePrograms = () => {
       cta: "Request service",
     },
   ];
+
+  const resourceLibraryLinks = RESOURCE_LIBRARY_LINKS.map((link) => ({
+    ...link,
+    cta: link.cta || "View resource",
+  }));
   return (
     <>
       <SEO
@@ -405,12 +411,18 @@ const ResidentialMaintenancePrograms = () => {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <FeaturedToolsBlock
-            links={[...TOP_TOOL_LINKS, TOOLS_HUB_LINK]}
+            links={ALL_TOOL_LINKS}
             subtitle="Budget ranges, replacement timing, and ROI planning."
           />
           <RelatedGuidesBlock
-            links={GUIDE_LINKS}
+            links={ALL_GUIDE_LINKS}
             subtitle="Practical guidance on budgets, checklists, and repair priorities."
+          />
+          <LinkGrid
+            title="Resource library"
+            subtitle="Downloads and reference guides for homeowners."
+            links={resourceLibraryLinks}
+            columns={3}
           />
           <NextStepsBlock
             links={nextSteps}
