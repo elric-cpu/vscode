@@ -1,9 +1,16 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, Shield, Users, Award, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+} from "@/data/internalLinks";
 
 const About = () => {
   const values = [
@@ -33,17 +40,32 @@ const About = () => {
     },
   ];
 
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Explore plans",
+    },
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review coverage",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Inspection repairs",
+    },
+  ];
+
   return (
     <>
-      <Helmet>
-        <title>
-          About Benson Home Solutions | Oregon Licensed Contractor CCB# 258533
-        </title>
-        <meta
-          name="description"
-          content="Licensed Oregon contractor specializing in water damage mitigation, mold remediation, and home remodeling. Professional service in Burns, Hines, Sweet Home & Mid-Valley. CCB# 258533."
-        />
-      </Helmet>
+      <SEO
+        title="About Benson Home Solutions | Licensed Oregon Contractor"
+        description="Licensed Oregon contractor specializing in water damage restoration, mold remediation, maintenance plans, and remodeling. Serving Harney County and the Mid-Willamette Valley."
+        keywords="about Benson Home Solutions, Oregon licensed contractor, CCB 258533, restoration contractor Oregon, maintenance plans Oregon"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,13 +89,13 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-contractor-black mb-6">
-            Oregon Construction & Restoration
+            Oregon Maintenance & Restoration
           </h2>
           <p className="text-lg text-restoration-gray mb-6">
             Benson Home Solutions is a licensed general contractor (CCB# 258533)
             serving Oregon homeowners with professional restoration and
             construction services. We specialize in emergency water damage
-            mitigation, mold remediation, bathroom and kitchen remodels, and
+            restoration, mold remediation, bathroom and kitchen remodels, and
             general contracting throughout Harney County and the Mid-Willamette
             Valley.
           </p>
@@ -127,14 +149,14 @@ const About = () => {
             Restoration Professionalism
           </h2>
           <p className="text-lg text-restoration-gray mb-6">
-            Our water damage mitigation and mold remediation services follow
+            Our water damage restoration and mold remediation services follow
             industry-standard protocols aligned with IICRC (Institute of
             Inspection, Cleaning and Restoration Certification) guidelines. We
             use professional-grade equipment, document processes thoroughly, and
             maintain the level of professionalism insurance companies expect.
           </p>
           <p className="text-lg text-restoration-gray mb-6">
-            For emergency mitigation, speed and proper execution make the
+            For Emergency restoration, speed and proper execution make the
             difference between minor inconvenience and major reconstruction. We
             respond quickly, extract water immediately, monitor drying progress
             with moisture meters, and prevent secondary damage that could
@@ -180,80 +202,16 @@ const About = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-contractor-black mb-6">
-            Service Footprint Across Oregon
-          </h2>
-          <p className="text-lg text-restoration-gray mb-6">
-            We serve two distinct regions of Oregon:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-cream rounded-lg p-6">
-              <h3 className="text-xl font-bold text-contractor-black mb-3">
-                Harney County
-              </h3>
-              <ul className="space-y-2 text-restoration-gray">
-                <li>• Burns, Oregon</li>
-                <li>• Hines, Oregon</li>
-                <li>• Surrounding rural areas</li>
-              </ul>
-              <p className="text-sm text-restoration-gray mt-4">
-                Fast emergency response for water damage and restoration needs
-              </p>
-            </div>
-            <div className="bg-cream rounded-lg p-6">
-              <h3 className="text-xl font-bold text-contractor-black mb-3">
-                Mid-Willamette Valley
-              </h3>
-              <ul className="space-y-2 text-restoration-gray">
-                <li>• Sweet Home, Oregon</li>
-                <li>• Lebanon, Oregon</li>
-                <li>• Albany, Oregon</li>
-                <li>• Surrounding valley communities</li>
-              </ul>
-              <p className="text-sm text-restoration-gray mt-4">
-                Full-service construction and restoration throughout the valley
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-cream">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg p-8 shadow-lg border-2 border-maroon">
-            <h2 className="text-3xl font-bold text-contractor-black mb-4">
-              Coming Soon: Online Project Portal
-            </h2>
-            <p className="text-lg text-restoration-gray mb-6">
-              We're launching a secure online portal where you can:
-            </p>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-maroon rounded-full flex-shrink-0 mt-2" />
-                <span className="text-restoration-gray">
-                  View project updates and progress photos
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-maroon rounded-full flex-shrink-0 mt-2" />
-                <span className="text-restoration-gray">
-                  Access estimates and invoices
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-maroon rounded-full flex-shrink-0 mt-2" />
-                <span className="text-restoration-gray">
-                  Share documents securely
-                </span>
-              </li>
-            </ul>
-            <p className="text-sm text-restoration-gray italic">
-              We are committed to making your experience as smooth and
-              transparent as possible.
-            </p>
-          </div>
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <LocationsServedBlock
+            links={GEO_HUB_LINKS}
+            subtitle="Service coverage across Harney County and the Mid-Willamette Valley."
+          />
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Explore the maintenance and restoration programs we deliver locally."
+          />
         </div>
       </section>
 
@@ -293,3 +251,5 @@ const About = () => {
 };
 
 export default About;
+
+

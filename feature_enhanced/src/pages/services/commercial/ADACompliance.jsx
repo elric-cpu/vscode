@@ -56,8 +56,8 @@ export default function ADACompliance() {
         },
       ]}
       seoTitle="ADA Compliance Fixes Oregon"
-      seoDescription="Targeted ADA accessibility fixes for small commercial properties: trip hazards, rails, thresholds, restroom accessories, and documentation."
-      keywords="ADA compliance contractor Oregon, accessibility repairs, commercial ADA fixes"
+      seoDescription="Targeted ADA accessibility fixes for small commercial properties: trip hazards, rails, thresholds, restroom accessories, and documentation across Oregon."
+      keywords="ADA compliance contractor Oregon, accessibility repairs, commercial ADA fixes, ADA restroom upgrades, trip hazard corrections"
     />
   );
 }

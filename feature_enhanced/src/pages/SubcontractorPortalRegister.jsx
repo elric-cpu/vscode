@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from "@/lib/customSupabaseClient";
 import { Button } from "@/components/ui/button";
@@ -11,6 +10,7 @@ import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { isEmail, isPhone, isStrongPassword, sanitizeText } from "@/lib/validators";
+import SEO from "@/components/SEO";
 
 const SubcontractorPortalRegister = () => {
   const navigate = useNavigate();
@@ -139,10 +139,11 @@ const SubcontractorPortalRegister = () => {
 
   return (
     <div className="min-h-screen bg-[#EFE3C8] flex items-center justify-center px-4 py-12">
-      <Helmet>
-        <title>Subcontractor Registration | Benson Home Solutions</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEO
+        title="Subcontractor Registration"
+        description="Create a subcontractor account for the Benson Home Solutions portal."
+        robots="noindex, nofollow"
+      />
 
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}

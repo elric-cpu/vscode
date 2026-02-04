@@ -11,6 +11,17 @@ import {
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -48,10 +59,10 @@ const BlogPost = () => {
         "Top 10 Warning Signs of Hidden Water Damage in Your Walls and Ceilings",
       date: "December 12, 2023",
       dateISO: "2023-12-12",
-      category: "Water Mitigation",
+      category: "Water Damage Restoration",
       description:
         "Discover the 10 most common signs of hidden water damage in walls and ceilings. Learn what to look for, when to call a pro, and how to prevent costly repairs. Oregon homeowners guide.",
-    image: siteImages.placeholder,
+    image: siteImages.ogDefault,
       faqSchema: {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -105,7 +116,7 @@ const BlogPost = () => {
           </p>
           <p className="mb-6">
             At Benson Home Solutions, we follow IICRC standards for inspection
-            and mitigation. We know that what you see on the surface is often
+            and restoration. We know that what you see on the surface is often
             just the tip of the iceberg. Here are the top 10 warning signs that
             water is hiding in your walls or ceilings.
           </p>
@@ -129,10 +140,11 @@ const BlogPost = () => {
             1. Discoloration or Staining
           </h2>
           <div className="mb-6">
-            <img
-              className="w-full h-64 object-cover rounded-lg mb-4"
-              alt="Water stain on ceiling showing signs of hidden water damage"
-              src={siteImages.placeholder}
+            <VisualBlock
+              variant="slate"
+              eyebrow="Visible Sign"
+              title="Ceiling Staining"
+              subtitle="Yellow or brown rings often indicate pooled water above the surface."
             />
           </div>
           <p className="mb-4">
@@ -144,10 +156,10 @@ const BlogPost = () => {
           </p>
           <p className="mb-4 font-semibold text-maroon">
             <Link
-              to="/services/water-damage-mitigation"
+              to="/water-damage-restoration"
               className="hover:underline"
             >
-              Need help identifying stains? Contact our mitigation team.
+              Need help identifying stains? Contact our restoration team.
             </Link>
           </p>
 
@@ -155,10 +167,11 @@ const BlogPost = () => {
             2. Soft or Spongy Drywall
           </h2>
           <div className="mb-6">
-            <img
-              className="w-full h-64 object-cover rounded-lg mb-4"
-              alt="Soft drywall texture indicating moisture saturation"
-              src={siteImages.placeholder}
+            <VisualBlock
+              variant="moss"
+              eyebrow="Structural Risk"
+              title="Soft Drywall"
+              subtitle="Saturated drywall loses integrity and can hide mold growth."
             />
           </div>
           <p className="mb-4">
@@ -192,7 +205,7 @@ const BlogPost = () => {
           </p>
           <p className="mb-4">
             <Link
-              to="/services/mold-remediation"
+              to="/mold-remediation"
               className="text-maroon font-semibold hover:underline"
             >
               Learn more about our Mold Remediation services.
@@ -203,10 +216,11 @@ const BlogPost = () => {
             5. Visible Mold or Mildew
           </h2>
           <div className="mb-6">
-            <img
-              className="w-full h-64 object-cover rounded-lg mb-4"
-              alt="Mold growth on wall from hidden water damage"
-              src={siteImages.placeholder}
+            <VisualBlock
+              variant="ink"
+              eyebrow="Air Quality"
+              title="Surface Mold"
+              subtitle="Visible mold often signals hidden moisture deeper in the wall assembly."
             />
           </div>
           <p className="mb-4">
@@ -305,10 +319,11 @@ const BlogPost = () => {
             How to Inspect for Hidden Damage
           </h2>
           <div className="mb-6">
-            <img
-              className="w-full h-64 object-cover rounded-lg mb-4"
-              alt="Professional moisture meter detecting hidden water in walls"
-              src={siteImages.placeholder}
+            <VisualBlock
+              variant="clay"
+              eyebrow="Inspection"
+              title="Moisture Meter Check"
+              subtitle="Professional tools confirm hidden saturation without invasive demolition."
             />
           </div>
           <p className="mb-4">
@@ -344,7 +359,7 @@ const BlogPost = () => {
             </li>
             <li>
               <strong>Call a Professional:</strong> Contact a certified
-              mitigation company like Benson Home Solutions immediately.
+              restoration company like Benson Home Solutions immediately.
             </li>
             <li>
               <strong>Document Everything:</strong> Take photos of the damage
@@ -409,7 +424,7 @@ const BlogPost = () => {
             </h3>
             <p className="mb-6 text-cream text-lg">
               Don't let it spread. We serve Burns, Hines, Sweet Home, and the
-              entire Mid-Valley area with emergency mitigation services.
+              entire Mid-Valley area with Emergency restoration services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:5413215115">
@@ -435,9 +450,9 @@ const BlogPost = () => {
       title: "What to Do in the First 24 Hours After Water Damage",
       date: "October 15, 2023",
       dateISO: "2023-10-15",
-      category: "Water Mitigation",
+      category: "Water Damage Restoration",
       description:
-        "Immediate steps Oregon homeowners should take to minimize damage and prepare for professional mitigation.",
+        "Immediate steps Oregon homeowners should take to minimize damage and prepare for professional restoration.",
       content: (
         <>
           <p className="mb-4">
@@ -468,7 +483,7 @@ const BlogPost = () => {
           </p>
 
           <h2 className="text-2xl font-bold text-contractor-black mt-8 mb-4">
-            3. Call a Professional Mitigation Company
+            3. Call a Professional Restoration Company
           </h2>
           <p className="mb-4">
             Call Benson Home Solutions immediately at (541) 321-5115. We offer
@@ -615,6 +630,41 @@ const BlogPost = () => {
   };
 
   const post = posts[slug];
+  const remodelingLink = {
+    label: "bathroom remodels",
+    to: "/bathroom-remodels",
+    description: "Scope planning for remodels with clear timelines.",
+    intent: "service",
+    cta: "Explore remodels",
+  };
+  const categoryPrimaryLink = {
+    "Water Damage Restoration": SERVICE_PILLAR_LINKS.water,
+    "Mold Remediation": SERVICE_PILLAR_LINKS.mold,
+    Remodeling: remodelingLink,
+  };
+  const primaryServiceLink =
+    categoryPrimaryLink[post?.category] || SERVICE_PILLAR_LINKS.inspection;
+  const nextSteps = [
+    {
+      ...primaryServiceLink,
+      cta: primaryServiceLink.cta || "Explore service",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Preventive plan",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Inspection repairs",
+    },
+    {
+      label: "request service",
+      to: "/contact",
+      description: "Get a documented scope and scheduling plan.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -694,8 +744,24 @@ const BlogPost = () => {
           </div>
         </div>
       </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Choose the service line or maintenance plan that fits this topic."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[0], TOOLS_HUB_LINK]}
+            subtitle="Estimate budgets, repair timing, and ROI."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
     </>
   );
 };
 
 export default BlogPost;
+
+

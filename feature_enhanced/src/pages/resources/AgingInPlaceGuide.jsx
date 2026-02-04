@@ -15,6 +15,17 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const AgingInPlaceGuide = () => {
   const schema = {
@@ -38,12 +49,40 @@ const AgingInPlaceGuide = () => {
     description:
       "Comprehensive guide to ADA home modifications and aging in place in Oregon. Serving seniors in Salem, Burns, Sweet Home, and the Willamette Valley.",
   };
+  const nextSteps = [
+    {
+      label: "accessibility retrofits",
+      to: "/accessibility-retrofits",
+      description: "Safety-first upgrades with documented scopes.",
+      intent: "service",
+      cta: "Explore retrofits",
+    },
+    {
+      label: "bathroom remodels",
+      to: "/bathroom-remodels",
+      description: "Curbless showers and safer bathroom layouts.",
+      intent: "service",
+      cta: "Plan remodels",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Protect the home",
+    },
+    {
+      label: "request a safety walkthrough",
+      to: "/contact",
+      description: "Get a prioritized accessibility scope.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   return (
     <>
       <SEO
         title="Aging in Place & ADA Guide | Burns, Sweet Home, Salem, Albany"
         description="Expert guide to accessible home remodeling in Oregon. Grab bars, ramps, walk-in showers for Harney, Linn, Marion, Polk & Yamhill Counties."
+        keywords="aging in place guide Oregon, accessibility upgrades, ADA home modifications, senior home safety checklist, grab bar placement"
         schema={schema}
         type="article"
         image={siteImages.ogDefault}
@@ -52,12 +91,8 @@ const AgingInPlaceGuide = () => {
       <Breadcrumbs />
 
       <section className="bg-contractor-black text-white py-12 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src={siteImages.placeholder}
-            alt="Accessible bathroom with grab bars"
-            className="w-full h-full object-cover"
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
@@ -73,6 +108,14 @@ const AgingInPlaceGuide = () => {
             Practical modifications for seniors wishing to stay in their homes
             across Harney County and the Mid-Willamette Valley.
           </p>
+          <div className="max-w-lg mx-auto">
+            <VisualBlock
+              variant="moss"
+              eyebrow="Aging In Place"
+              title="Safe, Accessible Upgrades"
+              subtitle="Curbless showers, safer entries, and confidence at home."
+            />
+          </div>
         </div>
       </section>
 
@@ -261,7 +304,7 @@ const AgingInPlaceGuide = () => {
               </h3>
               <nav className="space-y-3">
                 <Link
-                  to="/services/bathroom-remodels"
+                  to="/bathroom-remodels"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
@@ -270,7 +313,7 @@ const AgingInPlaceGuide = () => {
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
                 <Link
-                  to="/services/general-contracting"
+                  to="/inspection-repairs"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
@@ -298,8 +341,23 @@ const AgingInPlaceGuide = () => {
           </aside>
         </div>
       </div>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Connect accessibility planning to a documented scope and schedule."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOOLS_HUB_LINK]}
+            subtitle="Budget ranges and maintenance planning tools."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
     </>
   );
 };
 
 export default AgingInPlaceGuide;
+

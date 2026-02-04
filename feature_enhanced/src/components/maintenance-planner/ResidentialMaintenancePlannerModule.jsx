@@ -139,23 +139,18 @@ export default function ResidentialMaintenancePlannerModule() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-semibold bg-maroon/10 text-maroon px-3 py-1 rounded-full">
-                Public Preview
-              </span>
-              <p className="text-xs text-gray-500 m-0">
-                ZIP-based planning preview (regional factor verified at
-                enrollment)
-              </p>
-            </div>
+            <p className="text-xs text-gray-500 m-0 mb-4">
+              ZIP code adjusted planning preview (regional factor confirmed at
+              enrollment).
+            </p>
 
             <h2 className="text-3xl font-bold text-contractor-black mb-3">
-              ZIP-Smart Home Maintenance Planner
+              Home Maintenance Planner
             </h2>
             <p className="text-restoration-gray mb-6">
-              Get a fast, realistic maintenance budget range and seasonal task
-              focus. For older homes, we flag systems that commonly approach
-              end-of-life.
+              Build a realistic annual maintenance budget and seasonal
+              priorities for Oregon homeowners. Older homes get end-of-life
+              flags for key systems.
             </p>
 
             <div className="bg-cream border border-cream rounded-xl p-6">
@@ -323,7 +318,7 @@ export default function ResidentialMaintenancePlannerModule() {
                 <Lock className="w-5 h-5 text-cream" />
                 <div>
                   <p className="text-xs uppercase tracking-wide text-cream m-0">
-                    Lead Capture
+                    Get Full Report
                   </p>
                   <p className="text-lg font-bold m-0">
                     Unlock the 5-year forecast
@@ -331,8 +326,8 @@ export default function ResidentialMaintenancePlannerModule() {
                 </div>
               </div>
               <p className="text-sm text-gray-200 mb-6">
-                Get a ZIP-adjusted replacement timeline, a line-item budget, and
-                a membership savings projection.
+                Receive a ZIP code adjusted replacement timeline, a line item
+                budget, and a membership savings estimate.
               </p>
 
               <form onSubmit={onSubmit} className="space-y-4">

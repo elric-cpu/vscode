@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Layers, Paintbrush } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +8,9 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import {
@@ -17,6 +21,13 @@ import {
 import { MATERIAL_MODELS } from "@/lib/calculators/costModels";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const MaterialsEstimatorCalculator = () => {
   const [zip, setZip] = useState("");
@@ -148,12 +159,41 @@ const MaterialsEstimatorCalculator = () => {
 
   const faqSchema = buildFaqSchema(faqs);
 
+  const nextSteps = [
+    {
+      label: "Inspection repairs",
+      to: SERVICE_PILLAR_LINKS.inspection.to,
+      description: "Punch lists, pre-sale repairs, and scope planning.",
+      intent: "service",
+    },
+    {
+      label: "Request a walkthrough",
+      to: "/contact",
+      description: "Get a line-item scope and schedule.",
+      intent: "contact",
+    },
+    {
+      label: "Home maintenance program",
+      to: MAINTENANCE_LINKS.home.to,
+      description: "Prevent repeat repairs and track history.",
+      intent: "subscribe",
+    },
+    {
+      label: "Tools hub",
+      to: TOOLS_HUB_LINK.to,
+      description: "More calculators and planning tools.",
+      intent: "estimate",
+    },
+  ];
+
   return (
     <CalculatorLayout
       seo={{
         title: "Material / Project Estimator | Benson Home Solutions",
         description:
           "Estimate material quantities and ZIP-adjusted costs for paint, drywall, and flooring projects.",
+        keywords:
+          "materials estimator, project cost estimate Oregon, paint quantity calculator, drywall estimate, flooring cost estimate",
         schema: faqSchema,
       }}
       badge="Project Planning"
@@ -180,6 +220,24 @@ const MaterialsEstimatorCalculator = () => {
         />
       }
     >
+      <p className="text-sm text-restoration-gray">
+        For scope planning, combine this with{" "}
+        <Link
+          to={SERVICE_PILLAR_LINKS.inspection.to}
+          className="text-maroon font-semibold"
+        >
+          inspection repairs
+        </Link>{" "}
+        or a{" "}
+        <Link
+          to={MAINTENANCE_LINKS.home.to}
+          className="text-maroon font-semibold"
+        >
+          home maintenance program
+        </Link>
+        .
+      </p>
+
       <div className="bg-cream border border-gray-200 rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -327,6 +385,15 @@ const MaterialsEstimatorCalculator = () => {
           Result: faster turnover and controlled budget.
         </p>
       </div>
+
+      <NextStepsBlock links={nextSteps} />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[4], TOOLS_HUB_LINK]}
+        subtitle="Estimate materials, repair scope, and timelines."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

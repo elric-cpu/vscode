@@ -158,7 +158,7 @@ export default function ResidentialMaintenanceFunnel() {
         <div>
           <p className="text-sm text-restoration-gray">Subscription funnel</p>
           <h3 className="text-xl font-bold text-contractor-black">
-            Residential Maintenance Programs
+            Residential Maintenance Plans
           </h3>
         </div>
         <div className="text-sm text-restoration-gray">

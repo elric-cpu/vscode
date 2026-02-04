@@ -1,7 +1,14 @@
 import React from "react";
 import NichePageTemplate from "./NichePageTemplate";
 import { NICHE_MENUS } from "@/data/nicheMenus";
-import siteImages from "@/data/siteImages";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 export default function AgingInPlace() {
   const data = NICHE_MENUS.aging_in_place;
@@ -20,12 +27,17 @@ export default function AgingInPlace() {
   };
 
   const hero = {
-    badge: "Demographic Certainty",
+    badge: "Accessibility Upgrades",
     h1: "Aging-in-Place & Accessibility Retrofits",
     subhead:
-      "Safety + dignity upgrades with standardized scopes and fast estimates.",
-    imageSrc: siteImages.placeholder,
-    imageAlt: "Accessible bathroom retrofit with safety features",
+      "Safety-first upgrades with clear scopes and thoughtful design.",
+    visual: {
+      variant: "moss",
+      eyebrow: "Accessibility Retrofits",
+      title: "Safety-First Home Upgrades",
+      subtitle:
+        "Curbless showers, grab bars, and safer entries built for daily confidence.",
+    },
     primaryCtaLabel: "Request a Safety Walk-Through",
     primaryCtaHref: "/contact",
   };
@@ -73,6 +85,37 @@ export default function AgingInPlace() {
     },
   ];
 
+  const internalLinks = {
+    subtitle: "Bundle accessibility upgrades with ongoing maintenance support.",
+    nextSteps: [
+      {
+        ...SERVICE_PILLAR_LINKS.inspection,
+        cta: "Address safety items",
+      },
+      {
+        label: "bathroom remodels",
+        to: "/bathroom-remodels",
+        description: "Curbless showers, grab bars, and safety upgrades.",
+        intent: "service",
+        cta: "Explore remodels",
+      },
+      {
+        ...MAINTENANCE_LINKS.home,
+        cta: "Protect the home",
+      },
+      {
+        label: "request a safety scope",
+        to: "/contact",
+        description: "Get a prioritized scope for safety upgrades.",
+        intent: "contact",
+        cta: "Request service",
+      },
+    ],
+    tools: [TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOOLS_HUB_LINK],
+    guides: [GUIDE_LINKS[0], GUIDE_LINKS[1], GUIDE_LINKS[2]],
+    locations: GEO_HUB_LINKS,
+  };
+
   return (
     <NichePageTemplate
       meta={meta}
@@ -85,6 +128,7 @@ export default function AgingInPlace() {
       faqs={faqs}
       menu={data.serviceMenu}
       pricing={data.pricingMatrix}
+      internalLinks={internalLinks}
     />
   );
 }

@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/components/ui/use-toast";
+import SEO from "@/components/SEO";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+} from "@/data/internalLinks";
 
 const Contact = () => {
   const [isInsuranceClaim, setIsInsuranceClaim] = useState(false);
@@ -28,8 +35,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, this would send data to a backend
-    console.log("Form submitted:", { ...formData, isInsuranceClaim });
+    // Backend submission is pending; this handler currently logs to email/phone CTA.
 
     toast({
       title: "Message Sent!",
@@ -52,17 +58,32 @@ const Contact = () => {
     setIsInsuranceClaim(false);
   };
 
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Explore plans",
+    },
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review coverage",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Mold assessment",
+    },
+  ];
+
   return (
     <>
-      <Helmet>
-        <title>
-          Contact Benson Home Solutions | Oregon Construction & Restoration
-        </title>
-        <meta
-          name="description"
-          content="Contact Benson Home Solutions for free estimates and emergency service. Serving Burns, Hines, Sweet Home & Mid-Valley. Call (541) 321-5115."
-        />
-      </Helmet>
+      <SEO
+        title="Contact Benson Home Solutions | Oregon Restoration & Maintenance"
+        description="Contact Benson Home Solutions for estimates, maintenance plans, and emergency response. Serving Burns, Hines, Sweet Home, Lebanon, and Albany."
+        keywords="contact Oregon contractor, water damage emergency phone, maintenance plan estimate, restoration estimate Oregon, Burns OR contractor contact"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,12 +93,27 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              Contact & Dispatch
+            </h1>
             <p className="text-xl text-cream">
-              Ready to start your project or need emergency assistance? We're
-              here to help.
+              Request an estimate, start a maintenance plan, or dispatch
+              emergency response.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Choose the service line or maintenance program that fits your need."
+          />
+          <LocationsServedBlock
+            links={GEO_HUB_LINKS}
+            subtitle="Serving Harney County and the Mid-Willamette Valley."
+          />
         </div>
       </section>
 
@@ -164,7 +200,7 @@ const Contact = () => {
                       Mon-Fri: 8:00 AM - 5:00 PM
                       <br />
                       <span className="font-semibold text-maroon">
-                        24/7 Emergency Water Mitigation
+                        24/7 Water Damage Restoration
                       </span>
                     </p>
                   </div>
@@ -174,7 +210,7 @@ const Contact = () => {
 
             <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
               <h3 className="text-2xl font-bold text-contractor-black mb-6">
-                Send Us a Message
+                Request an Estimate
               </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -186,6 +222,7 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
+                      autoComplete="name"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-maroon"
                       placeholder="Your Name"
                     />
@@ -199,6 +236,7 @@ const Contact = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
+                      autoComplete="tel"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-maroon"
                       placeholder="(541) 555-0123"
                     />
@@ -215,6 +253,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
+                      autoComplete="email"
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-maroon"
                       placeholder="you@example.com"
                     />
@@ -243,17 +282,25 @@ const Contact = () => {
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-maroon"
                   >
                     <option value="">Select a service...</option>
-                    <option value="Water Mitigation">
-                      Water Damage Mitigation
+                    <option value="Water Damage Restoration">
+                      Water Damage Restoration
                     </option>
                     <option value="Mold Remediation">Mold Remediation</option>
-                    <option value="Home Maintenance Program">
-                      Home Maintenance Program
-                    </option>
+                    <option value="Maintenance Plans">Maintenance Plans</option>
                     <option value="Bathroom Remodel">Bathroom Remodel</option>
                     <option value="Kitchen Remodel">Kitchen Remodel</option>
-                    <option value="General Contracting">
-                      General Contracting
+                    <option value="Inspection Repairs">
+                      Inspection Repairs
+                    </option>
+                    <option value="Moisture Control">Moisture Control</option>
+                    <option value="Accessibility Retrofits">
+                      Accessibility Retrofits
+                    </option>
+                    <option value="Energy Comfort Retrofits">
+                      Energy Comfort Retrofits
+                    </option>
+                    <option value="Insurance Claims Repairs">
+                      Insurance Claims Repairs
                     </option>
                     <option value="Commercial Maintenance">
                       Commercial Maintenance
@@ -352,3 +399,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

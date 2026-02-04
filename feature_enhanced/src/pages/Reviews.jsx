@@ -1,24 +1,48 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Star, Quote, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { reviews } from "@/data/reviews"; // Importing the manageable data file
+import SEO from "@/components/SEO";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+} from "@/data/internalLinks";
 
 const Reviews = () => {
   // Calculate average rating
   const averageRating =
     reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Explore plans",
+    },
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review coverage",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Inspection repairs",
+    },
+  ];
 
   return (
     <>
-      <Helmet>
-        <title>Customer Reviews | Benson Home Solutions</title>
-        <meta
-          name="description"
-          content="Read what our customers in Burns, Hines, and the Willamette Valley say about our water mitigation, restoration, and remodeling services."
-        />
-      </Helmet>
+      <SEO
+        title="Customer Reviews | Benson Home Solutions"
+        description="Read verified customer feedback for water damage restoration, maintenance plans, and remodeling services across Oregon."
+        keywords="Benson Home Solutions reviews, Oregon contractor reviews, water damage restoration reviews, mold remediation reviews, remodeling reviews Oregon, maintenance plans reviews"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,6 +130,16 @@ const Reviews = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Explore the programs our clients reference in their reviews."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
+
       <section className="py-20 bg-mitigation-graphite text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MessageSquare className="w-16 h-16 mx-auto mb-6 text-cream" />
@@ -114,18 +148,14 @@ const Reviews = () => {
             Your feedback helps us maintain our high standards and helps your
             neighbors find reliable contractors.
           </p>
-          <a
-            href="https://g.page/r/placeholder-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to="/contact">
             <Button
               size="lg"
               className="bg-maroon hover:bg-white hover:text-maroon text-white text-lg px-8 py-6"
             >
-              Leave a Review on Google
+              Request Review Link
             </Button>
-          </a>
+          </Link>
         </div>
       </section>
     </>
@@ -133,3 +163,4 @@ const Reviews = () => {
 };
 
 export default Reviews;
+

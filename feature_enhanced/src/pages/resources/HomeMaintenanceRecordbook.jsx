@@ -3,6 +3,16 @@ import { Download, FileText } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const PDF_PATH = "/resources/home-maintenance-recordbook.pdf";
 
@@ -14,12 +24,34 @@ const HomeMaintenanceRecordbook = () => {
     fileFormat: "application/pdf",
     url: PDF_PATH,
   };
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Review maintenance plans",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Fix inspection items",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Plan emergency coverage",
+    },
+    {
+      label: "request a walkthrough",
+      to: "/contact",
+      description: "Confirm scope, priorities, and seasonal scheduling.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   return (
     <>
       <SEO
         title="Home Maintenance Recordbook (PDF) | Benson Home Solutions"
         description="Download or view the Benson Home Solutions Home Maintenance Recordbook PDF."
+        keywords="home maintenance recordbook PDF, maintenance log template, home upkeep checklist Oregon, maintenance documentation"
         schema={schema}
         type="website"
       />
@@ -58,6 +90,20 @@ const HomeMaintenanceRecordbook = () => {
               style={{ height: "80vh" }}
             />
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Turn your recordbook into a documented maintenance plan."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOOLS_HUB_LINK]}
+            subtitle="Budget ranges and replacement timing tools."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
         </div>
       </section>
     </>

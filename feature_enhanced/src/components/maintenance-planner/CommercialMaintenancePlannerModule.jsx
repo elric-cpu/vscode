@@ -161,23 +161,17 @@ export default function CommercialMaintenancePlannerModule() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-semibold bg-maroon/10 text-maroon px-3 py-1 rounded-full">
-                Public Preview
-              </span>
-              <p className="text-xs text-gray-500 m-0">
-                ZIP-based planning preview (regional factor verified at
-                onboarding)
-              </p>
-            </div>
+            <p className="text-xs text-gray-500 m-0 mb-4">
+              ZIP code adjusted planning preview (regional factor confirmed at
+              onboarding).
+            </p>
 
             <h2 className="text-3xl font-bold text-contractor-black mb-3">
-              ZIP-Smart Commercial Maintenance Planner
+              Commercial Maintenance Planner
             </h2>
             <p className="text-restoration-gray mb-6">
               Estimate annual maintenance budgets, seasonal priorities, and
-              major system replacements for small commercial properties under
-              50k sq ft.
+              major system replacements for Oregon properties under 50k sq ft.
             </p>
 
             <div className="bg-cream border border-cream rounded-xl p-6">
@@ -380,7 +374,7 @@ export default function CommercialMaintenancePlannerModule() {
                 <Lock className="w-5 h-5 text-cream" />
                 <div>
                   <p className="text-xs uppercase tracking-wide text-cream m-0">
-                    Lead Capture
+                    Get Full Report
                   </p>
                   <p className="text-lg font-bold m-0">
                     Unlock the 5-year capital plan
@@ -388,8 +382,8 @@ export default function CommercialMaintenancePlannerModule() {
                 </div>
               </div>
               <p className="text-sm text-gray-200 mb-6">
-                Get a ZIP-adjusted capital replacement timeline, line-item scope
-                recommendations, and service agreement savings.
+                Receive a ZIP code adjusted capital replacement timeline, line
+                item scope recommendations, and service agreement savings.
               </p>
 
               <form onSubmit={onSubmit} className="space-y-4">

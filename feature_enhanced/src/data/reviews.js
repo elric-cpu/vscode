@@ -18,7 +18,7 @@ export const reviews = [
     rating: 5,
     date: "2023-11-15",
     text: "Benson Home Solutions saved us when our pipes burst last winter. They were there within an hour, got the water out, and handled everything with our insurance. Highly recommend!",
-    service: "Water Mitigation",
+    service: "Water Damage Restoration",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ export const reviews = [
     rating: 5,
     date: "2023-12-05",
     text: "Professional, courteous, and honest. It's hard to find contractors who communicate this well. They kept us updated every step of the way.",
-    service: "General Contracting",
+    service: "Inspection Repairs",
   },
   {
     id: 4,

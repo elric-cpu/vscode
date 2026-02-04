@@ -7,6 +7,9 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import {
@@ -17,6 +20,13 @@ import {
 import { ASSET_MODELS } from "@/lib/calculators/costModels";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const AssetLifecycleCalculator = () => {
   const [zip, setZip] = useState("");
@@ -60,6 +70,28 @@ const AssetLifecycleCalculator = () => {
       extendedRemaining,
     };
   }, [replacementCost, annualPmSpend, assetAge, localization.costFactor, model]);
+
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review agreements",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Compare home plans",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Plan repairs",
+    },
+    {
+      label: "request a walkthrough",
+      to: "/contact",
+      description: "Schedule an on-site assessment and scope review.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   const canSubmit =
     lead.name.trim().length >= 2 &&
@@ -156,6 +188,8 @@ const AssetLifecycleCalculator = () => {
         title: "Asset Lifecycle Extension Tool | Benson Home Solutions",
         description:
           "Estimate how preventive maintenance extends asset life and defers capital replacement with ZIP-adjusted pricing.",
+        keywords:
+          "asset lifecycle calculator, equipment life extension, preventive maintenance planning, capital replacement timeline, facilities maintenance budgeting",
         schema: faqSchema,
       }}
       badge="ROI & Compliance"
@@ -327,7 +361,7 @@ const AssetLifecycleCalculator = () => {
 
       <div className="bg-white border border-gray-200 rounded-xl p-6">
         <h3 className="text-lg font-bold text-contractor-black mb-2">
-          Case study: Roof maintenance program
+          Case study: Roof maintenance plan
         </h3>
         <p className="text-sm text-restoration-gray mb-3">
           A warehouse invested in annual roof inspections and minor repairs. Roof
@@ -338,9 +372,22 @@ const AssetLifecycleCalculator = () => {
         </p>
       </div>
 
+      <NextStepsBlock
+        links={nextSteps}
+        subtitle="Translate lifecycle insight into a documented maintenance or repair plan."
+      />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[4], TOOLS_HUB_LINK]}
+        subtitle="Estimate, compare, and map the next 12-24 months."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
+
       <FaqSection items={faqs} />
     </CalculatorLayout>
   );
 };
 
 export default AssetLifecycleCalculator;
+

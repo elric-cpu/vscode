@@ -5,7 +5,19 @@ import { Phone, Clock, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const WaterDamageMitigation = () => {
   const schema = {
@@ -22,10 +34,10 @@ const WaterDamageMitigation = () => {
       { "@type": "City", name: "Sweet Home" },
     ],
     description:
-      "Emergency water damage mitigation and dry-out services. 24/7 response for flooding, burst pipes, and leaks.",
+      "Emergency water damage restoration and dry-out services. 24/7 response for flooding, burst pipes, and leaks.",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Water Mitigation Services",
+      name: "Water Restoration Services",
       itemListElement: [
         {
           "@type": "Offer",
@@ -49,7 +61,7 @@ const WaterDamageMitigation = () => {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How quickly should I call for water damage mitigation?",
+        name: "How quickly should I call for water damage restoration?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Immediately. Water damage worsens rapidly—mold can begin growing within 24-48 hours. The faster we extract water and start drying, the less secondary damage occurs and the better your insurance claim outcome.",
@@ -57,7 +69,7 @@ const WaterDamageMitigation = () => {
       },
       {
         "@type": "Question",
-        name: "Will my homeowners insurance cover water damage mitigation?",
+        name: "Will my homeowners insurance cover water damage restoration?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Most policies cover sudden and accidental water damage (burst pipes, appliance failures). We work directly with insurance companies, providing detailed documentation. Flood damage typically requires separate flood insurance.",
@@ -65,6 +77,37 @@ const WaterDamageMitigation = () => {
       },
     ],
   };
+
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Address mold risk",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Prevent repeat events",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Repair damaged areas",
+    },
+    {
+      label: "request emergency service",
+      to: "/contact",
+      description: "Start mitigation with documented scope and photo logs.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
+
+  const toolLinks = [
+    TOP_TOOL_LINKS[2],
+    TOP_TOOL_LINKS[0],
+    TOP_TOOL_LINKS[1],
+    TOOLS_HUB_LINK,
+  ];
+
+  const guideLinks = [GUIDE_LINKS[3], GUIDE_LINKS[2], GUIDE_LINKS[0]];
 
   const causes = [
     "Burst or leaking pipes",
@@ -105,12 +148,12 @@ const WaterDamageMitigation = () => {
 
   const faqs = [
     {
-      question: "How quickly should I call for water damage mitigation?",
+      question: "How quickly should I call for water damage restoration?",
       answer:
         "Immediately. Water damage worsens rapidly—mold can begin growing within 24-48 hours. The faster we extract water and start drying, the less secondary damage occurs and the better your insurance claim outcome.",
     },
     {
-      question: "Will my homeowners insurance cover water damage mitigation?",
+      question: "Will my homeowners insurance cover water damage restoration?",
       answer:
         "Most policies cover sudden and accidental water damage (burst pipes, appliance failures). We work directly with insurance companies, providing detailed documentation. Flood damage typically requires separate flood insurance.",
     },
@@ -120,7 +163,7 @@ const WaterDamageMitigation = () => {
         "Typically 3-7 days depending on the extent of water intrusion, materials affected, and environmental conditions. We use moisture meters to confirm complete dryness before removing equipment.",
     },
     {
-      question: "Can I stay in my home during mitigation?",
+      question: "Can I stay in my home during restoration?",
       answer:
         "Often yes, especially if damage is isolated. We work to minimize disruption. In severe cases, temporary relocation may be safer and more practical.",
     },
@@ -159,10 +202,10 @@ const WaterDamageMitigation = () => {
   return (
     <>
       <SEO
-        title="Water Damage Mitigation Oregon | Emergency Dry-Out Services"
-        description="24/7 emergency water damage mitigation in Burns, Hines, Sweet Home & Mid-Valley Oregon. Fast extraction, professional drying, insurance coordination. Call (541) 321-5115."
+        title="Water Damage Restoration Oregon | 24/7 Emergency Dry-Out"
+        description="24/7 emergency water damage restoration in Burns, Hines, Sweet Home & Mid-Valley Oregon. Fast extraction, professional drying, insurance coordination. Call (541) 321-5115."
         schema={[schema, faqSchema]}
-        keywords="water damage mitigation Oregon, emergency water extraction, dry out services Burns OR, water damage restoration Sweet Home"
+        keywords="water damage restoration Oregon, emergency water extraction, dry out services Burns OR, structural drying Oregon, flood cleanup Harney County, insurance documentation water loss"
       />
 
       <Breadcrumbs />
@@ -176,11 +219,11 @@ const WaterDamageMitigation = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Water Damage Mitigation & Dry-Out
+                Water Damage Restoration & Dry-Out
               </h1>
               <p className="text-xl text-cream mb-6">
-                Fast emergency response to prevent secondary damage and protect
-                your property. We work directly with insurance companies.
+                Fast emergency response to prevent secondary damage, with clear
+                documentation for insurance or out-of-pocket repairs.
               </p>
               <div className="flex items-center gap-4 mb-8">
                 <div className="flex items-center gap-2 text-cream">
@@ -203,10 +246,11 @@ const WaterDamageMitigation = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <img
-                className="rounded-lg shadow-2xl w-full"
-                alt="Professional water damage mitigation equipment and team in action"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="slate"
+                eyebrow="24/7 Response"
+                title="Extraction, Drying, Documentation"
+                subtitle="Rapid stabilization with moisture monitoring and scope documentation."
               />
             </motion.div>
           </div>
@@ -216,24 +260,23 @@ const WaterDamageMitigation = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-contractor-black mb-6">
-            What Is Water Damage Mitigation?
+            What Is Water Damage Restoration?
           </h2>
           <p className="text-lg text-restoration-gray mb-6">
-            Water damage mitigation is the immediate process of reducing and
-            preventing further damage after water intrusion. Unlike full
-            restoration (which includes reconstruction), mitigation focuses on
-            stopping the damage progression: extracting standing water, drying
-            out structures, and preventing mold growth.
+            Water damage restoration is the immediate process of reducing and
+            preventing further damage after water intrusion. Early restoration
+            focuses on stopping the damage progression: extracting standing
+            water, drying structures, and preventing mold growth.
           </p>
           <p className="text-lg text-restoration-gray mb-6">
             Time is critical. Water continues spreading through porous materials
             (drywall, insulation, wood framing) for hours after the initial
-            event. Professional mitigation within the first 24-48 hours
+            event. Professional restoration within the first 24-48 hours
             significantly reduces long-term damage and repair costs.
           </p>
 
           <h2 className="text-3xl font-bold text-contractor-black mb-6 mt-12">
-            Who Needs Water Mitigation Services?
+            Who Needs Water Restoration Services?
           </h2>
           <p className="text-lg text-restoration-gray mb-6">
             Any property owner experiencing sudden water intrusion should act
@@ -249,7 +292,7 @@ const WaterDamageMitigation = () => {
           </div>
           <p className="text-lg text-restoration-gray">
             Whether you're a homeowner dealing with a burst pipe or a business
-            facing storm damage, professional mitigation protects your property
+            facing storm damage, professional restoration protects your property
             and your insurance claim.
           </p>
         </div>
@@ -258,7 +301,7 @@ const WaterDamageMitigation = () => {
       <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-contractor-black mb-12 text-center">
-            Our Water Mitigation Process
+            Our Water Restoration Process
           </h2>
           <div className="space-y-8">
             {processSteps.map((step, index) => (
@@ -294,7 +337,7 @@ const WaterDamageMitigation = () => {
           </h2>
           <p className="text-lg text-restoration-gray mb-6">
             Every water damage situation is unique. Several factors influence
-            both the cost and duration of mitigation:
+            both the cost and duration of restoration:
           </p>
           <ul className="space-y-4 mb-6">
             <li className="flex items-start gap-3">
@@ -344,7 +387,7 @@ const WaterDamageMitigation = () => {
                 </strong>
                 <span className="text-restoration-gray">
                   {" "}
-                  Faster mitigation means less secondary damage and shorter
+                  Faster restoration means less secondary damage and shorter
                   drying times.
                 </span>
               </div>
@@ -365,46 +408,31 @@ const WaterDamageMitigation = () => {
           </ul>
           <p className="text-lg text-restoration-gray">
             We provide detailed estimates after assessment. Most insurance
-            policies cover mitigation costs when damage is sudden and
+            policies cover restoration costs when damage is sudden and
             accidental. We work directly with your insurance company to
             streamline the claims process.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-mitigation-graphite text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8 text-center">Service Areas</h2>
-          <p className="text-center text-cream mb-8">
-            We provide emergency water damage mitigation throughout Harney
-            County and the Mid-Willamette Valley:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <Link
-              to="/service-areas/burns-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Burns, OR</h3>
-              <p className="text-cream text-sm">Fast emergency response</p>
-            </Link>
-            <Link
-              to="/service-areas/hines-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Hines, OR</h3>
-              <p className="text-cream text-sm">24/7 availability</p>
-            </Link>
-            <Link
-              to="/service-areas/sweet-home-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Sweet Home, OR</h3>
-              <p className="text-cream text-sm">Professional service</p>
-            </Link>
-          </div>
-          <p className="text-center text-structural-gray text-sm mt-6">
-            Also serving Lebanon, Albany, and surrounding Mid-Valley communities
-          </p>
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Move from emergency response to documented repairs and prevention."
+          />
+          <RelatedToolsBlock
+            links={toolLinks}
+            subtitle="Estimate repair scopes and plan budget recovery."
+          />
+          <RelatedGuidesBlock
+            links={guideLinks}
+            subtitle="Understand common causes and next-step decisions."
+          />
+          <LocationsServedBlock
+            links={GEO_HUB_LINKS}
+            subtitle="Harney County and the Mid-Willamette Valley response teams."
+          />
         </div>
       </section>
 
@@ -440,7 +468,7 @@ const WaterDamageMitigation = () => {
           </h2>
           <p className="text-xl mb-8 text-cream">
             Don't wait—every minute counts. Call us immediately for fast,
-            professional water damage mitigation.
+            professional water damage restoration.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:5413215115">
@@ -474,3 +502,5 @@ const WaterDamageMitigation = () => {
 };
 
 export default WaterDamageMitigation;
+
+

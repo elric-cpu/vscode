@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import { serviceAreaData } from "@/data/serviceAreas";
 import { CALCULATOR_ROUTES } from "@/data/calculators";
+import { GUIDE_ROUTES } from "@/data/guides";
 
 const Sitemap = () => {
   // Static Routes
@@ -15,60 +16,64 @@ const Sitemap = () => {
     { path: "/blog", name: "Blog" },
     { path: "/resources", name: "Resources" },
     { path: "/resources-help", name: "Resources Help" },
+    { path: "/service-areas", name: "Service Areas" },
     { path: "/sitemap", name: "Sitemap" },
+    { path: "/sitemap.xml", name: "Sitemap (XML)" },
+    { path: "/robots.txt", name: "Robots.txt" },
   ];
 
   const serviceRoutes = [
     {
-      path: "/services/water-damage-mitigation",
-      name: "Water Damage Mitigation",
+      path: "/water-damage-restoration",
+      name: "Water Damage Restoration",
     },
-    { path: "/services/mold-remediation", name: "Mold Remediation" },
-    { path: "/services/bathroom-remodels", name: "Bathroom Remodels" },
-    { path: "/services/kitchen-remodels", name: "Kitchen Remodels" },
-    { path: "/services/general-contracting", name: "General Contracting" },
+    { path: "/mold-remediation", name: "Mold Remediation" },
+    { path: "/fire-smoke-damage", name: "Fire & Smoke Damage Cleanup" },
+    { path: "/bathroom-remodels", name: "Bathroom Remodels" },
+    { path: "/kitchen-remodels", name: "Kitchen Remodels" },
+    { path: "/inspection-repairs", name: "Inspection Repairs & Punch Lists" },
     {
-      path: "/services/residential-maintenance",
-      name: "Residential Maintenance Programs",
+      path: "/maintenance-plans",
+      name: "Maintenance Plans",
     },
     {
-      path: "/services/moisture-envelope",
+      path: "/moisture-control",
       name: "Water Intrusion, Envelope & Moisture Control",
     },
     {
-      path: "/services/aging-in-place",
+      path: "/accessibility-retrofits",
       name: "Aging-in-Place & Accessibility Retrofits",
     },
     {
-      path: "/services/insurance-adjacent",
-      name: "Insurance-Adjacent Specialty Work",
+      path: "/insurance-claims-repairs",
+      name: "Insurance Claims Repairs",
     },
-    { path: "/services/energy-comfort", name: "Energy & Comfort Retrofits" },
-    { path: "/services/commercial", name: "Commercial Maintenance" },
+    { path: "/energy-comfort-retrofits", name: "Energy & Comfort Retrofits" },
+    { path: "/commercial-maintenance", name: "Commercial Maintenance" },
     {
-      path: "/services/commercial/tenant-turns",
+      path: "/commercial/tenant-turns",
       name: "Commercial Tenant Turns",
     },
     {
-      path: "/services/commercial/preventive-maintenance",
+      path: "/commercial/preventive-maintenance",
       name: "Commercial Preventive Maintenance",
     },
     {
-      path: "/services/commercial/emergency-repairs",
+      path: "/commercial/emergency-repairs",
       name: "Emergency Commercial Repairs",
     },
     {
-      path: "/services/commercial/ada-compliance",
+      path: "/commercial/ada-compliance",
       name: "ADA Compliance Fixes",
     },
     {
-      path: "/services/commercial/service-agreements",
+      path: "/commercial-service-agreements",
       name: "Commercial Service Agreements",
     },
   ];
 
   const resourceRoutes = [
-    { path: "/resources/calculators", name: "ZIP-Smart Calculators" },
+    { path: "/resources/calculators", name: "Maintenance & ROI Calculators" },
     {
       path: "/resources/home-maintenance-estimator",
       name: "Home Maintenance Estimator",
@@ -84,20 +89,21 @@ const Sitemap = () => {
     { path: "/resources/bathroom-remodel-roi", name: "Bathroom Remodel ROI" },
     { path: "/resources/kitchen-remodel-roi", name: "Kitchen Remodel ROI" },
     {
-      path: "/resources/water-damage-mitigation-guide",
-      name: "Water Damage Mitigation Guide",
+      path: "/resources/water-damage-restoration-guide",
+      name: "Water Damage Restoration Guide",
     },
     {
       path: "/resources/ada-aging-in-place-guide",
       name: "ADA & Aging in Place Guide",
     },
+    ...GUIDE_ROUTES,
     ...CALCULATOR_ROUTES,
   ];
 
   const landingRoutes = [
     {
       path: "/landing/residential-maintenance-programs.html",
-      name: "Residential Maintenance Programs (Landing)",
+      name: "Maintenance Plans (Landing)",
     },
     {
       path: "/landing/residential-maintenance-pricing.html",
@@ -128,6 +134,10 @@ const Sitemap = () => {
 
     // Harney County
     if (serviceAreaData?.["harney-county"]?.towns) {
+      routes.push({
+        path: "/service-areas/harney-county",
+        name: "Harney County Service Area",
+      });
       serviceAreaData["harney-county"].towns.forEach((town) => {
         routes.push({
           path: `/service-areas/harney-county/${town.slug}`,
@@ -138,6 +148,10 @@ const Sitemap = () => {
 
     // Mid-Valley
     if (serviceAreaData?.["mid-valley"]?.counties) {
+      routes.push({
+        path: "/service-areas/mid-willamette-valley",
+        name: "Mid-Willamette Valley Service Area",
+      });
       Object.entries(serviceAreaData["mid-valley"].counties).forEach(
         ([countySlug, countyData]) => {
           if (countyData.towns) {
@@ -283,3 +297,5 @@ const Sitemap = () => {
 };
 
 export default Sitemap;
+
+

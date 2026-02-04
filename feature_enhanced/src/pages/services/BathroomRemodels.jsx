@@ -1,10 +1,22 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import siteImages from "@/data/siteImages";
+import SEO from "@/components/SEO";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const BathroomRemodels = () => {
   const benefits = [
@@ -104,18 +116,47 @@ const BathroomRemodels = () => {
     },
   ];
 
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Protect the investment",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Bundle repairs",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Plan moisture protection",
+    },
+    {
+      label: "request a remodel scope",
+      to: "/contact",
+      description: "Confirm budget, finishes, and scheduling.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
+
+  const guideLinks = [
+    {
+      label: "Bathroom remodel ROI guide",
+      to: "/resources/bathroom-remodel-roi",
+      description: "Understand payback and value lift by upgrade scope.",
+      intent: "guide",
+    },
+    GUIDE_LINKS[0],
+    GUIDE_LINKS[1],
+  ];
+
   return (
     <>
-      <Helmet>
-        <title>
-          Bathroom Remodels Oregon | Custom Bathroom Renovation - Benson Home
-          Solutions
-        </title>
-        <meta
-          name="description"
-          content="Complete bathroom remodeling in Burns, Hines, Sweet Home & Mid-Valley OR. ADA accessible, modern designs, quality materials. Licensed contractor CCB# 258533. Free estimates."
-        />
-      </Helmet>
+      <SEO
+        title="Bathroom Remodels Oregon | Custom Bathroom Renovation"
+        description="Professional bathroom remodeling in Burns, Hines, Sweet Home, and the Mid-Willamette Valley. Accessible options, quality materials, and licensed installation."
+        keywords="bathroom remodel Oregon, bathroom renovation Burns OR, ADA bathroom upgrades, shower remodel Sweet Home, licensed bathroom contractor Oregon"
+        type="service"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,10 +189,11 @@ const BathroomRemodels = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <img
-                className="rounded-lg shadow-2xl w-full"
-                alt="Modern bathroom remodel with white subway tile and chrome fixtures"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="clay"
+                eyebrow="Bathroom Remodels"
+                title="Durable, Accessible Spaces"
+                subtitle="Water-resistant materials and layouts built for daily use."
               />
             </motion.div>
           </div>
@@ -292,19 +334,19 @@ const BathroomRemodels = () => {
           <h2 className="text-3xl font-bold mb-8 text-center">Service Areas</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <Link
-              to="/service-areas/burns-or"
+              to="/service-areas/harney-county/burns"
               className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
             >
               <h3 className="font-bold text-xl mb-2">Burns, OR</h3>
             </Link>
             <Link
-              to="/service-areas/hines-or"
+              to="/service-areas/harney-county/hines"
               className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
             >
               <h3 className="font-bold text-xl mb-2">Hines, OR</h3>
             </Link>
             <Link
-              to="/service-areas/sweet-home-or"
+              to="/service-areas/mid-valley/sweet-home"
               className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
             >
               <h3 className="font-bold text-xl mb-2">Sweet Home, OR</h3>
@@ -313,6 +355,24 @@ const BathroomRemodels = () => {
           <p className="text-center text-structural-gray text-sm mt-6">
             Also serving Lebanon, Albany, and surrounding Mid-Valley areas
           </p>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Turn a remodel plan into a documented scope and timeline."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[1], TOOLS_HUB_LINK]}
+            subtitle="Estimate budgets and replacement timing before you commit."
+          />
+          <RelatedGuidesBlock
+            links={guideLinks}
+            subtitle="Planning guidance for ROI and maintenance impact."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
         </div>
       </section>
 
@@ -378,3 +438,4 @@ const BathroomRemodels = () => {
 };
 
 export default BathroomRemodels;
+

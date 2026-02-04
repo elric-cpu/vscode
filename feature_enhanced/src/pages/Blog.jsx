@@ -1,10 +1,17 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, ArrowRight, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import siteImages from "@/data/siteImages";
+import SEO from "@/components/SEO";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+} from "@/data/internalLinks";
 
 const Blog = () => {
   const posts = [
@@ -16,18 +23,18 @@ const Blog = () => {
         "Discover the silent destroyers lurking in your walls. Learn to spot the subtle signs of hidden water damage before mold takes hold or structural failure occurs.",
       date: "December 12, 2023",
       author: "Benson Team",
-      category: "Water Mitigation",
-      image: siteImages.placeholder,
+      category: "Water Damage Restoration",
+      variant: "slate",
     },
     {
       slug: "first-24-hours-water-damage",
       title: "What to Do in the First 24 Hours After Water Damage",
       excerpt:
-        "Immediate steps Oregon homeowners should take to minimize damage and prepare for professional mitigation. Speed is critical to preventing mold and structural issues.",
+        "Immediate steps Oregon homeowners should take to minimize damage and prepare for professional restoration. Speed is critical to preventing mold and structural issues.",
       date: "October 15, 2023",
       author: "Benson Team",
-      category: "Water Mitigation",
-      image: siteImages.placeholder,
+      category: "Water Damage Restoration",
+      variant: "ink",
     },
     {
       slug: "mold-vs-mildew",
@@ -37,7 +44,7 @@ const Blog = () => {
       date: "September 28, 2023",
       author: "Benson Team",
       category: "Mold Remediation",
-      image: siteImages.placeholder,
+      variant: "moss",
     },
     {
       slug: "bathroom-remodel-costs",
@@ -47,21 +54,35 @@ const Blog = () => {
       date: "September 10, 2023",
       author: "Benson Team",
       category: "Remodeling",
-      image: siteImages.placeholder,
+      variant: "clay",
+    },
+  ];
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Mold assessment",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Preventive plan",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Inspection repairs",
     },
   ];
 
   return (
     <>
-      <Helmet>
-        <title>
-          Home Restoration & Construction Blog | Benson Home Solutions
-        </title>
-        <meta
-          name="description"
-          content="Expert advice on water damage, mold remediation, and home remodeling for Oregon homeowners. Tips, guides, and industry insights from Benson Home Solutions."
-        />
-      </Helmet>
+      <SEO
+        title="Home Restoration & Construction Blog"
+        description="Expert advice on water damage, mold remediation, maintenance, and remodeling for Oregon homeowners."
+        keywords="Oregon home restoration blog, water damage tips, mold remediation guide, home maintenance advice, remodeling insights Oregon"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,14 +115,12 @@ const Blog = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex flex-col h-full bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
               >
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="block h-48 overflow-hidden"
-                >
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                <Link to={`/blog/${post.slug}`} className="block p-4">
+                  <VisualBlock
+                    variant={post.variant}
+                    eyebrow={post.category}
+                    title={`${post.category} Guide`}
+                    subtitle="Practical checklists, documentation tips, and next steps."
                   />
                 </Link>
                 <div className="p-6 flex flex-col flex-grow">
@@ -140,6 +159,16 @@ const Blog = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Use our guides to choose the right service or maintenance plan."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
         </div>
       </section>
     </>

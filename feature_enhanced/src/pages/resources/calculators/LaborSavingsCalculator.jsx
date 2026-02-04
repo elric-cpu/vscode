@@ -7,6 +7,9 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import {
@@ -16,6 +19,13 @@ import {
 } from "@/lib/calculators/utils";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const LaborSavingsCalculator = () => {
   const [zip, setZip] = useState("");
@@ -50,6 +60,31 @@ const LaborSavingsCalculator = () => {
       optimizedCost,
     };
   }, [workOrders, hoursPerOrder, hourlyRate, efficiencyGain, localization.costFactor]);
+
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Build a program",
+    },
+    {
+      label: "commercial service agreements",
+      to: "/commercial-service-agreements",
+      description: "Documented scopes with response times and budget controls.",
+      intent: "subscribe",
+      cta: "Review agreements",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Bundle repairs",
+    },
+    {
+      label: "request a staffing review",
+      to: "/contact",
+      description: "Audit work order flow and build a coverage plan.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   const canSubmit =
     lead.name.trim().length >= 2 &&
@@ -146,6 +181,8 @@ const LaborSavingsCalculator = () => {
         title: "Labor Savings Estimator | Benson Home Solutions",
         description:
           "Calculate labor savings from outsourcing maintenance or improving work order efficiency with ZIP-adjusted labor rates.",
+        keywords:
+          "labor savings calculator, maintenance labor cost comparison, outsource vs in-house maintenance, facilities labor estimator, productivity savings",
         schema: faqSchema,
       }}
       badge="Operations"
@@ -317,6 +354,18 @@ const LaborSavingsCalculator = () => {
           Result: reclaimed 240 labor hours and faster response times.
         </p>
       </div>
+
+      <NextStepsBlock
+        links={nextSteps}
+        subtitle="Turn labor savings into a documented maintenance plan and predictable coverage."
+      />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[4], TOP_TOOL_LINKS[2], TOOLS_HUB_LINK]}
+        subtitle="Compare ROI, replacement timing, and repair budgets."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

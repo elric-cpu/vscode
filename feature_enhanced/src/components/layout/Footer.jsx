@@ -1,28 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Phone, Mail, ExternalLink } from "lucide-react";
-import { toast } from "@/components/ui/use-toast";
+import { Phone, Mail } from "lucide-react";
 import siteImages from "@/data/siteImages";
 
 const Footer = () => {
-  const handleStaffPortal = () => {
-    toast({
-      title: "🚧 Coming Soon!",
-      description:
-        "The Staff Portal is currently under development. Check back soon!",
-      duration: 4000,
-    });
-  };
-
-  const handlePayInvoice = () => {
-    toast({
-      title: "🚧 Coming Soon!",
-      description:
-        "Online invoice payment will be available soon. Please contact us for payment options.",
-      duration: 4000,
-    });
-  };
-
   return (
     <footer className="bg-contractor-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -35,7 +16,7 @@ const Footer = () => {
             />
             <p className="text-xl font-bold mb-2">Benson Home Solutions</p>
             <p className="text-cream text-sm mb-4">
-              Oregon Construction & Restoration
+              Oregon Maintenance & Restoration
             </p>
             <p className="text-structural-gray text-sm">CCB# 258533</p>
           </div>
@@ -73,6 +54,12 @@ const Footer = () => {
             </p>
             <div className="space-y-2">
               <Link
+                to="/service-areas/harney-county"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Harney County
+              </Link>
+              <Link
                 to="/service-areas/harney-county/burns"
                 className="block text-structural-gray hover:text-white transition-colors"
               >
@@ -83,6 +70,12 @@ const Footer = () => {
                 className="block text-structural-gray hover:text-white transition-colors"
               >
                 Hines, OR
+              </Link>
+              <Link
+                to="/service-areas/mid-willamette-valley"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Mid-Willamette Valley
               </Link>
               <Link
                 to="/service-areas/mid-valley/sweet-home"
@@ -103,7 +96,37 @@ const Footer = () => {
                 to="/services"
                 className="block text-structural-gray hover:text-white transition-colors"
               >
-                Our Services
+                Services Overview
+              </Link>
+              <Link
+                to="/maintenance-plans"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Maintenance Plans
+              </Link>
+              <Link
+                to="/water-damage-restoration"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Water Damage Restoration
+              </Link>
+              <Link
+                to="/fire-smoke-damage"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Fire & Smoke Damage Cleanup
+              </Link>
+              <Link
+                to="/commercial-maintenance"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Commercial Maintenance
+              </Link>
+              <Link
+                to="/service-areas"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Service Areas
               </Link>
               <Link
                 to="/about"
@@ -118,10 +141,16 @@ const Footer = () => {
                 Resources
               </Link>
               <Link
-                to="/resources-help"
+                to="/client-portal-login"
                 className="block text-structural-gray hover:text-white transition-colors"
               >
-                Resource Links & Help
+                Client Portal
+              </Link>
+              <Link
+                to="/subcontractor-portal-login"
+                className="block text-structural-gray hover:text-white transition-colors"
+              >
+                Partner Portal
               </Link>
               <Link
                 to="/sitemap"
@@ -136,22 +165,6 @@ const Footer = () => {
                 Contact
               </Link>
             </div>
-            <div className="space-y-2">
-              <button
-                onClick={handleStaffPortal}
-                className="flex items-center gap-2 text-cream hover:text-white transition-colors text-sm"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Staff Portal
-              </button>
-              <button
-                onClick={handlePayInvoice}
-                className="flex items-center gap-2 text-cream hover:text-white transition-colors text-sm"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Pay Invoice
-              </button>
-            </div>
           </div>
         </div>
 
@@ -162,7 +175,7 @@ const Footer = () => {
               reserved.
             </p>
             <p className="text-cream text-sm text-center md:text-right">
-              Free estimates available. Emergency water mitigation available.
+              Estimates available. 24/7 emergency water damage restoration.
             </p>
           </div>
           <p className="text-structural-gray text-xs text-center mt-4">
@@ -176,3 +189,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

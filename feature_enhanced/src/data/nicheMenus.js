@@ -13,8 +13,8 @@ function moneyRange(min, max) {
 
 export const NICHE_MENUS = {
   residential_maintenance: {
-    slug: "residential-maintenance",
-    title: "Residential Maintenance Programs",
+    slug: "maintenance-plans",
+    title: "Residential Maintenance Plans",
     ctaLabel: "Get Exact Pricing",
     ctaHref: "/resources/home-maintenance-estimator",
     anchors: {
@@ -120,7 +120,7 @@ export const NICHE_MENUS = {
           ],
         },
         {
-          name: "Crawlspace moisture mitigation plan",
+          name: "Crawlspace moisture control plan",
           typical: moneyRange(395, 895),
           includes: [
             "Vapor barrier evaluation",
@@ -242,8 +242,8 @@ export const NICHE_MENUS = {
   },
 
   insurance_adjacent: {
-    slug: "insurance-adjacent",
-    title: "Insurance-Adjacent Specialty Work",
+    slug: "insurance-claims-repairs",
+    title: "Insurance Claims Repairs",
     ctaLabel: "Get a Fast Triage Visit",
     ctaHref: "/contact",
     anchors: {
@@ -321,7 +321,7 @@ export const NICHE_MENUS = {
     slug: "commercial-maintenance",
     title: "Small Commercial & Light Industrial Facilities Maintenance",
     ctaLabel: "Start a Service Agreement",
-    ctaHref: "/services/commercial/service-agreements",
+    ctaHref: "/commercial-service-agreements",
     anchors: {
       positioning:
         "Predictable scopes + documentation for properties under 50k sq ft",
@@ -470,3 +470,4 @@ export const NICHE_MENUS = {
     },
   },
 };
+

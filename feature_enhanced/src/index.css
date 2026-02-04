@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,7 @@
   }
 
   body {
-    font-family: "Inter", sans-serif;
+    font-family: "Public Sans", sans-serif;
     color: var(--contractor-black);
     background: white;
   }
@@ -26,7 +26,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Libre Bodoni", serif;
     font-weight: 600;
   }
 }

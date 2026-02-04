@@ -7,7 +7,6 @@ const toAbsolute = (path) =>
 const siteImages = {
   logo: `${base}/benson_logo.png`,
   ogDefault: `${base}/og-default.svg`,
-  placeholder: `${base}/placeholder.svg`,
   logoAbsolute: toAbsolute(`${base}/benson_logo.png`),
   ogDefaultAbsolute: toAbsolute(`${base}/og-default.svg`),
 };

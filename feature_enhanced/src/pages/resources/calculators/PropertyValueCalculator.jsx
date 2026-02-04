@@ -7,6 +7,9 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import {
@@ -17,6 +20,13 @@ import {
 import { PROPERTY_UPGRADES } from "@/lib/calculators/costModels";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const PropertyValueCalculator = () => {
   const [zip, setZip] = useState("");
@@ -58,6 +68,34 @@ const PropertyValueCalculator = () => {
       payback,
     };
   }, [units, currentRent, upgradeType, projectCost, localization.costFactor]);
+
+  const nextSteps = [
+    {
+      label: "inspection repairs",
+      to: "/inspection-repairs",
+      description: "Close inspection items that affect appraisals and tenant safety.",
+      intent: "service",
+      cta: "Fix inspection items",
+    },
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Protect NOI",
+    },
+    {
+      label: "energy comfort retrofits",
+      to: "/energy-comfort-retrofits",
+      description: "Targeted upgrades that improve rent lift and occupancy.",
+      intent: "service",
+      cta: "Explore retrofits",
+    },
+    {
+      label: "request a scope review",
+      to: "/contact",
+      description: "Get a line-item scope and sequencing plan.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   const canSubmit =
     lead.name.trim().length >= 2 &&
@@ -154,6 +192,8 @@ const PropertyValueCalculator = () => {
         title: "Property Value & Rental Increase Calculator | Benson Home Solutions",
         description:
           "Estimate rent lift and property value gains from cosmetic and amenity upgrades with ZIP-adjusted costs.",
+        keywords:
+          "property value calculator, rental increase estimate, renovation ROI, upgrade value lift, rent lift calculator Oregon",
         schema: faqSchema,
       }}
       badge="ROI & Compliance"
@@ -334,6 +374,18 @@ const PropertyValueCalculator = () => {
           Result: 3.1-year payback and improved tenant retention.
         </p>
       </div>
+
+      <NextStepsBlock
+        links={nextSteps}
+        subtitle="Prioritize the upgrades that protect value and accelerate rent lift."
+      />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[0], TOOLS_HUB_LINK]}
+        subtitle="Plan budgets, replacement timing, and ROI side by side."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

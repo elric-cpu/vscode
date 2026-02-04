@@ -57,8 +57,8 @@ export default function EmergencyRepairs() {
         },
       ]}
       seoTitle="Emergency Commercial Repairs Oregon"
-      seoDescription="Priority-response commercial repairs for small facilities: leaks, safety hazards, door/security hardware, and urgent damage control."
-      keywords="emergency commercial repairs, facility emergency repair Oregon, urgent maintenance contractor"
+      seoDescription="Priority-response commercial repairs for small facilities: leaks, safety hazards, door/security hardware, and urgent damage control across Oregon."
+      keywords="emergency commercial repairs, facility emergency repair Oregon, urgent maintenance contractor, after-hours repairs, security hardware repair"
     />
   );
 }

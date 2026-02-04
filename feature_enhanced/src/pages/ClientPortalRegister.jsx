@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import SEO from "@/components/SEO";
 
 export default function ClientPortalRegister() {
   const navigate = useNavigate();
@@ -50,9 +50,11 @@ export default function ClientPortalRegister() {
 
   return (
     <>
-      <Helmet>
-        <title>Client Registration | Benson Home Solutions</title>
-      </Helmet>
+      <SEO
+        title="Client Registration"
+        description="Create a client portal account for Benson Home Solutions."
+        robots="noindex, nofollow"
+      />
       <main className="min-h-screen bg-[#FAF6EE] py-20 px-4">
         <div className="max-w-lg mx-auto bg-white border border-[#D4C5A5] p-8">
           <h1 className="text-3xl font-bold text-[#3C0008]">Client Registration</h1>

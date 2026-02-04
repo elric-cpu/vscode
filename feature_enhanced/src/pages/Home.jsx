@@ -11,10 +11,25 @@ import {
   Award,
   Users,
   Facebook,
+  Droplets,
+  ShieldCheck,
+  ClipboardList,
+  Hammer,
+  Building2,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
-import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const Home = () => {
   const schema = {
@@ -22,7 +37,7 @@ const Home = () => {
     "@type": "GeneralContractor",
     name: "Benson Home Solutions",
     description:
-      "Professional water damage restoration, mold remediation, and home remodeling services in Harney County and Mid-Valley Oregon. 24/7 emergency response.",
+      "Professional maintenance plans, water damage restoration, mold remediation, and inspection repairs across Harney County and the Mid-Willamette Valley.",
     url: "https://bensonhomesolutions.com",
     telephone: "+1-541-321-5115",
     sameAs: ["https://www.facebook.com/p/Benson-Enterprises-61565667928376/"],
@@ -75,68 +90,68 @@ const Home = () => {
   };
   const services = [
     {
-      title: "Residential Maintenance Programs",
+      title: "Maintenance Plans",
       description:
-        "Subscription home maintenance with predictable pricing, photos & logs, and one trusted provider for recurring small jobs.",
-      icon: "🧾",
-      link: "/services/residential-maintenance",
+        "Predictable annual maintenance with clear scopes, budgets, and documentation.",
+      icon: ClipboardList,
+      link: "/maintenance-plans",
     },
     {
-      title: "Water Damage Mitigation & Dry-Out",
+      title: "Water Damage Restoration",
       description:
-        "Fast emergency response to extract water, dry structures, and prevent secondary damage. We work directly with insurance companies.",
-      icon: "💧",
-      link: "/services/water-damage-mitigation",
+        "24/7 extraction, structural drying, and insurance-ready documentation.",
+      icon: Droplets,
+      link: "/water-damage-restoration",
     },
     {
       title: "Mold Remediation",
       description:
-        "Professional mold assessment, containment, and removal following industry protocols to restore healthy indoor air quality.",
-      icon: "🛡️",
-      link: "/services/mold-remediation",
+        "Containment, removal, and prevention aligned with IICRC guidance.",
+      icon: ShieldCheck,
+      link: "/mold-remediation",
     },
     {
-      title: "Bathroom Remodels",
+      title: "Moisture Control",
       description:
-        "Complete bathroom renovations from concept to completion, including fixtures, tile, accessibility upgrades, and custom touches.",
-      icon: "🚿",
-      link: "/services/bathroom-remodels",
+        "Leak diagnostics, envelope repairs, and moisture prevention for Oregon homes.",
+      icon: Shield,
+      link: "/moisture-control",
     },
     {
-      title: "Kitchen Remodels",
+      title: "Inspection Repairs",
       description:
-        "Kitchen transformations that blend functionality with style—cabinets, countertops, appliances, and layout optimization.",
-      icon: "🏠",
-      link: "/services/kitchen-remodels",
+        "Punch lists, pre-sale repairs, and code-driven fixes with clear timelines.",
+      icon: Hammer,
+      link: "/inspection-repairs",
     },
     {
-      title: "General Contracting",
+      title: "Commercial Maintenance",
       description:
-        "Home additions, remodels, ADA/aging-in-place modifications, exterior improvements, and insurance restoration work.",
-      icon: "🔨",
-      link: "/services/general-contracting",
-    }
+        "Facilities support for properties under 50k sq ft with clear logs and scopes.",
+      icon: Building2,
+      link: "/commercial-maintenance",
+    },
   ];
   const processSteps = [
     {
       title: "Initial Contact & Assessment",
       description:
-        "Call us or submit a request. We respond quickly, especially for water emergencies.",
+        "Call or submit a request. We confirm scope, urgency, and next steps.",
     },
     {
       title: "Detailed Estimate",
       description:
-        "We provide clear, itemized estimates with no hidden fees. Insurance claim coordination available.",
+        "You receive a clear, line-item estimate with documented findings.",
     },
     {
       title: "Professional Execution",
       description:
-        "Licensed, insured team works efficiently with regular communication and quality workmanship.",
+        "Licensed crews complete the work with clean job sites and updates.",
     },
     {
       title: "Final Walkthrough",
       description:
-        "We ensure you're completely satisfied before considering the job complete.",
+        "We review results, documentation, and recommended next steps.",
     },
   ];
   const reviews = [
@@ -149,7 +164,7 @@ const Home = () => {
     {
       name: "Mike T.",
       location: "Sweet Home, OR",
-      text: "Our kitchen remodel exceeded expectations. The team was punctual, clean, and incredibly skilled.",
+      text: "Their maintenance plan made it easy to prioritize repairs and budget for the year. Clear scope and great communication.",
       rating: 5,
     },
     {
@@ -162,24 +177,20 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Benson Home Solutions | Water Damage & Restoration Services"
-        description="Professional water damage restoration, mold remediation, and home remodeling services in Harney County and Mid-Valley Oregon. 24/7 emergency response."
+        title="Oregon Maintenance Plans, Restoration & Repairs | Benson Home Solutions"
+        description="Licensed Oregon contractor providing maintenance plans, water damage restoration, mold remediation, moisture control, inspection repairs, and commercial maintenance across Harney County and the Mid-Willamette Valley."
         schema={schema}
-        keywords="Home Maintenance, Small commercial maintenance, church maintenance, light industrial maintenance, Oregon construction, restoration company, water damage mitigation, mold remediation, bathroom remodel, kitchen remodel, Burns OR contractor, Sweet Home OR contractor"
+        keywords="Oregon maintenance plans, home maintenance planner, water damage restoration Oregon, emergency water removal, mold remediation Oregon, moisture control Oregon, inspection repairs Oregon, commercial maintenance services, insurance claims repairs, Harney County contractor, Mid-Willamette Valley contractor, Burns OR contractor, Hines OR contractor, Sweet Home OR contractor"
       />
 
       {/* H1 Heading Hidden Visually but Present for SEO Structure if needed, or integrated into Hero */}
 
       <section className="relative bg-contractor-black text-white py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            className="w-full h-full object-cover"
-            alt="Modern Oregon home exterior with professional restoration work in progress"
-            src={siteImages.placeholder}
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)] gap-12 items-center">
             <motion.div
               initial={{
                 opacity: 0,
@@ -194,16 +205,16 @@ const Home = () => {
               }}
             >
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                Professional Home Restoration & Remodeling Services in Oregon
+                Oregon Maintenance Plans, Restoration, and Repair Services
               </h1>
               <p className="text-xl lg:text-2xl mb-4 text-cream">
-                Water Damage Mitigation, Mold Remediation & Expert General
-                Contracting
+                Maintenance plans, emergency restoration, and inspection-ready
+                repairs delivered by a licensed local team.
               </p>
               <p className="text-lg mb-8 text-structural-gray">
                 Serving Harney County (Burns, Hines) and the Mid-Willamette
-                Valley (Sweet Home, Lebanon, Albany) with licensed, professional
-                restoration, maintenance and construction services.
+                Valley (Sweet Home, Lebanon, Albany) with clear scopes,
+                documented work, and responsive scheduling.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="tel:5413215115">
@@ -227,6 +238,14 @@ const Home = () => {
                 </Link>
               </div>
             </motion.div>
+            <div className="hidden lg:block">
+              <VisualBlock
+                variant="slate"
+                eyebrow="Licensed CCB# 258533"
+                title="Maintenance, Restoration, and Repairs"
+                subtitle="Detailed scopes, documented work, and rapid response for Oregon properties."
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -336,48 +355,51 @@ const Home = () => {
               Our Core Services
             </h2>
             <p className="text-xl text-restoration-gray max-w-3xl mx-auto">
-              Comprehensive maintenance, restoration, and remodeling solutions
-              tailored to your home or business needs.
+              Comprehensive maintenance, restoration, and repair solutions
+              tailored to homes and small facilities.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{
-                  opacity: 0,
-                  y: 30,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  delay: index * 0.1,
-                }}
-                className="flex"
-              >
-                <Link to={service.link} className="w-full flex">
-                  <div className="bg-white border-2 border-structural-gray rounded-lg p-6 hover:border-maroon hover:shadow-lg transition-all w-full flex flex-col h-full">
-                    <div className="text-5xl mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-bold text-contractor-black mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-restoration-gray mb-4 flex-grow">
-                      {service.description}
-                    </p>
-                    <span className="text-maroon font-semibold flex items-center gap-2 mt-auto">
-                      View Service Details
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{
+                    opacity: 0,
+                    y: 30,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    delay: index * 0.1,
+                  }}
+                  className="flex"
+                >
+                  <Link to={service.link} className="w-full flex">
+                    <div className="bg-white border-2 border-structural-gray rounded-lg p-6 hover:border-maroon hover:shadow-lg transition-all w-full flex flex-col h-full">
+                      <Icon className="w-12 h-12 text-maroon mb-4" />
+                      <h3 className="text-xl font-bold text-contractor-black mb-3">
+                        {service.title}
+                      </h3>
+                      <p className="text-restoration-gray mb-4 flex-grow">
+                        {service.description}
+                      </p>
+                      <span className="text-maroon font-semibold flex items-center gap-2 mt-auto">
+                        View Service Details
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           <div className="text-center mt-12">
@@ -394,71 +416,71 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Expanded Content Section for SEO */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none text-gray-700">
-            <h2 className="text-3xl font-bold text-maroon mb-6">
-              Why Choose Benson Home Solutions?
+            <h2 className="text-3xl font-bold text-maroon mb-4">
+              Local, Licensed, and Documentation-First
             </h2>
-            <p className="mb-6">
-              Benson Home Solutions knows a house is not just a structure, but the place your life happens. When water damage disrupts your home or you are ready to invest in a kitchen remodel, you need a contractor who is reliable, clear, and accountable. We are a locally owned construction and restoration company serving homeowners throughout Harney County and the Mid-Willamette Valley, focused on practical solutions, quality workmanship, and straightforward communication.
+            <p>
+              We deliver restoration and maintenance with clear scopes,
+              line-item estimates, and photo documentation. As a licensed,
+              bonded, and insured Oregon contractor (CCB# 258533), we focus on
+              practical solutions that protect your property and your budget.
+            </p>
+            <p>
+              Emergency water damage requires fast action. Our team mobilizes
+              quickly, documents every step for insurance, and prioritizes
+              drying and stabilization to prevent secondary damage.
+            </p>
+            <ul>
+              <li>Clear scopes and documented work you can keep.</li>
+              <li>Insurance-ready reporting when claims are involved.</li>
+              <li>
+                Skilled crews for restoration, maintenance, inspection repairs,
+                and moisture control.
+              </li>
+            </ul>
 
-            </p>
-            <p className="mb-6">
-              Our team brings years of experience and a commitment to excellence
-              in every project we undertake. We are fully licensed, bonded, and
-              insured (CCB# 258533), giving you peace of mind that your property
-              is in capable hands. From emergency water extraction in the middle
-              of the night to meticulous tile work in your new bathroom, we
-              prioritize quality, transparency, and customer satisfaction.
-            </p>
-
-            <h2 className="text-3xl font-bold text-maroon mb-6 mt-12">
-              Our Commitment to Emergency Response
-            </h2>
-            <p className="mb-6">
-              Disasters don’t wait for business hours, and neither do we. Water
-              damage can escalate quickly, leading to structural issues and mold
-              growth if not addressed immediately. That’s why Benson Home
-              Solutions offers <strong>24/7 emergency response services</strong>
-              .
-            </p>
-            <p className="mb-6">
-              When you call us, you speak to a local professional ready to
-              mobilize quickly to Burns, Hines, Sweet Home, Lebanon, or Albany.
-              We arrive with the industrial-grade equipment needed to extract
-              water, dry out your property, and secure your home against further
-              damage. We also work directly with your insurance company to
-              streamline the claims process, documenting every step to ensure
-              you get the coverage you deserve.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
+            <div className="grid md:grid-cols-2 gap-8 mt-10">
               <div>
-                <h3 className="text-2xl font-bold text-contractor-black mb-4">
-                  Serving Harney County
+                <h3 className="text-2xl font-bold text-contractor-black mb-2">
+                  Harney County Coverage
                 </h3>
                 <p>
-                  We are proud to be a trusted resource for residents of Burns,
-                  Hines, and the surrounding high desert communities. We
-                  understand the unique challenges of our local climate and
-                  provide solutions built to last.
+                  Burns, Hines, and surrounding communities with emergency
+                  response and restoration expertise.
                 </p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-contractor-black mb-4">
-                  Serving Mid-Willamette Valley
+                <h3 className="text-2xl font-bold text-contractor-black mb-2">
+                  Mid-Willamette Valley Coverage
                 </h3>
                 <p>
-                  Our team is equally committed to serving homeowners in Sweet
-                  Home, Lebanon, Albany, and nearby areas. We bring top-tier
-                  craftsmanship to every renovation and restoration project in
-                  the valley.
+                  Sweet Home, Lebanon, Albany, and nearby areas with maintenance
+                  plans, inspection repairs, and restoration services.
                 </p>
               </div>
             </div>
+            <div className="mt-6">
+              <Link to="/service-areas" className="text-maroon font-semibold">
+                View all service areas
+              </Link>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <FeaturedToolsBlock
+            links={[...TOP_TOOL_LINKS, TOOLS_HUB_LINK]}
+            subtitle="Budget ranges, replacement timing, and ROI planning tools."
+          />
+          <RelatedGuidesBlock
+            links={GUIDE_LINKS}
+            subtitle="Maintenance and repair guidance for Oregon property owners."
+          />
         </div>
       </section>
 
@@ -468,19 +490,18 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                We Work With Your Insurance Company
+                Insurance-Ready Documentation
               </h2>
               <p className="text-lg text-structural-gray mb-6">
-                Dealing with water damage, mold, or property loss is stressful
-                enough. We have extensive experience coordinating with insurance
-                companies to streamline your claim process.
+                When a claim is involved, documentation matters. We capture
+                photos, moisture readings, and line-item scopes to keep your
+                claim moving and reduce delays.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-cream flex-shrink-0 mt-1" />
                   <span>
-                    Direct communication with adjusters and claim
-                    representatives
+                    Direct coordination with adjusters when authorized
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -492,14 +513,14 @@ const Home = () => {
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-cream flex-shrink-0 mt-1" />
                   <span>
-                    Transparent estimates aligned with industry standards
+                    Transparent, line-item estimates aligned with industry
+                    standards
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-cream flex-shrink-0 mt-1" />
                   <span>
-                    Emergency mitigation to prevent further damage and protect
-                    your claim
+                    Emergency restoration to prevent further damage
                   </span>
                 </li>
               </ul>
@@ -516,10 +537,11 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <img
-                className="rounded-lg shadow-2xl w-full"
-                alt="Insurance claim documentation paperwork and professional restoration equipment on site"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="slate"
+                eyebrow="Insurance Support"
+                title="Documentation That Holds Up"
+                subtitle="Photo logs, moisture readings, and line-item scopes built for adjuster review."
               />
             </div>
           </div>
@@ -531,11 +553,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-contractor-black mb-4">
-              Our Restoration Process
+              A Clear, Documented Process
             </h2>
             <p className="text-xl text-restoration-gray max-w-3xl mx-auto">
-              Clear communication and professional execution from start to
-              finish
+              One point of contact, clear scope, and documented results.
             </p>
           </div>
 
@@ -582,67 +603,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-contractor-black mb-4">
-              Service Areas
-            </h2>
-            <p className="text-xl text-restoration-gray">
-              Proudly serving communities across Oregon
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <h3 className="text-2xl font-bold text-contractor-black mb-4">
-                Harney County
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    to="/service-areas/harney-county/burns"
-                    className="text-maroon hover:underline font-semibold"
-                  >
-                    Burns, OR
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/service-areas/harney-county/hines"
-                    className="text-maroon hover:underline font-semibold"
-                  >
-                    Hines, OR
-                  </Link>
-                </li>
-              </ul>
-              <p className="text-restoration-gray mt-4 text-sm">
-                Fast emergency response for water damage and restoration needs
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <h3 className="text-2xl font-bold text-contractor-black mb-4">
-                Mid-Willamette Valley
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    to="/service-areas/mid-valley/sweet-home"
-                    className="text-maroon hover:underline font-semibold"
-                  >
-                    Sweet Home, OR
-                  </Link>
-                </li>
-                <li className="text-restoration-gray">Lebanon, OR</li>
-                <li className="text-restoration-gray">Albany, OR</li>
-              </ul>
-              <p className="text-restoration-gray mt-4 text-sm">
-                Full-service remodeling and construction throughout the valley
-              </p>
-            </div>
-          </div>
+      <section className="py-16 bg-cream">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <LocationsServedBlock
+            links={GEO_HUB_LINKS}
+            subtitle="Serving Harney County and the Mid-Willamette Valley."
+          />
         </div>
       </section>
 
@@ -680,9 +646,11 @@ const Home = () => {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <span key={i} className="text-2xl">
-                      ⭐
-                    </span>
+                    <Star
+                      key={i}
+                      className="w-5 h-5 text-maroon"
+                      fill="currentColor"
+                    />
                   ))}
                 </div>
                 <p className="text-restoration-gray mb-4 italic">
@@ -728,74 +696,41 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                className="w-full h-64 object-cover"
-                alt="Modern bathroom remodel with white subway tile and chrome fixtures"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="clay"
+                eyebrow="Recent Project"
+                title="Maintenance Plan Launch - Lebanon"
+                subtitle="Annual budget, seasonal priorities, and documentation."
               />
               <div className="p-4 bg-cream">
                 <p className="font-bold text-contractor-black">
-                  Bathroom Remodel - Burns
+                  Maintenance Plan Launch - Lebanon
                 </p>
               </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                className="w-full h-64 object-cover"
-                alt="Professional water damage restoration equipment drying out residential space"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="slate"
+                eyebrow="Recent Project"
+                title="Water Damage Restoration - Sweet Home"
+                subtitle="Rapid extraction and structural drying with documentation."
               />
               <div className="p-4 bg-cream">
                 <p className="font-bold text-contractor-black">
-                  Water Mitigation - Sweet Home
+                  Water Damage Restoration - Sweet Home
                 </p>
               </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                className="w-full h-64 object-cover"
-                alt="Updated kitchen with white cabinets and quartz countertops"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="moss"
+                eyebrow="Recent Project"
+                title="Moisture Control Repairs - Hines"
+                subtitle="Leak tracing, drying, and envelope repairs."
               />
               <div className="p-4 bg-cream">
                 <p className="font-bold text-contractor-black">
-                  Kitchen Renovation - Hines
-                </p>
-              </div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                className="w-full h-64 object-cover"
-                alt="Mold remediation containment setup with plastic barriers"
-                src={siteImages.placeholder}
-              />
-              <div className="p-4 bg-cream">
-                <p className="font-bold text-contractor-black">
-                  Mold Remediation - Lebanon
-                </p>
-              </div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                className="w-full h-64 object-cover"
-                alt="Home addition exterior construction framing"
-                src={siteImages.placeholder}
-              />
-              <div className="p-4 bg-cream">
-                <p className="font-bold text-contractor-black">
-                  Concrete slab plumbing repair - Albany
-                </p>
-              </div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                className="w-full h-64 object-cover"
-                alt="ADA accessible bathroom with grab bars and walk-in shower"
-                src={siteImages.placeholder}
-              />
-              <div className="p-4 bg-cream">
-                <p className="font-bold text-contractor-black">
-                  Wheelchair Ramp - Burns
+                  Moisture Control Repairs - Hines
                 </p>
               </div>
             </div>
@@ -806,11 +741,12 @@ const Home = () => {
       <section className="py-20 bg-maroon text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Get Started?
+            Ready for a Clear, Professional Estimate?
           </h2>
           <p className="text-xl mb-8 text-cream">
-            Call us today for a free estimate or to discuss your project.
-            Emergency water mitigation available 24/7.
+            Talk with a local team about maintenance plans, restoration, or
+            inspection repairs. Emergency water damage restoration is available
+            24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="tel:5413215115" className="w-full sm:w-auto">
@@ -849,7 +785,7 @@ const Home = () => {
             </a>
           </div>
           <p className="text-sm text-cream mt-6">
-            Licensed, Bonded & Insured • CCB# 258533 • Free Estimates
+            Licensed, Bonded & Insured • CCB# 258533 • Oregon Owned
           </p>
         </div>
       </section>
@@ -857,3 +793,5 @@ const Home = () => {
   );
 };
 export default Home;
+
+

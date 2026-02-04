@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +16,7 @@ import { useStripe } from "@/hooks/useStripe";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/SupabaseAuthContext";
 import { parseHostList, safeExternalHref } from "@/lib/security";
+import SEO from "@/components/SEO";
 
 const ClientPortal = () => {
   const { toast } = useToast();
@@ -124,10 +124,11 @@ const ClientPortal = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Client Portal - Benson Enterprises</title>
-        <meta name="description" content="Access your project documents, invoices, and updates in your secure client portal." />
-      </Helmet>
+      <SEO
+        title="Client Portal"
+        description="Access project documents, invoices, and updates in the secure client portal."
+        robots="noindex, nofollow"
+      />
 
       <div className="min-h-screen bg-[#EFE3C8] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -215,9 +216,9 @@ const ClientPortal = () => {
                       <div className="bg-[#FAF6EE] p-6 rounded-sm border border-[#C5C5C5]">
                         <h3 className="text-lg font-bold text-[#0E0E0E] mb-4 uppercase border-b border-[#E1E1E1] pb-2">Quick Actions</h3>
                         <div className="space-y-3">
-                          <Button className="w-full bg-[#EFE3C8] text-[#0E0E0E] border border-[#C5C5C5] hover:bg-[#3C0008] hover:text-[#FAF6EE]" onClick={() => toast({ title: "Feature coming soon" })}>
+                          <Button className="w-full bg-[#EFE3C8] text-[#0E0E0E] border border-[#C5C5C5] hover:bg-[#3C0008] hover:text-[#FAF6EE]" onClick={() => navigate('/contact')}>
                             <FileText className="w-4 h-4 mr-2" />
-                            View Full Project Details
+                            Request Detailed Summary
                           </Button>
                           <Button className="w-full bg-[#EFE3C8] text-[#0E0E0E] border border-[#C5C5C5] hover:bg-[#3C0008] hover:text-[#FAF6EE]" onClick={() => navigate('/contact')}>
                             <Calendar className="w-4 h-4 mr-2" />

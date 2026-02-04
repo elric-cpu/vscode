@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { isStrongPassword } from "@/lib/validators";
 import { supabase } from "@/lib/customSupabaseClient";
+import SEO from "@/components/SEO";
 
 const AuthResetPassword = () => {
   const navigate = useNavigate();
@@ -60,10 +60,7 @@ const AuthResetPassword = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Set New Password | Benson Home Solutions</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEO title="Set New Password | Benson Home Solutions" robots="noindex, nofollow" />
 
       <main className="min-h-screen bg-[#FAF6EE] py-16 px-4">
         <div className="max-w-lg mx-auto bg-white border border-[#D4C5A5] p-8 rounded-xl shadow-xl">
@@ -86,6 +83,7 @@ const AuthResetPassword = () => {
                 <label className="block text-sm font-medium text-charcoal-text mb-1">New Password</label>
                 <input
                   type="password"
+                  autoComplete="new-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-maroon-800 outline-none transition-all"
@@ -96,6 +94,7 @@ const AuthResetPassword = () => {
                 <label className="block text-sm font-medium text-charcoal-text mb-1">Confirm Password</label>
                 <input
                   type="password"
+                  autoComplete="new-password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-maroon-800 outline-none transition-all"

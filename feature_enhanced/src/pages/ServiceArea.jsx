@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -10,13 +9,15 @@ import {
   ShieldCheck,
   Droplets,
   Hammer,
-  Home,
+  ClipboardList,
   CheckCircle,
   ThermometerSnowflake,
   Waves,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import { getTownData, serviceAreaData } from "@/data/serviceAreas";
+import VisualBlock from "@/components/VisualBlock";
 import siteImages from "@/data/siteImages";
 
 const ServiceArea = () => {
@@ -39,18 +40,14 @@ const ServiceArea = () => {
         <>
           <p className="mb-4">
             In <strong>{townData.name}</strong> and the high desert climate of
-            Harney County, the primary threat to homes is extreme temperature
-            fluctuation. Winter freezes often lead to burst pipes in exterior
-            walls, crawlspaces, and attics.
+            Harney County, the primary risk is freeze/thaw damage. Winter
+            freezes can lead to burst pipes in exterior walls, crawlspaces, and
+            attics.
           </p>
           <p>
-            When these frozen pipes thaw, they can release hundreds of gallons
-            of water in minutes. Benson Home Solutions specializes in{" "}
-            <span className="text-maroon font-semibold">
-              structural drying for frozen pipe damage
-            </span>
-            , ensuring that moisture is removed from wall cavities before dry
-            rot sets in.
+            When pipes thaw, water can release quickly into wall cavities and
+            flooring. We focus on fast extraction, structural drying, and
+            moisture documentation to prevent secondary damage.
           </p>
         </>
       );
@@ -59,16 +56,14 @@ const ServiceArea = () => {
       <>
         <p className="mb-4">
           Residents of <strong>{townData.name}</strong> know that the Willamette
-          Valley's persistent rain and high humidity create unique challenges.
-          The primary risk here isn't just the water you see—it's the moisture
-          that lingers.
+          Valley's persistent rain and humidity create ongoing moisture risk.
+          The primary concern is not just surface water, but moisture that
+          lingers in materials.
         </p>
         <p>
-          In our region, flooding from river swells and groundwater saturation
-          is common in spring. Furthermore, the ambient humidity makes mold
-          growth a rapid threat after any leak. We use industrial-grade
-          dehumidification tailored for the wet Oregon climate to protect your
-          home.
+          Seasonal flooding and groundwater saturation can lead to hidden
+          moisture and mold after leaks. We use industrial dehumidification and
+          monitoring tailored for Oregon conditions.
         </p>
       </>
     );
@@ -110,31 +105,20 @@ const ServiceArea = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{`${townData.name}, OR Water Damage Restoration & Home Services | Benson Home Solutions`}</title>
-        <meta
-          name="description"
-          content={`Professional water damage restoration, mold remediation, and remodeling in ${townData.name}, OR (${townData.zip}). 24/7 Emergency Service. Licensed CCB# 258533.`}
-        />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <SEO
+        title={`${townData.name}, OR Maintenance Plans, Restoration & Repairs`}
+        description={`Professional water damage restoration, mold remediation, maintenance plans, moisture control, and inspection repairs in ${townData.name}, OR (${townData.zip}). 24/7 emergency response. Licensed CCB# 258533.`}
+        keywords={`${townData.name} OR water damage restoration, ${townData.name} maintenance plans, mold remediation ${townData.name}, moisture control ${townData.name}, inspection repairs ${townData.name}, emergency water removal ${townData.name}`}
+        schema={schema}
+        type="website"
+      />
 
       {/* Hero Section */}
       <section className="bg-contractor-black text-white py-16 lg:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          {isHarney ? (
-            <img
-              src={siteImages.placeholder}
-              alt="High desert Oregon landscape"
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={siteImages.placeholder}
-              alt="Willamette Valley lush landscape"
-              className="w-full h-full object-cover"
-            />
-          )}
+        <div className="absolute inset-0 opacity-90">
+          <div
+            className={`h-full w-full ${isHarney ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" : "bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700"}`}
+          />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
@@ -146,13 +130,12 @@ const ServiceArea = () => {
             Serving {townData.name}, {townData.zip}
           </motion.div>
           <h1 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight">
-            {townData.name}, {townData.county} Water Damage Restoration{" "}
-            <br className="hidden md:block" />& Home Services
+            {townData.name}, OR Restoration, Maintenance & Repairs
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Professional restoration and remodeling services serving{" "}
-            {townData.name} and surrounding communities. Licensed, Bonded, and
-            Insured (CCB# 258533).
+            Licensed Oregon contractor providing water damage restoration, mold
+            remediation, maintenance plans, and inspection repairs in{" "}
+            {townData.name} and nearby communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:5413215115">
@@ -170,7 +153,7 @@ const ServiceArea = () => {
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-contractor-black w-full sm:w-auto font-bold py-6 px-8 text-lg"
               >
-                Schedule Consultation
+                Schedule a Consultation
               </Button>
             </Link>
           </div>
@@ -183,26 +166,27 @@ const ServiceArea = () => {
             {/* Introduction */}
             <section>
               <h2 className="text-3xl font-bold text-contractor-black mb-6">
-                Welcome to {townData.name}
+                Trusted Local Service in {townData.name}
               </h2>
               <div className="prose prose-lg text-gray-700">
                 <p>
-                  Benson Home Solutions is proud to serve homeowners and
-                  businesses in{" "}
+                  We serve homeowners and small facilities in{" "}
                   <strong>
                     {townData.name}, OR ({townData.zip})
                   </strong>
-                  . Whether you are dealing with a sudden water emergency or
-                  planning a dream renovation, you need a contractor who
-                  understands the local area.
+                  . Our work is documented, our scopes are clear, and our crews
+                  are licensed and insured.
                 </p>
                 <p>
-                  We are not a national franchise. We are a locally owned and
-                  operated business that knows {countyName}. From navigating
-                  local building codes to understanding the specific climate
-                  challenges of the{" "}
-                  {isHarney ? "high desert" : "Willamette Valley"}, our
-                  expertise is tailored to your community.
+                  As a local contractor, we understand {countyName} and the
+                  climate challenges of the{" "}
+                  {isHarney ? "high desert" : "Willamette Valley"}. We focus on
+                  durable repairs, clean job sites, and predictable scheduling.
+                </p>
+                <p>
+                  In addition to restoration and inspection repairs, we provide
+                  maintenance plans and moisture control solutions tailored to
+                  Oregon homes.
                 </p>
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-6 not-prose rounded-r-lg">
                   <div className="flex items-start gap-4">
@@ -212,9 +196,9 @@ const ServiceArea = () => {
                         24/7 Emergency Response in {townData.name}
                       </h4>
                       <p className="text-blue-800">
-                        Water damage doesn't wait for business hours. We have
-                        crews ready to deploy to {townData.name} day or night to
-                        stop the damage and protect your property.
+                        Water damage does not wait. We deploy quickly to stop
+                        loss, dry structures, and document the scope for
+                        insurance or out-of-pocket repairs.
                       </p>
                     </div>
                   </div>
@@ -238,7 +222,7 @@ const ServiceArea = () => {
                     handle everything from burst pipes to flood cleanup.
                   </p>
                   <Link
-                    to="/services/water-damage-mitigation"
+                    to="/water-damage-restoration"
                     className="text-maroon font-semibold flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
@@ -253,7 +237,7 @@ const ServiceArea = () => {
                     moisture source to prevent future growth.
                   </p>
                   <Link
-                    to="/services/mold-remediation"
+                    to="/mold-remediation"
                     className="text-maroon font-semibold flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
@@ -261,33 +245,31 @@ const ServiceArea = () => {
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-maroon transition-colors">
-                  <Home className="w-8 h-8 text-maroon mb-4" />
-                  <h3 className="text-xl font-bold mb-2">
-                    Kitchen & Bath Remodels
-                  </h3>
+                  <ClipboardList className="w-8 h-8 text-maroon mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Maintenance Plans</h3>
                   <p className="text-gray-600 mb-4">
-                    Transform your {townData.name} home with modern designs,
-                    quality cabinetry, and professional installation.
+                    Annual maintenance scopes, seasonal priorities, and budget
+                    planning for Oregon homeowners.
                   </p>
                   <Link
-                    to="/services/kitchen-remodels"
+                    to="/maintenance-plans"
                     className="text-maroon font-semibold flex items-center gap-1 hover:gap-2 transition-all"
                   >
-                    Kitchens <ArrowRight className="w-4 h-4" />
+                    Learn more <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-maroon transition-colors">
                   <Hammer className="w-8 h-8 text-maroon mb-4" />
                   <h3 className="text-xl font-bold mb-2">
-                    General Contracting
+                    Inspection Repairs & Punch Lists
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Additions, repairs, and ADA modifications. We help you age
-                    in place safely and comfortably.
+                    Pre-sale repairs, inspection responses, and targeted fixes
+                    delivered on a clear schedule.
                   </p>
                   <Link
-                    to="/services/general-contracting"
+                    to="/inspection-repairs"
                     className="text-maroon font-semibold flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
@@ -397,9 +379,9 @@ const ServiceArea = () => {
                     Do you offer free estimates?
                   </h4>
                   <p className="text-gray-600 mt-2">
-                    Yes. Whether it's a kitchen remodel in {townData.name} or
-                    assessing water damage, our initial estimates are
-                    complimentary.
+                    Yes. Whether it is a maintenance plan kickoff, inspection
+                    repairs, or water damage assessment in {townData.name}, our
+                    initial estimates are complimentary.
                   </p>
                 </div>
               </div>
@@ -408,6 +390,12 @@ const ServiceArea = () => {
 
           {/* Sidebar */}
           <aside className="lg:col-span-4 space-y-8">
+            <VisualBlock
+              variant={isHarney ? "slate" : "moss"}
+              eyebrow="Local Service Area"
+              title={`${townData.name}, OR`}
+              subtitle={`Licensed, bonded, and insured service across ${countyName}.`}
+            />
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 sticky top-24">
               <h3 className="text-xl font-bold text-contractor-black mb-4">
                 Quick Actions
@@ -435,10 +423,26 @@ const ServiceArea = () => {
                   Request Free Estimate
                 </Link>
                 <Link
+                  to={
+                    isHarney
+                      ? "/service-areas/harney-county"
+                      : "/service-areas/mid-willamette-valley"
+                  }
+                  className="block w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-center rounded font-semibold text-contractor-black transition-colors"
+                >
+                  View Service Area Hub
+                </Link>
+                <Link
                   to="/services"
                   className="block w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-center rounded font-semibold text-contractor-black transition-colors"
                 >
                   View All Services
+                </Link>
+                <Link
+                  to="/resources/calculators"
+                  className="block w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-center rounded font-semibold text-contractor-black transition-colors"
+                >
+                  Maintenance & ROI Tools
                 </Link>
               </nav>
 
@@ -495,3 +499,5 @@ const ServiceArea = () => {
 };
 
 export default ServiceArea;
+
+

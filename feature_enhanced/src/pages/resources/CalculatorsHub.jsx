@@ -1,21 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Calculator,
-  MapPin,
-  ShieldCheck,
-  LineChart,
-  MessageCircle,
-  Calendar,
-  FileText,
-  Activity,
-  Smartphone,
-  Gauge,
-} from "lucide-react";
+import { Calculator, MapPin } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { CALCULATORS } from "@/data/calculators";
+import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+} from "@/data/internalLinks";
 
 const groupByCategory = (items) =>
   items.reduce((acc, item) => {
@@ -26,12 +24,34 @@ const groupByCategory = (items) =>
 
 const CalculatorsHub = () => {
   const grouped = groupByCategory(CALCULATORS);
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Compare plans",
+    },
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review coverage",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Fix inspection items",
+    },
+    {
+      label: "request a scope review",
+      to: "/contact",
+      description: "Get a documented plan for repairs or ongoing maintenance.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   return (
     <>
       <SEO
         title="Construction & Maintenance Calculators | Benson Home Solutions"
-        description="ZIP-smart calculators for HVAC sizing, preventive maintenance ROI, energy savings, repair costs, and project estimating in Oregon."
+        description="Professional calculators for maintenance planning, ROI, HVAC sizing, and repair costs with Oregon ZIP code adjustments."
+        keywords="Oregon maintenance calculators, HVAC load calculator Oregon, preventive maintenance ROI, repair cost estimator, energy savings calculator, facilities maintenance tools"
         type="website"
       />
       <Breadcrumbs />
@@ -40,7 +60,7 @@ const CalculatorsHub = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-maroon text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-5">
-              <Calculator className="w-4 h-4" /> ZIP-Smart Calculators
+              <Calculator className="w-4 h-4" /> Maintenance Calculators
             </div>
             <h1 className="text-3xl lg:text-5xl font-bold mb-4">
               Maintenance, Energy, and ROI Tools
@@ -50,9 +70,9 @@ const CalculatorsHub = () => {
               across Oregon.
             </p>
             <p className="text-sm text-gray-200">
-              Each calculator uses ZIP-based cost factors and default values you
-              can override. Summary results are instant; detailed PDF reports
-              unlock after email submission.
+              Each tool uses ZIP-adjusted cost factors, documented assumptions,
+              and editable inputs. Summary results are instant; detailed reports
+              are delivered after submission.
             </p>
           </div>
         </div>
@@ -97,116 +117,18 @@ const CalculatorsHub = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <Gauge className="w-7 h-7 text-maroon" />
-            <h2 className="text-3xl font-bold text-contractor-black m-0">
-              Essential Digital Tools & Features
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Maintenance Request Portal",
-                desc: "Submit, track, and manage service requests with photo uploads and status updates.",
-                icon: <MessageCircle className="w-5 h-5" />,
-                to: "/client-portal-login",
-              },
-              {
-                title: "Preventive Maintenance Scheduler",
-                desc: "Set recurring inspections and seasonal checklists to prevent breakdowns.",
-                icon: <Calendar className="w-5 h-5" />,
-                to: "/services/commercial/preventive-maintenance",
-              },
-              {
-                title: "Document Management",
-                desc: "Access service logs, compliance records, and equipment histories in one place.",
-                icon: <FileText className="w-5 h-5" />,
-                to: "/client-portal-login",
-              },
-              {
-                title: "Real-Time Asset Monitoring",
-                desc: "Track critical equipment status and proactive alerts for commercial facilities.",
-                icon: <Activity className="w-5 h-5" />,
-                to: "/services/commercial",
-              },
-              {
-                title: "Mobile Scheduling App",
-                desc: "Schedule inspections and onsite work orders directly from your phone.",
-                icon: <Smartphone className="w-5 h-5" />,
-                to: "/contact",
-              },
-              {
-                title: "Live Chat / Virtual Assistant",
-                desc: "Get fast answers and triage issues before they become emergencies.",
-                icon: <MessageCircle className="w-5 h-5" />,
-                to: "/contact",
-              },
-            ].map((item) => (
-              <Link
-                key={item.title}
-                to={item.to}
-                className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-maroon hover:shadow-md transition-all"
-              >
-                <div className="flex items-center gap-3 mb-3 text-maroon">
-                  {item.icon}
-                  <h3 className="text-lg font-bold text-contractor-black m-0">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="text-sm text-restoration-gray m-0">
-                  {item.desc}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <ShieldCheck className="w-7 h-7 text-maroon" />
-            <h2 className="text-3xl font-bold text-contractor-black m-0">
-              Site Performance & Security Tools
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Performance Monitoring",
-                desc: "Track load time, lighthouse scores, and real-world field metrics.",
-                icon: <Gauge className="w-5 h-5" />,
-              },
-              {
-                title: "Security Scanning",
-                desc: "Protect lead data with continuous vulnerability and malware checks.",
-                icon: <ShieldCheck className="w-5 h-5" />,
-              },
-              {
-                title: "SEO & Analytics",
-                desc: "Measure which calculators and tools drive the most leads.",
-                icon: <LineChart className="w-5 h-5" />,
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-cream border border-gray-200 rounded-xl p-6"
-              >
-                <div className="flex items-center gap-3 mb-3 text-maroon">
-                  {item.icon}
-                  <h3 className="text-lg font-bold text-contractor-black m-0">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="text-sm text-restoration-gray m-0">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <FeaturedToolsBlock
+            links={TOP_TOOL_LINKS}
+            subtitle="High-intent tools for budgets, replacement timing, and ROI."
+          />
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Connect estimates to a maintenance program or project scope."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+          <div className="text-center">
             <Link to="/contact">
               <Button className="bg-maroon hover:bg-red-700 text-white font-bold">
                 Talk With a Specialist

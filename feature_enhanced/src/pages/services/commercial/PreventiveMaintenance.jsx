@@ -5,7 +5,7 @@ export default function PreventiveMaintenance() {
   return (
     <CommercialServiceTemplate
       title="Preventive Maintenance"
-      description="Scheduled inspections and small fixes that prevent big failures and tenant complaints."
+      description="Scheduled inspections and small fixes that prevent failures and reduce tenant disruptions."
       bullets={[
         "Quarterly or monthly walkthroughs",
         "Minor repairs discovered on-site",
@@ -57,8 +57,9 @@ export default function PreventiveMaintenance() {
         },
       ]}
       seoTitle="Preventive Maintenance for Small Commercial Properties"
-      seoDescription="Preventive maintenance plans for clinics, offices, churches, and warehouses under 50k sq ft."
-      keywords="preventive maintenance contractor, facility maintenance Oregon, commercial maintenance plan"
+      seoDescription="Preventive maintenance plans for clinics, offices, churches, and warehouses under 50k sq ft across Oregon."
+      keywords="preventive maintenance contractor, facility maintenance Oregon, commercial maintenance plan, quarterly maintenance plan, maintenance logs"
     />
   );
 }
+

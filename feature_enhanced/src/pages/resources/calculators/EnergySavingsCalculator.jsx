@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { LineChart, Leaf, Zap } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +8,9 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import {
@@ -17,6 +21,12 @@ import {
 import { UPGRADE_MODELS } from "@/lib/calculators/costModels";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const EnergySavingsCalculator = () => {
   const [zip, setZip] = useState("");
@@ -147,12 +157,41 @@ const EnergySavingsCalculator = () => {
 
   const faqSchema = buildFaqSchema(faqs);
 
+  const nextSteps = [
+    {
+      label: "Energy comfort retrofits",
+      to: "/energy-comfort-retrofits",
+      description: "Air sealing, insulation, and efficiency upgrades.",
+      intent: "service",
+    },
+    {
+      label: "Home maintenance program",
+      to: MAINTENANCE_LINKS.home.to,
+      description: "Keep systems tuned and reduce waste.",
+      intent: "subscribe",
+    },
+    {
+      label: "Commercial maintenance program",
+      to: MAINTENANCE_LINKS.commercial.to,
+      description: "Facilities maintenance with documented scopes.",
+      intent: "subscribe",
+    },
+    {
+      label: "Request an efficiency review",
+      to: "/contact",
+      description: "Schedule a comfort and energy audit.",
+      intent: "contact",
+    },
+  ];
+
   return (
     <CalculatorLayout
       seo={{
         title: "Energy Savings Calculator | Benson Home Solutions",
         description:
           "Estimate residential or commercial energy savings from efficiency upgrades with ZIP-adjusted costs.",
+        keywords:
+          "energy savings calculator Oregon, efficiency upgrade savings, HVAC efficiency savings, insulation savings estimate, utility bill reduction",
         schema: faqSchema,
       }}
       badge="Energy & IAQ"
@@ -179,6 +218,21 @@ const EnergySavingsCalculator = () => {
         />
       }
     >
+      <p className="text-sm text-restoration-gray">
+        Pair efficiency upgrades with a{" "}
+        <Link to="/energy-comfort-retrofits" className="text-maroon font-semibold">
+          comfort retrofit plan
+        </Link>{" "}
+        or a{" "}
+        <Link
+          to={MAINTENANCE_LINKS.home.to}
+          className="text-maroon font-semibold"
+        >
+          home maintenance program
+        </Link>
+        .
+      </p>
+
       <div className="bg-cream border border-gray-200 rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -364,6 +418,15 @@ const EnergySavingsCalculator = () => {
           Result: 2.4-year payback with improved occupant comfort.
         </p>
       </div>
+
+      <NextStepsBlock links={nextSteps} />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[3], TOOLS_HUB_LINK]}
+        subtitle="Estimate savings, compare upgrades, and plan next steps."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

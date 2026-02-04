@@ -1,7 +1,14 @@
 import React from "react";
 import NichePageTemplate from "./NichePageTemplate";
 import { NICHE_MENUS } from "@/data/nicheMenus";
-import siteImages from "@/data/siteImages";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 export default function MoistureEnvelope() {
   const data = NICHE_MENUS.moisture_envelope;
@@ -10,22 +17,27 @@ export default function MoistureEnvelope() {
     title: data.title,
     serviceType: data.title,
     description:
-      "Pre-loss moisture diagnostics and targeted repairs: flashing corrections, crawlspace mitigation, leak diagnostics, and drainage fixes. Serving Harney County & Mid-Valley Oregon.",
+      "Moisture diagnostics and targeted repairs: flashing corrections, crawlspace moisture control, leak diagnostics, and drainage fixes across Harney County and the Mid-Willamette Valley.",
     seoTitle:
       "Water Intrusion & Moisture Control Oregon | Envelope Diagnostics",
     seoDescription:
-      "Pre-loss moisture diagnostics and targeted repairs: flashing corrections, crawlspace mitigation, leak diagnostics, and drainage fixes. Serving Harney County & Mid-Valley Oregon.",
+      "Moisture diagnostics and targeted repairs: flashing corrections, crawlspace moisture control, leak diagnostics, and drainage fixes across Harney County and the Mid-Willamette Valley.",
     keywords:
-      "water intrusion repair Oregon, moisture control contractor, leak diagnostics, window flashing correction, crawlspace moisture mitigation, drainage grading",
+      "water intrusion repair Oregon, moisture control contractor, leak diagnostics, window flashing correction, crawlspace moisture control, drainage grading",
   };
 
   const hero = {
-    badge: "Silent Goldmine",
+    badge: "Moisture Diagnostics",
     h1: "Water Intrusion, Envelope & Moisture Control",
     subhead:
-      "Pre-loss moisture work that stops damage early... before it becomes a claim.",
-    imageSrc: siteImages.placeholder,
-    imageAlt: "Moisture inspection and building envelope diagnostics",
+      "Identify leak pathways early and fix them before damage spreads.",
+    visual: {
+      variant: "slate",
+      eyebrow: "Moisture Control",
+      title: "Leak Pathway Diagnostics",
+      subtitle:
+        "Flashing corrections, crawlspace moisture control, and documented findings.",
+    },
     primaryCtaLabel: "Book a Moisture Assessment",
     primaryCtaHref: "/contact",
   };
@@ -73,6 +85,34 @@ export default function MoistureEnvelope() {
     },
   ];
 
+  const internalLinks = {
+    subtitle: "Move from moisture diagnostics to prevention and repair scopes.",
+    nextSteps: [
+      {
+        ...SERVICE_PILLAR_LINKS.water,
+        cta: "Stop active intrusion",
+      },
+      {
+        ...SERVICE_PILLAR_LINKS.mold,
+        cta: "Address mold risk",
+      },
+      {
+        ...MAINTENANCE_LINKS.home,
+        cta: "Prevent repeat issues",
+      },
+      {
+        label: "request a moisture scope",
+        to: "/contact",
+        description: "Get a documented repair and prevention plan.",
+        intent: "contact",
+        cta: "Request service",
+      },
+    ],
+    tools: [TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[1], TOOLS_HUB_LINK],
+    guides: [GUIDE_LINKS[3], GUIDE_LINKS[0], GUIDE_LINKS[1]],
+    locations: GEO_HUB_LINKS,
+  };
+
   return (
     <NichePageTemplate
       meta={meta}
@@ -85,6 +125,7 @@ export default function MoistureEnvelope() {
       faqs={faqs}
       menu={data.serviceMenu}
       pricing={data.pricingMatrix}
+      internalLinks={internalLinks}
     />
   );
 }

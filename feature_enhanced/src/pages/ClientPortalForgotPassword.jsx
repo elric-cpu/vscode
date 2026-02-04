@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { isEmail } from "@/lib/validators";
 import { supabase } from "@/lib/customSupabaseClient";
+import SEO from "@/components/SEO";
 
 const ClientPortalForgotPassword = () => {
   const { toast } = useToast();
@@ -47,10 +47,11 @@ const ClientPortalForgotPassword = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Reset Password | Benson Home Solutions</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEO
+        title="Reset Password"
+        description="Reset your Benson Home Solutions client portal password."
+        robots="noindex, nofollow"
+      />
 
       <main className="min-h-screen bg-[#FAF6EE] py-16 px-4">
         <div className="max-w-lg mx-auto bg-white border border-[#D4C5A5] p-8 rounded-xl shadow-xl">

@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Wind, CheckCircle2, AlertTriangle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,11 +8,20 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import { formatNumber, toNumber } from "@/lib/calculators/utils";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const ACH_TARGETS = {
   office: { min: 4, max: 6, label: "Office" },
@@ -153,12 +163,41 @@ const ACHCalculator = () => {
 
   const faqSchema = buildFaqSchema(faqs);
 
+  const nextSteps = [
+    {
+      label: "Commercial maintenance program",
+      to: MAINTENANCE_LINKS.commercial.to,
+      description: "Indoor air quality and ventilation checklists.",
+      intent: "subscribe",
+    },
+    {
+      label: "Energy comfort retrofits",
+      to: "/energy-comfort-retrofits",
+      description: "Air sealing and efficiency upgrades.",
+      intent: "service",
+    },
+    {
+      label: "Request an IAQ review",
+      to: "/contact",
+      description: "Schedule a ventilation and filtration assessment.",
+      intent: "contact",
+    },
+    {
+      label: "View Harney County coverage",
+      to: GEO_HUB_LINKS[0].to,
+      description: "Local response and maintenance support.",
+      intent: "location",
+    },
+  ];
+
   return (
     <CalculatorLayout
       seo={{
         title: "ACH Calculator | Benson Home Solutions",
         description:
           "Calculate air changes per hour (ACH) and compare to recommended ventilation targets for different space types.",
+        keywords:
+          "ACH calculator, air changes per hour calculator, indoor air quality Oregon, ventilation rate calculator, HVAC air change estimate",
         schema: faqSchema,
       }}
       badge="Energy & IAQ"
@@ -185,6 +224,17 @@ const ACHCalculator = () => {
         />
       }
     >
+      <p className="text-sm text-restoration-gray">
+        Pair ACH targets with a{" "}
+        <Link
+          to={MAINTENANCE_LINKS.commercial.to}
+          className="text-maroon font-semibold"
+        >
+          commercial maintenance program
+        </Link>{" "}
+        for ongoing IAQ performance.
+      </p>
+
       <div className="bg-cream border border-gray-200 rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -345,6 +395,15 @@ const ACHCalculator = () => {
           Result: improved air quality scores and reduced occupant complaints.
         </p>
       </div>
+
+      <NextStepsBlock links={nextSteps} />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[3], TOP_TOOL_LINKS[4], TOOLS_HUB_LINK]}
+        subtitle="Compare upgrades and align IAQ with maintenance planning."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

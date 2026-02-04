@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ClipboardList, AlertCircle, ArrowRight } from "lucide-react";
 import { getSubcontractorPortalBundle } from "@/lib/portalData";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/SupabaseAuthContext";
+import SEO from "@/components/SEO";
 
 const SubcontractorPortal = () => {
   const navigate = useNavigate();
@@ -34,10 +34,11 @@ const SubcontractorPortal = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Subcontractor Portal - Benson Enterprises</title>
-        <meta name="description" content="Manage your work orders, performance metrics, and communications in your subcontractor portal." />
-      </Helmet>
+      <SEO
+        title="Subcontractor Portal"
+        description="Manage work orders and reporting in the subcontractor portal."
+        robots="noindex, nofollow"
+      />
       <div className="min-h-screen bg-cream-button py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           

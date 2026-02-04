@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Loader2, User } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/lib/customSupabaseClient";
+import SEO from "@/components/SEO";
 
 export default function ClientPortalLogin() {
   const navigate = useNavigate();
@@ -64,10 +64,11 @@ export default function ClientPortalLogin() {
 
   return (
     <>
-      <Helmet>
-        <title>Client Portal Login - Benson Home Solutions</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEO
+        title="Client Portal Login"
+        description="Secure client portal login for Benson Home Solutions."
+        robots="noindex, nofollow"
+      />
 
       <div className="min-h-screen bg-cream-50 flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-200">

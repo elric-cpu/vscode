@@ -5,7 +5,7 @@ export default function TenantTurns() {
   return (
     <CommercialServiceTemplate
       title="Commercial Tenant Turns"
-      description="Fast turnover between tenants with predictable scopes and minimal disruption."
+      description="Tenant turn scopes with clear documentation, predictable timelines, and minimal disruption."
       bullets={[
         "Walkthrough + punch list with photos",
         "Drywall/patch/paint touch-ups",
@@ -57,8 +57,8 @@ export default function TenantTurns() {
         },
       ]}
       seoTitle="Commercial Tenant Turns Oregon"
-      seoDescription="Tenant turn repairs for small commercial properties: punch lists, paint, minor carpentry, and closeout documentation."
-      keywords="tenant turns, commercial punch list, property manager maintenance Oregon"
+      seoDescription="Tenant turn repairs for small commercial properties: punch lists, paint, minor carpentry, and closeout documentation across Oregon."
+      keywords="tenant turns Oregon, commercial punch list, property manager maintenance, commercial turnover repairs, make-ready services"
     />
   );
 }

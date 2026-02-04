@@ -1,96 +1,83 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import siteImages from "@/data/siteImages";
+import SEO from "@/components/SEO";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const GeneralContracting = () => {
   const services = [
-    "Home additions and expansions",
-    "Structural repairs and renovations",
-    "ADA and aging-in-place modifications",
-    "Window and door installation",
-    "Siding and exterior improvements",
-    "Deck and patio construction",
-    "Garage conversions",
-    "Insurance restoration work",
+    "Inspection report repairs and punch lists",
+    "Pre-sale repairs and safety corrections",
+    "Drywall, trim, and finish carpentry fixes",
+    "Minor structural and framing corrections",
+    "Door, window, and hardware adjustments",
+    "Rot repair, exterior trim, and siding patches",
+    "Smoke/CO detector and safety hardware installs",
+    "Documentation for seller or insurance files",
   ];
 
   const processSteps = [
     {
-      title: "Project Consultation",
+      title: "Report Review",
       description:
-        "We meet to understand your vision, assess your property, discuss budget, and identify any potential challenges or opportunities.",
+        "Send your inspection report or punch list. We confirm scope, priorities, and timing.",
     },
     {
-      title: "Planning & Permits",
+      title: "Scope & Estimate",
       description:
-        "Detailed plans, material specifications, timeline estimates. We handle all necessary permits and ensure compliance with Oregon building codes.",
+        "You receive a clear, line-item estimate with documented assumptions and options.",
     },
     {
-      title: "Transparent Estimate",
+      title: "Scheduling",
       description:
-        "Itemized quote covering labor, materials, subcontractors, and permits. No hidden fees—just honest, professional pricing.",
+        "We align access, materials, and crew timing to keep the schedule predictable.",
     },
     {
-      title: "Construction Phase",
+      title: "Execution",
       description:
-        "Professional execution with regular communication. We maintain clean job sites, respect your property, and keep you informed of progress.",
+        "Licensed crews complete the work with clean job sites and daily updates.",
     },
     {
-      title: "Quality Inspection",
+      title: "Closeout",
       description:
-        "Throughout construction, we verify workmanship meets our standards and building codes. Final inspection ensures everything is perfect.",
-    },
-    {
-      title: "Project Completion",
-      description:
-        "Complete walkthrough, address any punch-list items, and ensure you're 100% satisfied before we consider the job done.",
+        "We provide photos and completion documentation for your records or closing file.",
     },
   ];
 
   const faqs = [
     {
-      question: "What types of projects do you handle as a general contractor?",
+      question: "What kinds of inspection repairs do you handle?",
       answer:
-        "We handle a wide range: home additions, structural repairs, aging-in-place modifications, window/door installation, exterior improvements, deck construction, and insurance restoration. If it involves construction, we can help.",
+        "We handle punch lists, safety corrections, minor framing repairs, drywall and trim, door/window adjustments, exterior rot repair, and code-focused fixes identified in inspection reports.",
     },
     {
-      question: "Do you handle permits and inspections?",
+      question: "Can you work directly from the inspection report?",
       answer:
-        "Yes. We manage the entire permit process—applications, inspections, and ensuring all work meets Oregon building codes. This is included in our service.",
+        "Yes. Send the report and we will identify priorities, confirm access needs, and provide a clear, line-item estimate.",
     },
     {
-      question: "How long do construction projects typically take?",
+      question: "How quickly can repairs be scheduled?",
       answer:
-        "It varies by scope. Simple projects (window replacement) may take days; home additions can take several months. We provide realistic timelines upfront and communicate any changes immediately.",
+        "Most inspection repair scopes can be scheduled within days depending on access and material availability. We prioritize deadline-driven transactions.",
     },
     {
-      question: "Can you work with my budget?",
+      question: "Do you provide documentation for closing files?",
       answer:
-        "Absolutely. We help you prioritize features, suggest cost-effective alternatives, and create a plan that maximizes value within your budget. Transparent pricing means no surprises.",
-    },
-    {
-      question: "Do you subcontract any work?",
-      answer:
-        "For specialized trades (electrical, plumbing, HVAC), we work with licensed professionals we trust. We coordinate all work and maintain quality control throughout.",
-    },
-    {
-      question: "What if I want to make changes during construction?",
-      answer:
-        "We understand plans evolve. We discuss change orders promptly, explain cost and timeline impacts, and get your approval before proceeding. Clear communication prevents surprises.",
-    },
-    {
-      question: "Do you offer aging-in-place or ADA modifications?",
-      answer:
-        "Yes. We specialize in accessibility improvements: ramps, wider doorways, barrier-free showers, grab bars, lever handles, and other modifications that help people age safely at home.",
-    },
-    {
-      question: "Can you help with insurance restoration projects?",
-      answer:
-        "Definitely. We work directly with insurance companies, document damage thoroughly, provide detailed estimates, and restore your property to pre-loss condition or better.",
+        "Yes. We provide photos, completion notes, and documented scope so you can share with buyers, sellers, or agents.",
     },
     {
       question: "What areas do you serve?",
@@ -98,24 +85,51 @@ const GeneralContracting = () => {
         "We serve Harney County (Burns, Hines) and the Mid-Willamette Valley (Sweet Home, Lebanon, Albany, and surrounding areas). Contact us to confirm service availability for your location.",
     },
     {
-      question: "Why should I choose Benson Home Solutions?",
+      question: "Why choose Benson Home Solutions for inspection repairs?",
       answer:
-        "Licensed (CCB# 258533), insured, local company with a reputation for quality work, clear communication, and professional service. We treat your home like our own.",
+        "Licensed (CCB# 258533), insured, local company with a focus on clear scope, tight scheduling, and clean documentation.",
     },
   ];
 
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Plan preventive work",
+    },
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Bundle repairs",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Address moisture issues",
+    },
+    {
+      label: "request a repair scope",
+      to: "/contact",
+      description: "Send your inspection report for a line-item estimate.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
+
+  const toolLinks = [
+    TOP_TOOL_LINKS[2],
+    TOP_TOOL_LINKS[0],
+    TOP_TOOL_LINKS[1],
+    TOOLS_HUB_LINK,
+  ];
+
+  const guideLinks = [GUIDE_LINKS[2], GUIDE_LINKS[0], GUIDE_LINKS[1]];
+
   return (
     <>
-      <Helmet>
-        <title>
-          General Contractor Oregon | Home Additions & Remodels - Benson Home
-          Solutions
-        </title>
-        <meta
-          name="description"
-          content="Licensed general contractor in Burns, Hines, Sweet Home & Mid-Valley OR. Home additions, ADA modifications, exterior improvements. CCB# 258533. Free estimates."
-        />
-      </Helmet>
+      <SEO
+        title="Inspection Repairs & Punch Lists | Oregon Contractor"
+        description="Inspection repairs, punch lists, and pre-sale fixes across Burns, Hines, Sweet Home, and the Mid-Willamette Valley. Clear scope, fast scheduling, documented closeout."
+        keywords="inspection repairs Oregon, punch list contractor, pre sale repairs Burns OR, inspection report repairs Sweet Home, home repair contractor Oregon, seller repairs Oregon"
+        type="service"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,12 +140,11 @@ const GeneralContracting = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                General Contracting Services
+                Inspection Repairs & Punch Lists
               </h1>
               <p className="text-xl text-cream mb-6">
-                Comprehensive construction services for your home. From
-                additions to accessibility upgrades, we deliver quality
-                workmanship and professional service.
+                Pre-sale repairs, inspection responses, and safety corrections
+                delivered on a clear schedule with documented results.
               </p>
               <a href="tel:5413215115">
                 <Button
@@ -148,10 +161,11 @@ const GeneralContracting = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <img
-                className="rounded-lg shadow-2xl w-full"
-                alt="Home addition construction with professional framing"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="clay"
+                eyebrow="Inspection-Ready"
+                title="Scoped Repairs with Documentation"
+                subtitle="Clear estimates, clean closeout, and schedule control for transactions."
               />
             </motion.div>
           </div>
@@ -161,14 +175,13 @@ const GeneralContracting = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-contractor-black mb-6">
-            What We Do
+            What We Fix
           </h2>
           <p className="text-lg text-restoration-gray mb-6">
-            As a licensed general contractor (CCB# 258533), Benson Home
-            Solutions provides comprehensive construction and renovation
-            services. Whether you're expanding your home, improving
-            accessibility, or restoring property after damage, we bring
-            professional expertise to every project.
+            As a licensed Oregon contractor (CCB# 258533), Benson Home Solutions
+            completes inspection repairs and punch lists with tight scheduling,
+            clear scope, and documented closeout for buyers, sellers, and
+            agents.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             {services.map((service) => (
@@ -184,7 +197,7 @@ const GeneralContracting = () => {
       <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-contractor-black mb-12 text-center">
-            Our Construction Process
+            Our Inspection Repair Process
           </h2>
           <div className="space-y-8">
             {processSteps.map((step, index) => (
@@ -288,32 +301,24 @@ const GeneralContracting = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-mitigation-graphite text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8 text-center">Service Areas</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <Link
-              to="/service-areas/burns-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Burns, OR</h3>
-            </Link>
-            <Link
-              to="/service-areas/hines-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Hines, OR</h3>
-            </Link>
-            <Link
-              to="/service-areas/sweet-home-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Sweet Home, OR</h3>
-            </Link>
-          </div>
-          <p className="text-center text-structural-gray text-sm mt-6">
-            Also serving Lebanon, Albany, and Mid-Valley Oregon communities
-          </p>
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Move inspection items into a documented scope and schedule."
+          />
+          <RelatedToolsBlock
+            links={toolLinks}
+            subtitle="Estimate repair budgets and replacement timing."
+          />
+          <RelatedGuidesBlock
+            links={guideLinks}
+            subtitle="Plan inspection repairs with clear priorities and timelines."
+          />
+          <LocationsServedBlock
+            links={GEO_HUB_LINKS}
+            subtitle="Harney County and Mid-Willamette Valley crews."
+          />
         </div>
       </section>
 
@@ -345,11 +350,11 @@ const GeneralContracting = () => {
       <section className="py-20 bg-maroon text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Start Your Project?
+            Ready to Close the Repairs?
           </h2>
           <p className="text-xl mb-8 text-cream">
-            Let's discuss your construction needs. Free consultations and
-            estimates available.
+            Share your inspection report and we will deliver a clear scope and
+            schedule.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:5413215115">

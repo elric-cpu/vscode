@@ -7,6 +7,16 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import CommercialAgreementFunnel from "@/components/commercial-agreements/CommercialAgreementFunnel";
 import FaqSection from "@/components/faq/FaqSection";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 export default function CommercialServiceAgreements() {
   const schema = {
@@ -68,6 +78,28 @@ export default function CommercialServiceAgreements() {
     },
   ];
 
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review maintenance program",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Bundle repairs",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Plan emergency response",
+    },
+    {
+      label: "request a facilities walkthrough",
+      to: "/contact",
+      description: "Confirm scope, response tiers, and reporting.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
+
   const faqSchema = buildFaqSchema(faqs);
 
   return (
@@ -88,13 +120,12 @@ export default function CommercialServiceAgreements() {
               Commercial Service Agreements
             </h1>
             <p className="text-xl text-cream mb-8">
-              A simple contract funnel that turns facility chaos into
-              predictable maintenance—walkthrough cadence, response tier, and
-              covered workstreams.
+              A structured agreement for predictable maintenance: scheduled
+              walkthroughs, defined response tiers, and documented scopes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/services/commercial" className="inline-flex">
+              <Link to="/commercial-maintenance" className="inline-flex">
                 <Button
                   variant="outline"
                   className="border-2 border-cream text-cream hover:bg-cream hover:text-contractor-black w-full sm:w-auto"
@@ -183,7 +214,22 @@ export default function CommercialServiceAgreements() {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Connect agreements to preventive scopes and emergency coverage."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[4], TOP_TOOL_LINKS[2], TOOLS_HUB_LINK]}
+            subtitle="Support budgeting, replacement timing, and ROI comparisons."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
+
       <FaqSection items={faqs} className="bg-white" />
     </>
   );
 }
+

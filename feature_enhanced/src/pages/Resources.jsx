@@ -6,7 +6,6 @@ import {
   Award,
   Droplets,
   AlertTriangle,
-  Home,
   Phone,
   ExternalLink,
   CheckCircle,
@@ -21,6 +20,15 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import { GUIDES } from "@/data/guides";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+} from "@/data/internalLinks";
 
 const Resources = () => {
   const schema = {
@@ -74,27 +82,42 @@ const Resources = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const nextSteps = [
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Explore plans",
+    },
+    {
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review coverage",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Inspection repairs",
+    },
+  ];
 
   return (
     <>
       <SEO
         title="Oregon Home Restoration Resources | Benson Home Solutions"
-        description="Comprehensive resources for water damage restoration, home improvement, and insurance claims in Oregon. Find certified contractors, industry standards, and homeowner rights."
+        description="Professional guides, calculators, and homeowner resources for restoration, maintenance planning, and insurance documentation across Oregon."
+        keywords="Oregon home restoration resources, water damage guide, insurance claim documentation, maintenance checklist, home maintenance estimator, maintenance calculators, Oregon contractor resources, client portal, subcontractor portal"
         schema={[schema, faqSchema]}
         type="website"
-        image={siteImages.placeholder}
+        image={siteImages.ogDefault}
       />
 
       <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="bg-contractor-black text-white py-16 lg:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img
-            src={siteImages.placeholder}
-            alt="Construction planning and restoration tools"
-            className="w-full h-full object-cover"
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
@@ -102,14 +125,21 @@ const Resources = () => {
             Homeowner Knowledge Base
           </div>
           <h1 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight max-w-4xl mx-auto">
-            Your Complete Resource Guide for <br />
-            Home Restoration in Oregon
+            Practical Resources for Home Restoration in Oregon
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Expert information, industry standards, and homeowner rights for
-            water damage restoration, remodeling, and home improvement across
-            the Mid-Willamette Valley & Harney County.
+            Guides, calculators, and checklists for water damage, maintenance,
+            and inspection repairs across Harney County and the Mid-Willamette
+            Valley.
           </p>
+          <div className="max-w-lg mx-auto mb-8">
+            <VisualBlock
+              variant="slate"
+              eyebrow="Tools & Guides"
+              title="Oregon Homeowner Resource Center"
+              subtitle="Actionable checklists, calculators, and restoration guidance built for Oregon conditions."
+            />
+          </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               onClick={() => scrollToSection("homeowner-rights")}
@@ -147,19 +177,18 @@ const Resources = () => {
                   className="group block bg-white p-6 rounded-xl border border-gray-200 hover:border-maroon hover:shadow-md transition-all"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
                         Interactive Tool
-                      </p>
-                      <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
-                        Home Maintenance Estimator
-                      </h3>
-                    </div>
+                    </p>
+                    <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
+                      Home Maintenance Estimator
+                    </h3>
+                  </div>
                     <HelpCircle className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
                   </div>
                   <p className="text-sm text-gray-600 mt-3 mb-0">
-                    Choose home size, enter your info, and view results
-                    instantly.
+                    Quick cost range for annual maintenance with ZIP context.
                   </p>
                 </Link>
 
@@ -170,7 +199,7 @@ const Resources = () => {
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
-                        ZIP-Smart Tools
+                        Calculators
                       </p>
                       <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
                         Maintenance & ROI Calculators
@@ -179,7 +208,8 @@ const Resources = () => {
                     <Calculator className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
                   </div>
                   <p className="text-sm text-gray-600 mt-3 mb-0">
-                    HVAC sizing, energy savings, repair costs, and more—localized by ZIP.
+                    HVAC sizing, energy savings, repair costs, and more with ZIP
+                    code adjustments.
                   </p>
                 </Link>
 
@@ -199,8 +229,7 @@ const Resources = () => {
                     <FileText className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
                   </div>
                   <p className="text-sm text-gray-600 mt-3 mb-0">
-                    Fillable recordbook to track repairs, appliances,
-                    warranties, and upkeep.
+                    Track repairs, appliances, warranties, and seasonal tasks.
                   </p>
                 </Link>
 
@@ -220,13 +249,13 @@ const Resources = () => {
                     <FileText className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
                   </div>
                   <p className="text-sm text-gray-600 mt-3 mb-0">
-                    Homeowner-friendly restoration reference guide.
+                    Step-by-step restoration guide for Oregon homeowners.
                   </p>
                 </Link>
               </div>
 
               <div className="mt-4 text-sm text-gray-600">
-                Want the PDF versions directly?{" "}
+                Prefer direct PDFs?{" "}
                 <a
                   href="/resources/home-maintenance-recordbook.pdf"
                   className="text-maroon font-semibold hover:underline"
@@ -241,6 +270,92 @@ const Resources = () => {
                   download the Restoration Guide
                 </a>
                 .
+              </div>
+            </section>
+
+            {/* Guides */}
+            <section id="guides" className="scroll-mt-24">
+              <div className="flex items-center gap-3 mb-6">
+                <BookOpen className="w-8 h-8 text-maroon" />
+                <h2 className="text-3xl font-bold text-contractor-black m-0">
+                  Guides & Checklists
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {GUIDES.map((guide) => (
+                  <Link
+                    key={guide.slug}
+                    to={`/resources/guides/${guide.slug}`}
+                    className="group block bg-white p-6 rounded-xl border border-gray-200 hover:border-maroon hover:shadow-md transition-all"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
+                          {guide.category}
+                        </p>
+                        <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
+                          {guide.title}
+                        </h3>
+                      </div>
+                      <BookOpen className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
+                    </div>
+                    <p className="text-sm text-gray-600 mt-3 mb-0">
+                      {guide.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* Portals */}
+            <section id="portals" className="scroll-mt-24">
+              <div className="flex items-center gap-3 mb-6">
+                <Users className="w-8 h-8 text-maroon" />
+                <h2 className="text-3xl font-bold text-contractor-black m-0">
+                  Portals & Account Access
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link
+                  to="/client-portal-login"
+                  className="group block bg-white p-6 rounded-xl border border-gray-200 hover:border-maroon hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
+                        Client Portal
+                      </p>
+                      <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
+                        Client Portal Login
+                      </h3>
+                    </div>
+                    <Users className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
+                  </div>
+                  <p className="text-sm text-gray-600 mt-3 mb-0">
+                    Access project updates, documents, invoices, and schedules.
+                  </p>
+                </Link>
+
+                <Link
+                  to="/subcontractor-portal-login"
+                  className="group block bg-white p-6 rounded-xl border border-gray-200 hover:border-maroon hover:shadow-md transition-all"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
+                        Partner Portal
+                      </p>
+                      <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
+                        Subcontractor Portal Login
+                      </h3>
+                    </div>
+                    <Users className="w-5 h-5 text-gray-400 group-hover:text-maroon" />
+                  </div>
+                  <p className="text-sm text-gray-600 mt-3 mb-0">
+                    View work orders, reporting requirements, and schedules.
+                  </p>
+                </Link>
               </div>
             </section>
 
@@ -749,6 +864,16 @@ const Resources = () => {
                 </Link>
               </div>
             </section>
+
+            <section className="bg-white border border-gray-200 rounded-xl p-8">
+              <NextStepsBlock
+                links={nextSteps}
+                subtitle="Use these resources to choose the right service or maintenance plan."
+              />
+              <div className="mt-10">
+                <LocationsServedBlock links={GEO_HUB_LINKS} />
+              </div>
+            </section>
           </main>
 
           {/* Sidebar */}
@@ -764,6 +889,18 @@ const Resources = () => {
                   className="flex items-center gap-2 text-gray-600 hover:text-maroon w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
                 >
                   <Anchor className="w-4 h-4" /> Tools & Downloads
+                </button>
+                <button
+                  onClick={() => scrollToSection("guides")}
+                  className="flex items-center gap-2 text-gray-600 hover:text-maroon w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <BookOpen className="w-4 h-4" /> Guides
+                </button>
+                <button
+                  onClick={() => scrollToSection("portals")}
+                  className="flex items-center gap-2 text-gray-600 hover:text-maroon w-full text-left p-2 rounded hover:bg-gray-50 transition-colors"
+                >
+                  <Users className="w-4 h-4" /> Portals
                 </button>
                 <button
                   onClick={() => scrollToSection("homeowner-rights")}

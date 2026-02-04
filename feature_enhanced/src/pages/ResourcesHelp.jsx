@@ -10,13 +10,18 @@ import {
   Building2,
   Phone,
   ExternalLink,
-  Info,
-  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SEO from "@/components/SEO";
-import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+} from "@/data/internalLinks";
 
 const ResourcesHelp = () => {
   useEffect(() => {
@@ -40,7 +45,7 @@ const ResourcesHelp = () => {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  const lastUpdated = "December 16, 2025";
+  const lastUpdated = "February 4, 2026";
 
   const categories = [
     {
@@ -229,6 +234,25 @@ const ResourcesHelp = () => {
     },
   ];
 
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Mold assessment",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Preventive plan",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Inspection repairs",
+    },
+  ];
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -247,6 +271,7 @@ const ResourcesHelp = () => {
       <SEO
         title="Oregon Restoration Resources & Help Links | Benson Home Solutions"
         description="Essential resources for Oregon homeowners. Links for insurance claims, contractor verification (CCB), asbestos/lead safety, mold prevention, and disaster preparedness."
+        keywords="Oregon restoration resources, insurance claim help Oregon, contractor verification CCB, mold resources Oregon, disaster preparedness links"
         schema={schema}
         type="website"
       />
@@ -255,15 +280,11 @@ const ResourcesHelp = () => {
 
       {/* Hero Section */}
       <section className="bg-contractor-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            alt="Peaceful Oregon landscape with river"
-            className="w-full h-full object-cover"
-            src={siteImages.placeholder}
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
-          <h1 className="text-3xl lg:text-5xl font-bold mb-6 font-montserrat">
+          <h1 className="text-3xl lg:text-5xl font-bold mb-6">
             Oregon Restoration Resources
           </h1>
           <p className="text-xl text-gray-200 mb-4 max-w-3xl leading-relaxed">
@@ -272,6 +293,14 @@ const ResourcesHelp = () => {
             links and regulatory information to help you navigate property
             restoration with confidence.
           </p>
+          <div className="max-w-lg">
+            <VisualBlock
+              variant="slate"
+              eyebrow="Resource Directory"
+              title="Verified Oregon Guidance"
+              subtitle="Insurance, safety, and contractor verification resources in one place."
+            />
+          </div>
           <p className="text-sm text-gray-400 font-mono">
             Last Updated: {lastUpdated}
           </p>
@@ -405,6 +434,16 @@ const ResourcesHelp = () => {
             Serving Harney County and Oregon's Mid-Valley with IICRC Certified
             Expertise.
           </p>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Apply what you learn to a documented scope and service plan."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
         </div>
       </section>
 

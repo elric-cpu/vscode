@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { BarChart3, ShieldCheck, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +8,9 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import {
@@ -17,6 +21,12 @@ import {
 } from "@/lib/calculators/utils";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const complianceFactors = {
   low: 0.05,
@@ -152,12 +162,41 @@ const PreventiveMaintenanceROICalculator = () => {
 
   const faqSchema = buildFaqSchema(faqs);
 
+  const nextSteps = [
+    {
+      label: "Commercial maintenance program",
+      to: MAINTENANCE_LINKS.commercial.to,
+      description: "Quarterly scopes, logs, and response SLAs.",
+      intent: "subscribe",
+    },
+    {
+      label: "Preventive inspection repairs",
+      to: "/inspection-repairs",
+      description: "Close out punch lists before failures.",
+      intent: "service",
+    },
+    {
+      label: "Request a facilities walkthrough",
+      to: "/contact",
+      description: "Schedule a documented maintenance review.",
+      intent: "contact",
+    },
+    {
+      label: "View Mid-Willamette Valley coverage",
+      to: GEO_HUB_LINKS[1].to,
+      description: "Local response across the valley.",
+      intent: "location",
+    },
+  ];
+
   return (
     <CalculatorLayout
       seo={{
         title: "Preventive Maintenance ROI Calculator | Benson Home Solutions",
         description:
           "Compare preventive maintenance budgets against emergency repairs, downtime, and compliance exposure with ZIP-based cost factors.",
+        keywords:
+          "preventive maintenance ROI calculator, reactive vs preventive maintenance, facilities maintenance ROI, emergency repair cost comparison, compliance risk estimate",
         schema: faqSchema,
       }}
       badge="ROI & Compliance"
@@ -184,6 +223,17 @@ const PreventiveMaintenanceROICalculator = () => {
         />
       }
     >
+      <p className="text-sm text-restoration-gray">
+        Pair this ROI analysis with a{" "}
+        <Link
+          to={MAINTENANCE_LINKS.commercial.to}
+          className="text-maroon font-semibold"
+        >
+          commercial maintenance program
+        </Link>{" "}
+        to reduce emergency spend and compliance risk.
+      </p>
+
       <div className="bg-cream border border-gray-200 rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -371,6 +421,15 @@ const PreventiveMaintenanceROICalculator = () => {
           Result: 41% ROI in year one and fewer tenant complaints.
         </p>
       </div>
+
+      <NextStepsBlock links={nextSteps} />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[4], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[2], TOOLS_HUB_LINK]}
+        subtitle="Plan budgets, compare scenarios, and model lifecycle costs."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

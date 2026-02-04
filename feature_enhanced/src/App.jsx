@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +13,7 @@ import Home from "@/pages/Home";
 import ServicesOverview from "@/pages/ServicesOverview";
 import WaterDamageMitigation from "@/pages/services/WaterDamageMitigation";
 import MoldRemediation from "@/pages/services/MoldRemediation";
+import FireSmokeDamage from "@/pages/services/FireSmokeDamage";
 import BathroomRemodels from "@/pages/services/BathroomRemodels";
 import KitchenRemodels from "@/pages/services/KitchenRemodels";
 import GeneralContracting from "@/pages/services/GeneralContracting";
@@ -23,6 +29,9 @@ import AgingInPlace from "@/pages/services/niches/AgingInPlace";
 import InsuranceAdjacent from "@/pages/services/niches/InsuranceAdjacent";
 import EnergyComfort from "@/pages/services/niches/EnergyComfort";
 import ServiceArea from "@/pages/ServiceArea";
+import ServiceAreas from "@/pages/ServiceAreas";
+import HarneyCountyHub from "@/pages/service-areas/HarneyCountyHub";
+import MidWillametteValleyHub from "@/pages/service-areas/MidWillametteValleyHub";
 import About from "@/pages/About";
 import Reviews from "@/pages/Reviews";
 import Blog from "@/pages/Blog";
@@ -39,6 +48,14 @@ import HomeMaintenanceEstimator from "@/pages/resources/HomeMaintenanceEstimator
 import HomeMaintenanceRecordbook from "@/pages/resources/HomeMaintenanceRecordbook";
 import HomeRestorationResourceGuide from "@/pages/resources/HomeRestorationResourceGuide";
 import CalculatorsHub from "@/pages/resources/CalculatorsHub";
+import AnnualHomeMaintenanceBudgetGuide from "@/pages/resources/guides/AnnualHomeMaintenanceBudgetGuide";
+import SeasonalMaintenanceChecklistGuide from "@/pages/resources/guides/SeasonalMaintenanceChecklistGuide";
+import CommercialPreventiveMaintenanceEssentialsGuide from "@/pages/resources/guides/CommercialPreventiveMaintenanceEssentialsGuide";
+import InspectionReportRepairsGuide from "@/pages/resources/guides/InspectionReportRepairsGuide";
+import InspectionRepairsCostGuide from "@/pages/resources/guides/InspectionRepairsCostGuide";
+import SignsOfHiddenWaterDamageGuide from "@/pages/resources/guides/SignsOfHiddenWaterDamageGuide";
+import MoldWhenToCallAProGuide from "@/pages/resources/guides/MoldWhenToCallAProGuide";
+import FireSmokeWhatToDoFirstGuide from "@/pages/resources/guides/FireSmokeWhatToDoFirstGuide";
 import HVACLoadCalculator from "@/pages/resources/calculators/HVACLoadCalculator";
 import PreventiveMaintenanceROICalculator from "@/pages/resources/calculators/PreventiveMaintenanceROICalculator";
 import InstantRepairCostCalculator from "@/pages/resources/calculators/InstantRepairCostCalculator";
@@ -74,68 +91,134 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<ServicesOverview />} />
             <Route
-              path="/services/water-damage-mitigation"
+              path="/water-damage-restoration"
               element={<WaterDamageMitigation />}
             />
+            <Route path="/mold-remediation" element={<MoldRemediation />} />
+            <Route path="/fire-smoke-damage" element={<FireSmokeDamage />} />
+            <Route path="/bathroom-remodels" element={<BathroomRemodels />} />
+            <Route path="/kitchen-remodels" element={<KitchenRemodels />} />
+            <Route path="/inspection-repairs" element={<GeneralContracting />} />
             <Route
-              path="/services/mold-remediation"
-              element={<MoldRemediation />}
-            />
-            <Route
-              path="/services/bathroom-remodels"
-              element={<BathroomRemodels />}
-            />
-            <Route
-              path="/services/kitchen-remodels"
-              element={<KitchenRemodels />}
-            />
-            <Route
-              path="/services/general-contracting"
-              element={<GeneralContracting />}
-            />
-            <Route
-              path="/services/residential-maintenance"
+              path="/maintenance-plans"
               element={<ResidentialMaintenancePrograms />}
             />
+            <Route path="/moisture-control" element={<MoistureEnvelope />} />
             <Route
-              path="/services/moisture-envelope"
-              element={<MoistureEnvelope />}
+              path="/accessibility-retrofits"
+              element={<AgingInPlace />}
             />
-            <Route path="/services/aging-in-place" element={<AgingInPlace />} />
             <Route
-              path="/services/insurance-adjacent"
+              path="/insurance-claims-repairs"
               element={<InsuranceAdjacent />}
             />
             <Route
-              path="/services/energy-comfort"
+              path="/energy-comfort-retrofits"
               element={<EnergyComfort />}
             />
 
             <Route
-              path="/services/commercial"
+              path="/commercial-maintenance"
               element={<CommercialMaintenance />}
             />
             <Route
-              path="/services/commercial/tenant-turns"
+              path="/commercial/tenant-turns"
               element={<TenantTurns />}
             />
             <Route
-              path="/services/commercial/preventive-maintenance"
+              path="/commercial/preventive-maintenance"
               element={<PreventiveMaintenance />}
             />
             <Route
-              path="/services/commercial/emergency-repairs"
+              path="/commercial/emergency-repairs"
               element={<EmergencyRepairs />}
             />
             <Route
-              path="/services/commercial/ada-compliance"
+              path="/commercial/ada-compliance"
               element={<ADACompliance />}
             />
             <Route
-              path="/services/commercial/service-agreements"
+              path="/commercial-service-agreements"
               element={<CommercialServiceAgreements />}
             />
+            <Route
+              path="/services/water-damage-mitigation"
+              element={<Navigate to="/water-damage-restoration" replace />}
+            />
+            <Route
+              path="/services/mold-remediation"
+              element={<Navigate to="/mold-remediation" replace />}
+            />
+            <Route
+              path="/services/fire-smoke-damage"
+              element={<Navigate to="/fire-smoke-damage" replace />}
+            />
+            <Route
+              path="/services/bathroom-remodels"
+              element={<Navigate to="/bathroom-remodels" replace />}
+            />
+            <Route
+              path="/services/kitchen-remodels"
+              element={<Navigate to="/kitchen-remodels" replace />}
+            />
+            <Route
+              path="/services/general-contracting"
+              element={<Navigate to="/inspection-repairs" replace />}
+            />
+            <Route
+              path="/services/residential-maintenance"
+              element={<Navigate to="/maintenance-plans" replace />}
+            />
+            <Route
+              path="/services/moisture-envelope"
+              element={<Navigate to="/moisture-control" replace />}
+            />
+            <Route
+              path="/services/aging-in-place"
+              element={<Navigate to="/accessibility-retrofits" replace />}
+            />
+            <Route
+              path="/services/insurance-adjacent"
+              element={<Navigate to="/insurance-claims-repairs" replace />}
+            />
+            <Route
+              path="/services/energy-comfort"
+              element={<Navigate to="/energy-comfort-retrofits" replace />}
+            />
+            <Route
+              path="/services/commercial"
+              element={<Navigate to="/commercial-maintenance" replace />}
+            />
+            <Route
+              path="/services/commercial/tenant-turns"
+              element={<Navigate to="/commercial/tenant-turns" replace />}
+            />
+            <Route
+              path="/services/commercial/preventive-maintenance"
+              element={<Navigate to="/commercial/preventive-maintenance" replace />}
+            />
+            <Route
+              path="/services/commercial/emergency-repairs"
+              element={<Navigate to="/commercial/emergency-repairs" replace />}
+            />
+            <Route
+              path="/services/commercial/ada-compliance"
+              element={<Navigate to="/commercial/ada-compliance" replace />}
+            />
+            <Route
+              path="/services/commercial/service-agreements"
+              element={<Navigate to="/commercial-service-agreements" replace />}
+            />
 
+            <Route path="/service-areas" element={<ServiceAreas />} />
+            <Route
+              path="/service-areas/harney-county"
+              element={<HarneyCountyHub />}
+            />
+            <Route
+              path="/service-areas/mid-willamette-valley"
+              element={<MidWillametteValleyHub />}
+            />
             {/* Dynamic Service Area Route */}
             <Route
               path="/service-areas/:region/:town"
@@ -165,8 +248,12 @@ function App() {
               element={<BathroomRemodelROI />}
             />
             <Route
-              path="/resources/water-damage-mitigation-guide"
+              path="/resources/water-damage-restoration-guide"
               element={<WaterDamageMitigationGuide />}
+            />
+            <Route
+              path="/resources/water-damage-mitigation-guide"
+              element={<Navigate to="/resources/water-damage-restoration-guide" replace />}
             />
             <Route
               path="/resources/kitchen-remodel-roi"
@@ -187,6 +274,38 @@ function App() {
             <Route
               path="/resources/home-restoration-resource-guide"
               element={<HomeRestorationResourceGuide />}
+            />
+            <Route
+              path="/resources/guides/annual-home-maintenance-budget"
+              element={<AnnualHomeMaintenanceBudgetGuide />}
+            />
+            <Route
+              path="/resources/guides/seasonal-maintenance-checklist"
+              element={<SeasonalMaintenanceChecklistGuide />}
+            />
+            <Route
+              path="/resources/guides/commercial-preventive-maintenance-essentials"
+              element={<CommercialPreventiveMaintenanceEssentialsGuide />}
+            />
+            <Route
+              path="/resources/guides/inspection-report-repairs"
+              element={<InspectionReportRepairsGuide />}
+            />
+            <Route
+              path="/resources/guides/inspection-repairs-cost-guide"
+              element={<InspectionRepairsCostGuide />}
+            />
+            <Route
+              path="/resources/guides/signs-of-hidden-water-damage"
+              element={<SignsOfHiddenWaterDamageGuide />}
+            />
+            <Route
+              path="/resources/guides/mold-when-to-call-a-pro"
+              element={<MoldWhenToCallAProGuide />}
+            />
+            <Route
+              path="/resources/guides/fire-smoke-what-to-do-first"
+              element={<FireSmokeWhatToDoFirstGuide />}
             />
             <Route
               path="/resources/calculators/hvac-load"
@@ -280,3 +399,5 @@ function App() {
 }
 
 export default App;
+
+

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import SEO from "@/components/SEO";
 import { useSubcontractorAuth } from '@/hooks/useSubcontractorAuth';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -72,10 +72,11 @@ const SubcontractorPortalLogin = () => {
 
   return (
     <div className="min-h-screen bg-[#EFE3C8] flex items-center justify-center px-4 py-12">
-      <Helmet>
-        <title>Subcontractor Login | Benson Home Solutions</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEO
+        title="Subcontractor Portal Login"
+        description="Secure subcontractor portal login."
+        robots="noindex, nofollow"
+      />
 
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}

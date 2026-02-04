@@ -23,7 +23,7 @@ export default function LeadCaptureCard({
         <Lock className="w-5 h-5 text-cream" />
         <div>
           <p className="text-xs uppercase tracking-wide text-cream m-0">
-            Lead Capture
+            Get Full Report
           </p>
           <p className="text-lg font-bold m-0">{title}</p>
         </div>
@@ -41,6 +41,8 @@ export default function LeadCaptureCard({
             value={lead.name}
             onChange={onLeadChange}
             placeholder="Full name"
+            autoComplete="name"
+            required
           />
         </div>
         <div className="space-y-2">
@@ -54,6 +56,8 @@ export default function LeadCaptureCard({
             value={lead.email}
             onChange={onLeadChange}
             placeholder="you@example.com"
+            autoComplete="email"
+            required
           />
         </div>
         <div className="space-y-2">
@@ -66,6 +70,7 @@ export default function LeadCaptureCard({
             value={lead.phone}
             onChange={onLeadChange}
             placeholder="(541) 555-0123"
+            autoComplete="tel"
           />
         </div>
 

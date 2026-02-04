@@ -16,7 +16,18 @@ import PricingMatrix from "@/components/services/PricingMatrix";
 import ServiceMenu from "@/components/services/ServiceMenu";
 import ResidentialMaintenancePlannerModule from "@/components/maintenance-planner/ResidentialMaintenancePlannerModule";
 import { NICHE_MENUS } from "@/data/nicheMenus";
-import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 import {
   HIGH_DEMAND_SERVICES,
   PROGRAM_FAQS,
@@ -37,7 +48,7 @@ const ResidentialMaintenancePrograms = () => {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Residential Maintenance Program",
+    serviceType: "Residential Maintenance Plan",
     provider: { "@type": "GeneralContractor", name: "Benson Home Solutions" },
     areaServed: [
       { "@type": "AdministrativeArea", name: "Harney County, OR" },
@@ -50,12 +61,33 @@ const ResidentialMaintenancePrograms = () => {
   const faqSchema = buildFaqSchema(PROGRAM_FAQS);
 
   const pricingData = NICHE_MENUS.residential_maintenance;
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Fix inspection items",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Plan emergency coverage",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Reduce mold risk",
+    },
+    {
+      label: "request a walkthrough",
+      to: "/contact",
+      description: "Confirm scope, priorities, and seasonal scheduling.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
   return (
     <>
       <SEO
-        title="Residential Maintenance Programs Oregon | Subscription Home Maintenance"
-        description="Subscription home maintenance programs for Oregon homeowners: predictable pricing, one trusted provider, photos & logs, and priority scheduling. Serving Harney County & the Mid-Willamette Valley."
-        keywords="home maintenance subscription Oregon, residential maintenance program, quarterly home maintenance, gutter maintenance, caulking sealing, smoke detector service"
+        title="Maintenance Plans Oregon | Subscription Home Maintenance"
+        description="Residential maintenance plans for Oregon homeowners: predictable pricing, one trusted provider, photos & logs, and priority scheduling. Serving Harney County & the Mid-Willamette Valley."
+        keywords="home maintenance plans Oregon, residential maintenance plan, quarterly home maintenance, gutter maintenance, caulking sealing, smoke detector service"
         schema={[serviceSchema, faqSchema]}
         type="service"
       />
@@ -72,14 +104,14 @@ const ResidentialMaintenancePrograms = () => {
             >
               <div className="inline-flex items-center gap-2 bg-maroon text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
                 <ShieldCheck className="w-4 h-4" />
-                Extremely Underserved
+                Maintenance Plans
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Residential Maintenance Programs
+                Residential Maintenance Plans
               </h1>
               <p className="text-xl text-cream mb-6">
-                One trusted provider. Predictable pricing. Documentation you can
-                keep.
+                One trusted provider, predictable pricing, and documentation
+                you can keep.
               </p>
               <div className="space-y-3 text-gray-200">
                 <div className="flex items-start gap-3">
@@ -133,10 +165,11 @@ const ResidentialMaintenancePrograms = () => {
               transition={{ duration: 0.6, delay: 0.15 }}
             >
               <div className="bg-cream rounded-lg p-6 shadow-2xl">
-                <img
-                  className="rounded-lg w-full h-80 object-cover"
-                  alt="Home maintenance checklist with documentation and photos"
-                  src={siteImages.placeholder}
+                <VisualBlock
+                  variant="clay"
+                  eyebrow="Maintenance Plans"
+                  title="Documented Home Care"
+                  subtitle="Seasonal checklists, photo logs, and predictable scheduling."
                 />
               </div>
             </motion.div>
@@ -154,7 +187,7 @@ const ResidentialMaintenancePrograms = () => {
               <p className="text-lg text-restoration-gray mb-5">
                 Most contractors avoid small jobs. Homeowners end up calling
                 multiple vendors, waiting weeks, and still lack a clear record
-                of what was done. Our residential maintenance programs solve
+                of what was done. Our residential maintenance plans solve
                 that.
               </p>
 
@@ -370,28 +403,20 @@ const ResidentialMaintenancePrograms = () => {
       </section>
 
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <h2 className="text-3xl font-bold text-contractor-black text-center">
-            Typical Pricing + Add-Ons
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-            <PricingMatrix
-              title={pricingData.pricingMatrix.title}
-              columns={pricingData.pricingMatrix.columns}
-              rows={pricingData.pricingMatrix.rows}
-              finePrint={pricingData.pricingMatrix.finePrint}
-            />
-            <ServiceMenu
-              title={pricingData.serviceMenu.title}
-              items={pricingData.serviceMenu.items.map((i) => ({
-                name: i.name,
-                subtitle: "Optional add-on (members get scheduling priority)",
-                typical: i.typical,
-                includes: i.includes,
-              }))}
-              disclaimer={`Onboarding: ${pricingData.anchors.enrollmentFee}. ${pricingData.anchors.responseWindow}.`}
-            />
-          </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <FeaturedToolsBlock
+            links={[...TOP_TOOL_LINKS, TOOLS_HUB_LINK]}
+            subtitle="Budget ranges, replacement timing, and ROI planning."
+          />
+          <RelatedGuidesBlock
+            links={GUIDE_LINKS}
+            subtitle="Practical guidance on budgets, checklists, and repair priorities."
+          />
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Connect your plan to repairs, mitigation, and seasonal priorities."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
         </div>
       </section>
 
@@ -430,3 +455,4 @@ const ResidentialMaintenancePrograms = () => {
 };
 
 export default ResidentialMaintenancePrograms;
+

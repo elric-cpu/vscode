@@ -11,6 +11,17 @@ import FaqSection from "@/components/faq/FaqSection";
 import { NICHE_MENUS } from "@/data/nicheMenus";
 import CommercialMaintenancePlannerModule from "@/components/maintenance-planner/CommercialMaintenancePlannerModule";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
+import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const CommercialMaintenance = () => {
   const schema = {
@@ -35,22 +46,47 @@ const CommercialMaintenance = () => {
     {
       title: "Tenant Turns",
       desc: "Fast, clean turnover between tenants with predictable scopes.",
-      to: "/services/commercial/tenant-turns",
+      to: "/commercial/tenant-turns",
     },
     {
       title: "Preventive Maintenance",
       desc: "Scheduled inspections and small fixes that prevent bigger failures.",
-      to: "/services/commercial/preventive-maintenance",
+      to: "/commercial/preventive-maintenance",
     },
     {
       title: "Emergency Repairs",
       desc: "Priority response for leaks, door/security issues, and urgent damage.",
-      to: "/services/commercial/emergency-repairs",
+      to: "/commercial/emergency-repairs",
     },
     {
       title: "ADA Compliance Fixes",
       desc: "Targeted modifications to reduce liability and improve accessibility.",
-      to: "/services/commercial/ada-compliance",
+      to: "/commercial/ada-compliance",
+    },
+  ];
+
+  const nextSteps = [
+    {
+      label: "commercial service agreements",
+      to: "/commercial-service-agreements",
+      description: "Documented scopes, budgets, and response expectations.",
+      intent: "subscribe",
+      cta: "Review agreements",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Bundle repairs",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Plan emergency coverage",
+    },
+    {
+      label: "request a facilities plan",
+      to: "/contact",
+      description: "Confirm scopes, SLAs, and scheduling.",
+      intent: "contact",
+      cta: "Request service",
     },
   ];
 
@@ -88,7 +124,7 @@ const CommercialMaintenance = () => {
     {
       question: "What does pricing look like?",
       answer:
-        "Pricing depends on building size, condition, and response tier. Use the ZIP-smart planner for budget ranges.",
+        "Pricing depends on building size, condition, and response tier. Use the ZIP-adjusted planner for budget ranges.",
     },
     {
       question: "How do we start a service agreement?",
@@ -122,13 +158,12 @@ const CommercialMaintenance = () => {
                 Small Commercial & Light Industrial Maintenance
               </h1>
               <p className="text-xl text-cream mb-6">
-                Predictable scopes, repeat clients, fewer competitors chasing
-                small accounts. We help you become steady and compliant—without
-                disruption.
+                Predictable scopes, documented closeout, and responsive service
+                for properties under 50k sq ft across Oregon.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/services/commercial/service-agreements">
+                <Link to="/commercial-service-agreements">
                   <Button
                     size="lg"
                     className="bg-maroon hover:bg-opacity-90 text-white w-full sm:w-auto"
@@ -206,6 +241,24 @@ const CommercialMaintenance = () => {
 
       <CommercialMaintenancePlannerModule />
 
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <FeaturedToolsBlock
+            links={[TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[4], TOP_TOOL_LINKS[2], TOOLS_HUB_LINK]}
+            subtitle="Budget ranges, replacement timing, and ROI scenarios."
+          />
+          <RelatedGuidesBlock
+            links={GUIDE_LINKS}
+            subtitle="Planning guidance for facilities teams and property managers."
+          />
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Connect planning to SLAs, repair scopes, and emergency readiness."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <h2 className="text-3xl font-bold text-contractor-black">
@@ -238,7 +291,7 @@ const CommercialMaintenance = () => {
             Annual service agreements and priority response contracts reduce
             surprises, protect budgets, and keep tenants happy.
           </p>
-          <Link to="/services/commercial/service-agreements">
+          <Link to="/commercial-service-agreements">
             <Button
               size="lg"
               className="bg-maroon hover:bg-opacity-90 text-white"
@@ -257,3 +310,4 @@ const CommercialMaintenance = () => {
 };
 
 export default CommercialMaintenance;
+

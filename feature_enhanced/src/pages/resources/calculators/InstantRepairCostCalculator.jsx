@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Wrench, AlertTriangle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,12 +8,22 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import { formatCurrency, toNumber } from "@/lib/calculators/utils";
 import { REPAIR_COSTS } from "@/lib/calculators/costModels";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const scopeBySystem = {
   ac: [
@@ -149,12 +160,41 @@ const InstantRepairCostCalculator = () => {
 
   const faqSchema = buildFaqSchema(faqs);
 
+  const nextSteps = [
+    {
+      label: "Request service for repairs",
+      to: "/contact",
+      description: "Share your issue and get a response window.",
+      intent: "contact",
+    },
+    {
+      label: "Fix inspection items",
+      to: SERVICE_PILLAR_LINKS.inspection.to,
+      description: "Punch lists and priority repairs with clear scopes.",
+      intent: "service",
+    },
+    {
+      label: "Home maintenance program",
+      to: MAINTENANCE_LINKS.home.to,
+      description: "Reduce after-hours repairs with scheduled care.",
+      intent: "subscribe",
+    },
+    {
+      label: "Commercial maintenance program",
+      to: MAINTENANCE_LINKS.commercial.to,
+      description: "Preventive maintenance for small facilities.",
+      intent: "subscribe",
+    },
+  ];
+
   return (
     <CalculatorLayout
       seo={{
         title: "Instant Repair Cost Calculator | Benson Home Solutions",
         description:
           "Estimate HVAC, plumbing, or electrical repair costs with ZIP-based pricing and urgency factors.",
+        keywords:
+          "instant repair cost calculator, HVAC repair estimate Oregon, plumbing repair cost estimate, electrical repair cost Oregon, emergency repair pricing",
         schema: faqSchema,
       }}
       badge="Emergency & Repairs"
@@ -181,6 +221,24 @@ const InstantRepairCostCalculator = () => {
         />
       }
     >
+      <p className="text-sm text-restoration-gray">
+        Looking for ongoing support? Our{" "}
+        <Link
+          to={MAINTENANCE_LINKS.home.to}
+          className="text-maroon font-semibold"
+        >
+          home maintenance program
+        </Link>{" "}
+        and{" "}
+        <Link
+          to={MAINTENANCE_LINKS.commercial.to}
+          className="text-maroon font-semibold"
+        >
+          commercial maintenance program
+        </Link>{" "}
+        reduce emergency repairs.
+      </p>
+
       <div className="bg-cream border border-gray-200 rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -326,6 +384,15 @@ const InstantRepairCostCalculator = () => {
           Result: avoided a two-day shutdown and protected perishable inventory.
         </p>
       </div>
+
+      <NextStepsBlock links={nextSteps} />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[4], TOOLS_HUB_LINK]}
+        subtitle="Estimate, compare, and plan your next steps."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

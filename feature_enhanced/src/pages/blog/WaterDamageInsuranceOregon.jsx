@@ -19,6 +19,17 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const WaterDamageInsuranceOregon = () => {
   const schema = {
@@ -44,6 +55,27 @@ const WaterDamageInsuranceOregon = () => {
     description:
       "Complete guide to water damage insurance coverage in Oregon. Learn claims processes for Burns, Sweet Home, Salem, Albany, Corvallis, and the entire Mid-Willamette Valley.",
   };
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Mold assessment",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Prevent repeat events",
+    },
+    {
+      label: "request service",
+      to: "/contact",
+      description: "Get documentation-ready scopes and photo logs.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -70,7 +102,7 @@ const WaterDamageInsuranceOregon = () => {
         name: "What should I do first if I find water damage?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Stop the water source if safe, call a professional mitigation company like Benson Home Solutions immediately to prevent secondary damage, and then contact your insurance agent.",
+          text: "Stop the water source if safe, call a professional restoration company like Benson Home Solutions immediately to prevent secondary damage, and then contact your insurance agent.",
         },
       },
       {
@@ -98,12 +130,8 @@ const WaterDamageInsuranceOregon = () => {
 
       {/* Hero Section */}
       <section className="bg-contractor-black text-white py-12 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src={siteImages.placeholder}
-            alt="Water damaged home interior being restored"
-            className="w-full h-full object-cover"
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
@@ -129,6 +157,14 @@ const WaterDamageInsuranceOregon = () => {
                 (541) 321-5115
               </a>
             </p>
+          </div>
+          <div className="max-w-lg mx-auto mt-8">
+            <VisualBlock
+              variant="slate"
+              eyebrow="Insurance Guide"
+              title="Coverage, Claims, Documentation"
+              subtitle="Understand coverage, avoid claim delays, and document correctly."
+            />
           </div>
         </div>
       </section>
@@ -333,7 +369,7 @@ const WaterDamageInsuranceOregon = () => {
                   <p className="mt-2">
                     File the claim as soon as possible. Get a claim number and
                     the adjuster's contact information. Inform them you have a
-                    professional mitigation team en route.
+                    professional restoration team en route.
                   </p>
                 </div>
               </li>
@@ -357,10 +393,11 @@ const WaterDamageInsuranceOregon = () => {
             </ol>
 
             <div className="my-8">
-              <img
-                src={siteImages.placeholder}
-                alt="Professional using moisture meter on wall"
-                className="rounded-lg shadow-md w-full h-80 object-cover"
+              <VisualBlock
+                variant="clay"
+                eyebrow="Documentation"
+                title="Moisture Readings + Photos"
+                subtitle="Clear documentation improves claim accuracy and speed."
               />
               <p className="text-sm text-center text-gray-500 mt-2">
                 Professional documentation is key to a successful claim.
@@ -476,7 +513,7 @@ const WaterDamageInsuranceOregon = () => {
                 Facing Water Damage Right Now?
               </h3>
               <p className="mb-6">
-                Every minute counts. Quick mitigation prevents mold and reduces
+                Every minute counts. Quick restoration prevents mold and reduces
                 costs.
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
@@ -535,7 +572,7 @@ const WaterDamageInsuranceOregon = () => {
                     immediately. Neglected mold is almost always excluded. See
                     our{" "}
                     <Link
-                      to="/services/mold-remediation"
+                      to="/mold-remediation"
                       className="text-maroon underline"
                     >
                       Mold Remediation services
@@ -563,7 +600,7 @@ const WaterDamageInsuranceOregon = () => {
                   <p className="text-sm">
                     You can, but insurers may deny future claims for mold or rot
                     if professional drying logs aren't provided. Professional
-                    mitigation ensures all moisture is removed from inside walls
+                    restoration ensures all moisture is removed from inside walls
                     and subfloors.
                   </p>
                 </div>
@@ -580,25 +617,25 @@ const WaterDamageInsuranceOregon = () => {
               </h3>
               <nav className="space-y-3">
                 <Link
-                  to="/services/water-damage-mitigation"
+                  to="/water-damage-restoration"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
-                    Water Mitigation Services
+                    Water Damage Restoration Services
                   </span>
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
                 <Link
-                  to="/resources/water-damage-mitigation-guide"
+                  to="/resources/water-damage-restoration-guide"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
-                    Free Mitigation Guide
+                    Water Damage Guide
                   </span>
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
                 <Link
-                  to="/service-areas/burns-or"
+                  to="/service-areas/harney-county/burns"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
@@ -607,7 +644,7 @@ const WaterDamageInsuranceOregon = () => {
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
                 <Link
-                  to="/service-areas/sweet-home-or"
+                  to="/service-areas/mid-valley/sweet-home"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
@@ -664,8 +701,26 @@ const WaterDamageInsuranceOregon = () => {
           </aside>
         </div>
       </div>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Connect insurance guidance to a documented response plan."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[0], TOOLS_HUB_LINK]}
+            subtitle="Estimate budgets, replacement timing, and repair scope."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
     </>
   );
 };
 
 export default WaterDamageInsuranceOregon;
+
+
+
+

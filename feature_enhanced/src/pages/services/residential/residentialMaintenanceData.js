@@ -109,7 +109,7 @@ export const PROGRAM_FAQS = [
     a: "Yes. Most programs run month-to-month with clear terms for cancellations and scheduling. We confirm exact terms at enrollment so expectations are simple and predictable.",
   },
   {
-    q: "What areas do you serve for the maintenance program?",
+    q: "What areas do you serve for the maintenance plan?",
     a: "Harney County (Burns, Hines) and the Mid-Willamette Valley (Sweet Home, Lebanon, Albany, Corvallis). If you are nearby, ask—routes expand as membership grows.",
   },
   {
@@ -137,3 +137,4 @@ export const PROGRAM_FAQS = [
     a: "Members receive priority response windows. We will triage the issue quickly and schedule the fastest available visit.",
   },
 ];
+

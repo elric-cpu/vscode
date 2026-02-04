@@ -1,170 +1,226 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  Phone,
+  Droplets,
+  ShieldCheck,
+  Hammer,
+  Home,
+  ClipboardList,
+  Building2,
+  Shield,
+  Thermometer,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import siteImages from "@/data/siteImages";
+import SEO from "@/components/SEO";
+import VisualBlock from "@/components/VisualBlock";
+import FeaturedToolsBlock from "@/components/internal-links/FeaturedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const ServicesOverview = () => {
-  const services = [
+  const serviceGroups = [
     {
-      title: "Water Damage Mitigation & Dry-Out",
+      title: "Maintenance Plans",
       description:
-        "Immediate emergency response to extract standing water, dry out structures, and prevent secondary damage. We use professional-grade equipment and work directly with insurance companies to document and restore your property.",
-      icon: "💧",
-      link: "/services/water-damage-mitigation",
-      benefits: [
-        "24/7 Emergency Response",
-        "Insurance Coordination",
-        "Professional Equipment",
-        "Moisture Monitoring",
+        "Predictable, documented maintenance for homes and small commercial facilities.",
+      visual: {
+        variant: "clay",
+        title: "Planned Maintenance",
+        subtitle:
+          "Annual budgets, seasonal priorities, and documented closeout for Oregon properties.",
+      },
+      items: [
+        {
+          title: "Maintenance Plans",
+          description:
+            "Residential plans with defined scopes, clear budgets, and recurring service windows.",
+          icon: ClipboardList,
+          link: "/maintenance-plans",
+        },
+        {
+          title: "Commercial Maintenance",
+          description:
+            "Facilities maintenance for properties under 50k sq ft with rapid response and logs.",
+          icon: Building2,
+          link: "/commercial-maintenance",
+        },
+        {
+          title: "Commercial Service Agreements",
+          description:
+            "Service agreements with scope alignment, pricing clarity, and service-level expectations.",
+          icon: Shield,
+          link: "/commercial-service-agreements",
+        },
       ],
     },
     {
-      title: "Mold Remediation",
+      title: "Emergency Restoration",
       description:
-        "Comprehensive mold assessment, containment, removal, and prevention following industry-standard protocols. We identify the source, eliminate the growth, and implement solutions to prevent recurrence.",
-      icon: "🛡️",
-      link: "/services/mold-remediation",
-      benefits: [
-        "Air Quality Testing",
-        "Safe Containment",
-        "Source Identification",
-        "Prevention Plans",
+        "Rapid response, drying, and documentation for water damage and indoor air quality risks.",
+      visual: {
+        variant: "ink",
+        title: "24/7 Restoration",
+        subtitle:
+          "Extraction, structural drying, and scope documentation designed for Oregon climates.",
+      },
+      items: [
+        {
+          title: "Water Damage Restoration",
+          description:
+            "Extraction, drying, and moisture monitoring with insurance-ready documentation.",
+          icon: Droplets,
+          link: "/water-damage-restoration",
+        },
+        {
+          title: "Mold Remediation",
+          description:
+            "Containment, removal, and prevention with health-first protocols and clear scope.",
+          icon: ShieldCheck,
+          link: "/mold-remediation",
+        },
+        {
+          title: "Fire & Smoke Damage Cleanup",
+          description:
+            "Cleanup, odor control, and repair coordination after fire events.",
+          icon: Shield,
+          link: "/fire-smoke-damage",
+        },
       ],
     },
     {
-      title: "Bathroom Remodels",
+      title: "Moisture & Envelope Diagnostics",
       description:
-        "Complete bathroom renovations tailored to your style and needs—from accessible modifications to luxury upgrades. We handle everything: fixtures, tile, vanities, lighting, and ventilation.",
-      icon: "🚿",
-      link: "/services/bathroom-remodels",
-      benefits: [
-        "Custom Design",
-        "ADA Accessible Options",
-        "Quality Materials",
-        "Efficient Timeline",
+        "Diagnostics and repairs for leaks, envelope failures, and recurring moisture issues.",
+      visual: {
+        variant: "slate",
+        title: "Moisture Control",
+        subtitle: "Leak tracing, envelope repairs, and durable moisture fixes.",
+      },
+      items: [
+        {
+          title: "Moisture Control",
+          description:
+            "Diagnostics and repairs for flashing, drainage, crawlspaces, and leak sources.",
+          icon: Droplets,
+          link: "/moisture-control",
+        },
+        {
+          title: "Insurance Claims Repairs",
+          description:
+            "Documentation-heavy repairs, scopes, and repair plans that support claim accuracy.",
+          icon: Shield,
+          link: "/insurance-claims-repairs",
+        },
       ],
     },
     {
-      title: "Kitchen Remodels",
+      title: "Inspection Repairs & Selective Remodeling",
       description:
-        "Transform your kitchen into a functional, beautiful space. Cabinet installation, countertop upgrades, appliance coordination, and layout optimization to match how you cook and live.",
-      icon: "🏠",
-      link: "/services/kitchen-remodels",
-      benefits: [
-        "Layout Planning",
-        "Custom Cabinetry",
-        "Modern Appliances",
-        "Quality Finishes",
+        "Pre-sale repairs, punch lists, and targeted upgrades to improve safety and usability.",
+      visual: {
+        variant: "clay",
+        title: "Inspection-Ready Repairs",
+        subtitle:
+          "Punch-list completion, safety fixes, and targeted upgrades with clear scopes.",
+      },
+      items: [
+        {
+          title: "Inspection Repairs",
+          description:
+            "Punch lists, pre-sale repairs, and code-focused fixes with quick scheduling.",
+          icon: Hammer,
+          link: "/inspection-repairs",
+        },
+        {
+          title: "Bathroom Remodels",
+          description:
+            "Durable, accessible bathrooms with quality materials and clean installs.",
+          icon: Home,
+          link: "/bathroom-remodels",
+        },
+        {
+          title: "Kitchen Remodels",
+          description:
+            "Layouts, cabinetry, and finishes tailored for real daily use.",
+          icon: Home,
+          link: "/kitchen-remodels",
+        },
       ],
     },
     {
-      title: "General Contracting",
+      title: "Accessibility & Comfort",
       description:
-        "Comprehensive construction services including home additions, structural repairs, aging-in-place modifications, window/door installation, and insurance restoration work. Your one-stop solution for quality construction.",
-      icon: "🔨",
-      link: "/services/general-contracting",
-      benefits: [
-        "Licensed & Insured",
-        "Project Management",
-        "Quality Craftsmanship",
-        "Clear Communication",
+        "Safety-first upgrades and comfort improvements designed for Oregon homes.",
+      visual: {
+        variant: "moss",
+        title: "Safer, More Comfortable",
+        subtitle:
+          "Accessibility retrofits and comfort fixes that reduce risk and improve livability.",
+      },
+      items: [
+        {
+          title: "Accessibility Retrofits",
+          description:
+            "Grab bars, curbless showers, wider entries, and safer transitions.",
+          icon: ShieldCheck,
+          link: "/accessibility-retrofits",
+        },
+        {
+          title: "Energy Comfort Retrofits",
+          description:
+            "Air sealing, insulation, and balance fixes to reduce drafts and hot spots.",
+          icon: Thermometer,
+          link: "/energy-comfort-retrofits",
+        },
       ],
     },
+  ];
+  const nextSteps = [
     {
-      title: "Residential Maintenance Programs",
-      description:
-        "Subscription-based home maintenance with predictable pricing, photo documentation, and one trusted provider for small jobs and seasonal upkeep.",
-      icon: "🧾",
-      link: "/services/residential-maintenance",
-      benefits: [
-        "Predictable Pricing",
-        "Photos & Logs",
-        "Priority Scheduling",
-        "Prevent Big Failures",
-      ],
+      ...MAINTENANCE_LINKS.home,
+      cta: "Explore plans",
     },
     {
-      title: "Water Intrusion, Envelope & Moisture Control",
-      description:
-        "Pre-loss moisture diagnostics and targeted repairs: flashing corrections, crawlspace mitigation, leak diagnostics, and drainage fixes.",
-      icon: "🧪",
-      link: "/services/moisture-envelope",
-      benefits: [
-        "Diagnostics + Report",
-        "Targeted Fixes",
-        "Strong Margins",
-        "Stops Damage Early",
-      ],
+      ...MAINTENANCE_LINKS.commercial,
+      cta: "Review coverage",
     },
     {
-      title: "Aging-in-Place & Accessibility Retrofits",
-      description:
-        "Safety-first upgrades for seniors and families: curbless showers, grab bars, door widening, non-slip flooring, and stair solutions.",
-      icon: "🧓",
-      link: "/services/aging-in-place",
-      benefits: [
-        "Short Sales Cycles",
-        "Funded by Family",
-        "Standardized Scopes",
-        "Safety + Dignity",
-      ],
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
     },
     {
-      title: "Insurance-Adjacent Specialty Work",
-      description:
-        "Fast, documentation-heavy repairs that are too small for big restoration firms but too complex for a handyman: partial dry-outs, post-leak rebuilds, and small mold remediation.",
-      icon: "📄",
-      link: "/services/insurance-adjacent",
-      benefits: [
-        "Documentation Packets",
-        "Fast Turnaround",
-        "Homeowner + Insurance Pay",
-        "Local & Reliable",
-      ],
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Inspection repairs",
     },
     {
-      title: "Small Commercial & Light Industrial Maintenance",
-      description:
-        "Facility maintenance for properties under 50k sq ft: tenant turns, preventive maintenance, emergency repairs, and ADA compliance fixes with documentation.",
-      icon: "🏢",
-      link: "/services/commercial",
-      benefits: [
-        "Repeat Clients",
-        "Predictable Scopes",
-        "Priority Response Options",
-        "Documentation & Closeout",
-      ],
-    },
-    {
-      title: "Energy & Comfort Retrofits (Not Solar)",
-      description:
-        "Comfort audits and targeted upgrades: air sealing, insulation improvements, window/door performance fixes, and comfort diagnostics.",
-      icon: "🌡️",
-      link: "/services/energy-comfort",
-      benefits: [
-        "Lower Bills",
-        "More Comfort",
-        "Diagnostics-Driven",
-        "Pairs With Maintenance",
-      ],
+      label: "request a scope review",
+      to: "/contact",
+      description: "Get a documented plan and scheduling options.",
+      intent: "contact",
+      cta: "Request service",
     },
   ];
 
   return (
     <>
-      <Helmet>
-        <title>
-          Our Services | Benson Home Solutions - Oregon Construction &
-          Restoration
-        </title>
-        <meta
-          name="description"
-          content="Complete construction and restoration services: water damage mitigation, mold remediation, bathroom & kitchen remodels, general contracting. Licensed Oregon contractor CCB# 258533."
-        />
-      </Helmet>
+      <SEO
+        title="Oregon Maintenance Plans, Restoration & Facilities Services"
+        description="Professional maintenance plans, water damage restoration, mold remediation, inspection repairs, and commercial facilities support across Harney County and the Mid-Willamette Valley."
+        keywords="Oregon maintenance plans, water damage restoration Oregon, mold remediation Oregon, moisture control Oregon, inspection repairs Oregon, commercial maintenance Oregon, service agreements Oregon, accessibility retrofits Oregon, energy comfort retrofits Oregon, Harney County contractor, Mid-Willamette Valley contractor"
+        type="website"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,66 +231,95 @@ const ServicesOverview = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Professional Construction & Restoration Services
+              Maintenance Plans, Restoration & Facility-Ready Services
             </h1>
             <p className="text-xl text-cream">
-              From emergency water mitigation to complete home renovations,
-              Benson Home Solutions delivers quality workmanship and reliable
-              service across Oregon.
+              Licensed Oregon contractor delivering maintenance plans, emergency
+              restoration, and inspection-ready repairs across Harney County and
+              the Mid-Willamette Valley.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {services.map((service, index) => (
+          <div className="space-y-12">
+            {serviceGroups.map((group, index) => (
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                key={group.title}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                className="space-y-6"
               >
-                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="text-6xl mb-6">{service.icon}</div>
-                  <h2 className="text-3xl font-bold text-contractor-black mb-4">
-                    {service.title}
-                  </h2>
-                  <p className="text-lg text-restoration-gray mb-6">
-                    {service.description}
-                  </p>
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {service.benefits.map((benefit) => (
-                      <div key={benefit} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-maroon rounded-full" />
-                        <span className="text-sm text-contractor-black">
-                          {benefit}
-                        </span>
-                      </div>
-                    ))}
+                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+                  <div>
+                    <h2 className="text-3xl font-bold text-contractor-black mb-2">
+                      {group.title}
+                    </h2>
+                    <p className="text-restoration-gray max-w-3xl">
+                      {group.description}
+                    </p>
                   </div>
-                  <Link to={service.link}>
-                    <Button className="bg-maroon hover:bg-opacity-90 text-white">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </div>
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="bg-cream rounded-lg p-8 shadow-lg">
-                    <img
-                      className="w-full h-64 object-cover rounded"
-                      alt={`Professional ${service.title.toLowerCase()} service in Oregon`}
-                      src={siteImages.placeholder}
+                  <div className="hidden lg:block">
+                    <VisualBlock
+                      variant={group.visual?.variant}
+                      title={group.visual?.title}
+                      subtitle={group.visual?.subtitle}
+                      className="w-64"
                     />
                   </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {group.items.map((service) => {
+                    const Icon = service.icon;
+                    return (
+                      <Link
+                        key={service.title}
+                        to={service.link}
+                        className="group block bg-white border border-gray-200 rounded-xl p-6 hover:border-maroon hover:shadow-md transition-all"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide m-0">
+                              Service
+                            </p>
+                            <h3 className="text-lg font-bold text-contractor-black group-hover:text-maroon transition-colors mt-1">
+                              {service.title}
+                            </h3>
+                          </div>
+                          <Icon className="w-5 h-5 text-maroon" />
+                        </div>
+                        <p className="text-sm text-gray-600 mt-3 mb-0">
+                          {service.description}
+                        </p>
+                      </Link>
+                    );
+                  })}
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <FeaturedToolsBlock
+            links={[...TOP_TOOL_LINKS, TOOLS_HUB_LINK]}
+            subtitle="High-intent tools for budgets, replacement timing, and ROI."
+          />
+          <RelatedGuidesBlock
+            links={GUIDE_LINKS}
+            subtitle="Planning guidance for maintenance, repairs, and prevention."
+          />
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Pick the best-fit service path based on urgency and scope."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
         </div>
       </section>
 

@@ -1,10 +1,22 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, Shield, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import siteImages from "@/data/siteImages";
+import SEO from "@/components/SEO";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const MoldRemediation = () => {
   const causes = [
@@ -48,6 +60,37 @@ const MoldRemediation = () => {
         "Replacement of removed materials (drywall, insulation, etc.) and final clearance testing to confirm successful remediation.",
     },
   ];
+
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Stop moisture source",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Repair affected areas",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Prevent recurrence",
+    },
+    {
+      label: "request an assessment",
+      to: "/contact",
+      description: "Confirm scope, containment needs, and clearance testing.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
+
+  const toolLinks = [
+    TOP_TOOL_LINKS[2],
+    TOP_TOOL_LINKS[0],
+    TOP_TOOL_LINKS[1],
+    TOOLS_HUB_LINK,
+  ];
+
+  const guideLinks = [GUIDE_LINKS[3], GUIDE_LINKS[0], GUIDE_LINKS[2]];
 
   const faqs = [
     {
@@ -104,16 +147,12 @@ const MoldRemediation = () => {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Mold Remediation Oregon | Professional Mold Removal - Benson Home
-          Solutions
-        </title>
-        <meta
-          name="description"
-          content="Safe, effective mold remediation in Burns, Hines, Sweet Home & Mid-Valley Oregon. Professional assessment, containment, removal. Licensed contractor CCB# 258533. Call (541) 321-5115."
-        />
-      </Helmet>
+      <SEO
+        title="Mold Remediation Oregon | Professional Mold Removal"
+        description="Safe, effective mold remediation in Burns, Hines, Sweet Home, and the Mid-Willamette Valley. Assessment, containment, and removal by a licensed contractor."
+        keywords="mold remediation Oregon, mold removal Burns OR, mold inspection Sweet Home, indoor air quality Oregon, licensed remediation contractor"
+        type="service"
+      />
 
       <section className="bg-contractor-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,10 +191,11 @@ const MoldRemediation = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <img
-                className="rounded-lg shadow-2xl w-full"
-                alt="Professional mold remediation containment and removal equipment"
-                src={siteImages.placeholder}
+              <VisualBlock
+                variant="moss"
+                eyebrow="Containment + Removal"
+                title="Controlled Remediation"
+                subtitle="Isolation, HEPA filtration, and documentation for clean clearance."
               />
             </motion.div>
           </div>
@@ -309,38 +349,24 @@ const MoldRemediation = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-mitigation-graphite text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-8 text-center">Service Areas</h2>
-          <p className="text-center text-cream mb-8">
-            Professional mold remediation serving:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <Link
-              to="/service-areas/burns-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Burns, OR</h3>
-              <p className="text-cream text-sm">Expert service</p>
-            </Link>
-            <Link
-              to="/service-areas/hines-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Hines, OR</h3>
-              <p className="text-cream text-sm">Licensed contractor</p>
-            </Link>
-            <Link
-              to="/service-areas/sweet-home-or"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg p-6 transition-all"
-            >
-              <h3 className="font-bold text-xl mb-2">Sweet Home, OR</h3>
-              <p className="text-cream text-sm">Professional remediation</p>
-            </Link>
-          </div>
-          <p className="text-center text-structural-gray text-sm mt-6">
-            Also serving Lebanon, Albany, and Mid-Valley communities
-          </p>
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Resolve the source, document the scope, and prevent recurrence."
+          />
+          <RelatedToolsBlock
+            links={toolLinks}
+            subtitle="Estimate scopes, repair timing, and budget recovery."
+          />
+          <RelatedGuidesBlock
+            links={guideLinks}
+            subtitle="Learn when mold requires professional containment and clearance."
+          />
+          <LocationsServedBlock
+            links={GEO_HUB_LINKS}
+            subtitle="Harney County and Mid-Willamette Valley response teams."
+          />
         </div>
       </section>
 
@@ -409,3 +435,4 @@ const MoldRemediation = () => {
 };
 
 export default MoldRemediation;
+

@@ -1,7 +1,14 @@
 import React from "react";
 import NichePageTemplate from "./NichePageTemplate";
 import { NICHE_MENUS } from "@/data/nicheMenus";
-import siteImages from "@/data/siteImages";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 export default function EnergyComfort() {
   const data = NICHE_MENUS.energy_comfort;
@@ -20,12 +27,17 @@ export default function EnergyComfort() {
   };
 
   const hero = {
-    badge: "Comfort-First",
+    badge: "Comfort Diagnostics",
     h1: "Energy & Comfort Retrofits",
     subhead:
-      "Reduce drafts and improve comfort with diagnostics and targeted upgrades... not hype.",
-    imageSrc: siteImages.placeholder,
-    imageAlt: "Home energy efficiency work and insulation upgrade",
+      "Reduce drafts and improve comfort with diagnostics and targeted upgrades.",
+    visual: {
+      variant: "slate",
+      eyebrow: "Energy Comfort",
+      title: "Air Sealing + Insulation",
+      subtitle:
+        "Targeted envelope upgrades that reduce drafts and improve balance.",
+    },
     primaryCtaLabel: "Book a Comfort Audit",
     primaryCtaHref: "/contact",
   };
@@ -73,18 +85,51 @@ export default function EnergyComfort() {
     },
   ];
 
+  const internalLinks = {
+    subtitle: "Pair comfort upgrades with preventive maintenance for better ROI.",
+    nextSteps: [
+      {
+        ...SERVICE_PILLAR_LINKS.inspection,
+        cta: "Bundle repairs",
+      },
+      {
+        ...MAINTENANCE_LINKS.home,
+        cta: "Protect the home",
+      },
+      {
+        label: "commercial maintenance program",
+        to: "/commercial-maintenance",
+        description: "Facilities coverage for small commercial properties.",
+        intent: "subscribe",
+        cta: "Review coverage",
+      },
+      {
+        label: "request a comfort audit",
+        to: "/contact",
+        description: "Schedule diagnostics and a targeted scope review.",
+        intent: "contact",
+        cta: "Request service",
+      },
+    ],
+    tools: [TOP_TOOL_LINKS[3], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[0], TOOLS_HUB_LINK],
+    guides: [GUIDE_LINKS[0], GUIDE_LINKS[1], GUIDE_LINKS[3]],
+    locations: GEO_HUB_LINKS,
+  };
+
   return (
     <NichePageTemplate
       meta={meta}
       hero={hero}
       highlights={[
         "Diagnostic-first recommendations that avoid wasted spend.",
-        "Bundled scopes that pair well with maintenance programs.",
+        "Bundled scopes that pair well with maintenance plans.",
         "Better comfort now and lower bills over time.",
       ]}
       faqs={faqs}
       menu={data.serviceMenu}
       pricing={data.pricingMatrix}
+      internalLinks={internalLinks}
     />
   );
 }
+

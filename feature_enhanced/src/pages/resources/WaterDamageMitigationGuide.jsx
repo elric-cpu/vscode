@@ -16,13 +16,24 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const WaterDamageMitigationGuide = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline:
-      "Water Damage Mitigation Guide: Burns, Salem, Sweet Home & Mid-Valley",
+      "Water Damage Restoration Guide: Burns, Salem, Sweet Home & Mid-Valley",
     image: siteImages.ogDefaultAbsolute,
     author: {
       "@type": "Organization",
@@ -38,14 +49,36 @@ const WaterDamageMitigationGuide = () => {
     },
     datePublished: "2025-01-15",
     description:
-      "Comprehensive guide to water damage mitigation in Oregon. Steps to take immediately for homeowners in Harney, Linn, Marion, Polk & Yamhill counties.",
+      "Comprehensive guide to water damage restoration in Oregon. Steps to take immediately for homeowners in Harney, Linn, Marion, Polk & Yamhill counties.",
   };
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Address mold risk",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Prevent repeat events",
+    },
+    {
+      label: "request service",
+      to: "/contact",
+      description: "Start mitigation with documented scope and photo logs.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   return (
     <>
       <SEO
-        title="Water Damage Mitigation Guide | Burns, Sweet Home, Salem, Albany"
+        title="Water Damage Restoration Guide | Burns, Sweet Home, Salem, Albany"
         description="Immediate steps for water damage in Oregon's Mid-Willamette Valley & Harney County. Free guide for homeowners in Salem, Corvallis, Sweet Home."
+        keywords="water damage restoration guide, emergency water damage steps, insurance documentation water damage, restoration timeline Oregon, water extraction checklist"
         schema={schema}
         type="article"
         image={siteImages.ogDefault}
@@ -54,12 +87,8 @@ const WaterDamageMitigationGuide = () => {
       <Breadcrumbs />
 
       <section className="bg-contractor-black text-white py-12 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src={siteImages.placeholder}
-            alt="Water extraction equipment"
-            className="w-full h-full object-cover"
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
@@ -67,7 +96,7 @@ const WaterDamageMitigationGuide = () => {
             Emergency Guide
           </div>
           <h1 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight">
-            Oregon Homeowner's Guide to Water Damage Mitigation
+            Oregon Homeowner's Guide to Water Damage Restoration
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             What to do in the first 24 hours to save your home in Harney, Linn,
@@ -78,6 +107,14 @@ const WaterDamageMitigationGuide = () => {
               <Phone className="w-5 h-5" />
               24/7 Emergency Line: (541) 321-5115
             </p>
+          </div>
+          <div className="max-w-lg mx-auto mt-8">
+            <VisualBlock
+              variant="slate"
+              eyebrow="Emergency Guide"
+              title="First 24 Hours"
+              subtitle="Immediate steps to reduce damage and support insurance documentation."
+            />
           </div>
         </div>
       </section>
@@ -136,7 +173,7 @@ const WaterDamageMitigationGuide = () => {
                 </p>
                 <p className="text-sm mt-2">
                   Pipes in exterior walls are vulnerable when temps drop below
-                  zero. Mitigation must involve rapid structural drying before
+                  zero. Restoration must involve rapid structural drying before
                   water refreezes or causes dry rot.
                 </p>
               </div>
@@ -179,7 +216,7 @@ const WaterDamageMitigationGuide = () => {
               Service Areas: Harney, Linn, Marion, Polk & Yamhill Counties
             </h3>
             <p>
-              We provide emergency water mitigation 24/7 to the entire region:
+              We provide emergency water damage restoration 24/7 to the entire region:
             </p>
 
             <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 my-8 text-sm">
@@ -254,11 +291,11 @@ const WaterDamageMitigationGuide = () => {
               </h3>
               <nav className="space-y-3">
                 <Link
-                  to="/services/water-damage-mitigation"
+                  to="/water-damage-restoration"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
-                    Our Mitigation Services
+                    Our Restoration Services
                   </span>
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
@@ -292,8 +329,24 @@ const WaterDamageMitigationGuide = () => {
           </aside>
         </div>
       </div>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Move from emergency guidance to a documented response plan."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[0], TOOLS_HUB_LINK]}
+            subtitle="Estimate budgets, replacement timing, and repair scope."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
     </>
   );
 };
 
 export default WaterDamageMitigationGuide;
+
+

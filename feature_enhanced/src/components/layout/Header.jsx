@@ -9,7 +9,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isAreasOpen, setIsAreasOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState(null); // For mobile menus
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -26,26 +25,47 @@ const Header = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
     setIsAreasOpen(false);
-    setActiveSubmenu(null);
   }, [location]);
 
-  const services = [
+  const serviceGroups = [
     {
-      name: "Water Damage Mitigation",
-      path: "/services/water-damage-mitigation",
+      label: "Emergency & Restoration",
+      items: [
+        { name: "Water Damage Restoration", path: "/water-damage-restoration" },
+        { name: "Mold Remediation", path: "/mold-remediation" },
+        { name: "Fire & Smoke Damage", path: "/fire-smoke-damage" },
+        {
+          name: "Insurance Claims Repairs",
+          path: "/insurance-claims-repairs",
+        },
+      ],
     },
-    { name: "Mold Remediation", path: "/services/mold-remediation" },
-    { name: "Bathroom Remodels", path: "/services/bathroom-remodels" },
-    { name: "Kitchen Remodels", path: "/services/kitchen-remodels" },
-    { name: "General Contracting", path: "/services/general-contracting" },
     {
-      name: "Residential Maintenance Programs",
-      path: "/services/residential-maintenance",
+      label: "Maintenance & Planning",
+      items: [
+        { name: "Maintenance Plans", path: "/maintenance-plans" },
+        { name: "Commercial Maintenance", path: "/commercial-maintenance" },
+        {
+          name: "Commercial Service Agreements",
+          path: "/commercial-service-agreements",
+        },
+      ],
     },
-    { name: "Commercial Maintenance", path: "/services/commercial" },
     {
-      name: "Commercial Service Agreements",
-      path: "/services/commercial/service-agreements",
+      label: "Diagnostics & Upgrades",
+      items: [
+        { name: "Moisture Control", path: "/moisture-control" },
+        { name: "Accessibility Retrofits", path: "/accessibility-retrofits" },
+        { name: "Energy Comfort Retrofits", path: "/energy-comfort-retrofits" },
+      ],
+    },
+    {
+      label: "Selective Remodeling",
+      items: [
+        { name: "Inspection Repairs", path: "/inspection-repairs" },
+        { name: "Bathroom Remodels", path: "/bathroom-remodels" },
+        { name: "Kitchen Remodels", path: "/kitchen-remodels" },
+      ],
     },
   ];
 
@@ -98,7 +118,7 @@ const Header = () => {
                 Benson Home Solutions
               </span>
               <span className="text-xs text-restoration-gray">
-                Oregon Construction & Restoration
+                Oregon Maintenance & Restoration
               </span>
             </div>
           </Link>
@@ -118,23 +138,35 @@ const Header = () => {
                 Services
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-200">
-                <div className="py-2">
-                  {services.map((service) => (
-                    <Link
-                      key={service.path}
-                      to={service.path}
-                      className="block px-4 py-2 text-contractor-black hover:bg-cream hover:text-maroon transition-colors"
-                    >
-                      {service.name}
-                    </Link>
+              <div className="absolute top-full left-0 mt-2 w-[560px] bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-200">
+                <div className="grid grid-cols-2 gap-4 p-4">
+                  {serviceGroups.map((group) => (
+                    <div key={group.label} className="space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+                        {group.label}
+                      </p>
+                      <div className="space-y-1">
+                        {group.items.map((service) => (
+                          <Link
+                            key={service.path}
+                            to={service.path}
+                            className="block px-3 py-2 rounded text-contractor-black hover:bg-cream hover:text-maroon transition-colors"
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   ))}
-                  <Link
-                    to="/services"
-                    className="block px-4 py-2 text-maroon hover:bg-cream font-semibold border-t border-gray-200 mt-2"
-                  >
-                    View All Services
-                  </Link>
+                  <div className="col-span-2">
+                    <Link
+                      to="/services"
+                      className="flex items-center justify-between px-4 py-2 text-maroon hover:bg-cream font-semibold border-t border-gray-200"
+                    >
+                      View All Services
+                      <ChevronRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -152,6 +184,12 @@ const Header = () => {
                   <h3 className="font-bold text-maroon mb-3 border-b border-gray-100 pb-2">
                     {serviceAreaData["harney-county"].label}
                   </h3>
+                  <Link
+                    to="/service-areas/harney-county"
+                    className="block text-sm font-semibold text-maroon mb-2"
+                  >
+                    View Harney County
+                  </Link>
                   <div className="space-y-1">
                     {serviceAreaData["harney-county"].towns.map((town) => (
                       <Link
@@ -170,6 +208,12 @@ const Header = () => {
                   <h3 className="font-bold text-maroon mb-3 border-b border-gray-100 pb-2">
                     {serviceAreaData["mid-valley"].label}
                   </h3>
+                  <Link
+                    to="/service-areas/mid-willamette-valley"
+                    className="inline-flex text-sm font-semibold text-maroon mb-3"
+                  >
+                    View Mid-Willamette Valley
+                  </Link>
                   <div className="grid grid-cols-2 gap-6">
                     {Object.entries(serviceAreaData["mid-valley"].counties).map(
                       ([key, county]) => (
@@ -193,6 +237,15 @@ const Header = () => {
                     )}
                   </div>
                 </div>
+                <div className="col-span-3 border-t border-gray-100 pt-3">
+                  <Link
+                    to="/service-areas"
+                    className="flex items-center justify-between px-3 py-2 text-maroon hover:bg-cream font-semibold rounded"
+                  >
+                    View All Service Areas
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -208,6 +261,28 @@ const Header = () => {
             >
               Resources
             </Link>
+            <div className="relative group">
+              <button className="text-contractor-black hover:text-maroon transition-colors font-medium flex items-center gap-1">
+                Portals
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-200">
+                <div className="p-3 space-y-1">
+                  <Link
+                    to="/client-portal-login"
+                    className="block px-3 py-2 rounded text-contractor-black hover:bg-cream hover:text-maroon transition-colors"
+                  >
+                    Client Portal Login
+                  </Link>
+                  <Link
+                    to="/subcontractor-portal-login"
+                    className="block px-3 py-2 rounded text-contractor-black hover:bg-cream hover:text-maroon transition-colors"
+                  >
+                    Partner Portal Login
+                  </Link>
+                </div>
+              </div>
+            </div>
             <Link
               to="/contact"
               className="text-contractor-black hover:text-maroon transition-colors font-medium"
@@ -274,14 +349,23 @@ const Header = () => {
                         exit={{ opacity: 0, height: 0 }}
                         className="pl-4 space-y-2 border-l-2 border-gray-100 ml-2"
                       >
-                        {services.map((service) => (
-                          <Link
-                            key={service.path}
-                            to={service.path}
-                            className="block py-2 text-sm text-gray-600 hover:text-maroon"
-                          >
-                            {service.name}
-                          </Link>
+                        {serviceGroups.map((group) => (
+                          <div key={group.label} className="py-2">
+                            <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">
+                              {group.label}
+                            </p>
+                            <div className="mt-2 space-y-2">
+                              {group.items.map((service) => (
+                                <Link
+                                  key={service.path}
+                                  to={service.path}
+                                  className="block py-1 text-sm text-gray-600 hover:text-maroon"
+                                >
+                                  {service.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                       </motion.div>
                     )}
@@ -312,6 +396,12 @@ const Header = () => {
                           <h4 className="font-bold text-maroon text-sm mb-1">
                             {serviceAreaData["harney-county"].label}
                           </h4>
+                          <Link
+                            to="/service-areas/harney-county"
+                            className="block py-1 text-sm text-maroon font-semibold"
+                          >
+                            View Harney County
+                          </Link>
                           {serviceAreaData["harney-county"].towns.map(
                             (town) => (
                               <Link
@@ -330,6 +420,12 @@ const Header = () => {
                           <h4 className="font-bold text-maroon text-sm mb-1">
                             {serviceAreaData["mid-valley"].label}
                           </h4>
+                          <Link
+                            to="/service-areas/mid-willamette-valley"
+                            className="block py-1 text-sm text-maroon font-semibold"
+                          >
+                            View Mid-Willamette Valley
+                          </Link>
                           {Object.entries(
                             serviceAreaData["mid-valley"].counties,
                           ).map(([key, county]) => (
@@ -351,6 +447,12 @@ const Header = () => {
                             </div>
                           ))}
                         </div>
+                        <Link
+                          to="/service-areas"
+                          className="block py-2 text-sm text-maroon font-semibold"
+                        >
+                          View All Service Areas
+                        </Link>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -368,6 +470,23 @@ const Header = () => {
                 >
                   Resources
                 </Link>
+                <div className="border-t border-gray-100 pt-2">
+                  <p className="text-xs uppercase tracking-widest text-gray-500 px-2 mb-1">
+                    Portals
+                  </p>
+                  <Link
+                    to="/client-portal-login"
+                    className="block py-2 text-contractor-black hover:text-maroon font-medium"
+                  >
+                    Client Portal Login
+                  </Link>
+                  <Link
+                    to="/subcontractor-portal-login"
+                    className="block py-2 text-contractor-black hover:text-maroon font-medium"
+                  >
+                    Partner Portal Login
+                  </Link>
+                </div>
                 <Link
                   to="/contact"
                   className="block py-2 text-contractor-black hover:text-maroon font-medium"

@@ -18,6 +18,7 @@ export const serviceAreaData = {
         towns: [
           { name: "Sweet Home", slug: "sweet-home", zip: "97386" },
           { name: "Lebanon", slug: "lebanon", zip: "97355" },
+          { name: "Albany", slug: "albany", zip: "97321-97322" },
           { name: "Brownsville", slug: "brownsville", zip: "97327" },
           { name: "Halsey", slug: "halsey", zip: "97348" },
           { name: "Harrisburg", slug: "harrisburg", zip: "97446" },

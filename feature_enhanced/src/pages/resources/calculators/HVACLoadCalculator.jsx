@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Gauge, ThermometerSun, Wind, Info } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +8,9 @@ import CalculatorLayout from "@/components/calculators/CalculatorLayout";
 import LeadCaptureCard from "@/components/calculators/LeadCaptureCard";
 import ResultsLock from "@/components/calculators/ResultsLock";
 import FaqSection from "@/components/faq/FaqSection";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 import { useZipLocalization } from "@/lib/zipLocalization/useZipLocalization";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
 import {
@@ -23,6 +27,12 @@ import {
 } from "@/lib/calculators/costModels";
 import { submitCalculatorLead } from "@/lib/calculators/submitCalculatorLead";
 import { isEmail, isZip } from "@/lib/validators";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const HVACLoadCalculator = () => {
   const [zip, setZip] = useState("");
@@ -157,12 +167,41 @@ const HVACLoadCalculator = () => {
 
   const faqSchema = buildFaqSchema(faqs);
 
+  const nextSteps = [
+    {
+      label: "Home maintenance program",
+      to: MAINTENANCE_LINKS.home.to,
+      description: "Plan seasonal HVAC tune-ups and filter schedules.",
+      intent: "subscribe",
+    },
+    {
+      label: "Commercial maintenance program",
+      to: MAINTENANCE_LINKS.commercial.to,
+      description: "Facilities maintenance for small commercial sites.",
+      intent: "subscribe",
+    },
+    {
+      label: "Energy comfort retrofits",
+      to: "/energy-comfort-retrofits",
+      description: "Air sealing and insulation improvements.",
+      intent: "service",
+    },
+    {
+      label: "Request a load assessment",
+      to: "/contact",
+      description: "Schedule a manual load calculation and site review.",
+      intent: "contact",
+    },
+  ];
+
   return (
     <CalculatorLayout
       seo={{
         title: "HVAC Load Calculator | Benson Home Solutions",
         description:
           "Estimate HVAC load, system size, and ZIP-adjusted replacement ranges for Oregon homes and small commercial properties.",
+        keywords:
+          "HVAC load calculator Oregon, heating cooling load estimate, HVAC sizing calculator, Manual J planning, replacement cost estimate Oregon",
         schema: faqSchema,
       }}
       badge="HVAC Planning"
@@ -189,6 +228,21 @@ const HVACLoadCalculator = () => {
         />
       }
     >
+      <p className="text-sm text-restoration-gray">
+        For full planning, pair this estimate with our{" "}
+        <Link to="/energy-comfort-retrofits" className="text-maroon font-semibold">
+          energy comfort retrofits
+        </Link>{" "}
+        and a{" "}
+        <Link
+          to={MAINTENANCE_LINKS.home.to}
+          className="text-maroon font-semibold"
+        >
+          home maintenance program
+        </Link>
+        .
+      </p>
+
       <div className="bg-cream border border-gray-200 rounded-xl p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -376,6 +430,15 @@ const HVACLoadCalculator = () => {
           Result: 3.5-ton system, verified by Manual J, with a 2.9-year payback.
         </p>
       </div>
+
+      <NextStepsBlock links={nextSteps} />
+
+      <RelatedToolsBlock
+        links={[TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[4], TOOLS_HUB_LINK]}
+        subtitle="Additional tools for HVAC planning and budgeting."
+      />
+
+      <LocationsServedBlock links={GEO_HUB_LINKS} />
 
       <FaqSection items={faqs} />
     </CalculatorLayout>

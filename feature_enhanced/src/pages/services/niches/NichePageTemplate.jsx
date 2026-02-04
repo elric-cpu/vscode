@@ -10,6 +10,11 @@ import ServiceMenu from "@/components/services/ServiceMenu";
 import { PRICING_NOTES } from "@/data/nicheMenus";
 import FaqSection from "@/components/faq/FaqSection";
 import { buildFaqSchema } from "@/lib/seo/faqSchema";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import RelatedGuidesBlock from "@/components/internal-links/RelatedGuidesBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
 
 function buildServiceSchema({ schemaType, title, description, serviceType }) {
   return {
@@ -33,6 +38,7 @@ export default function NichePageTemplate({
   highlights,
   faqs = [],
   faqSchema,
+  internalLinks = {},
 }) {
   const schema = buildServiceSchema({
     schemaType: "Service",
@@ -44,6 +50,15 @@ export default function NichePageTemplate({
   const resolvedFaqSchema = faqSchema || (faqs.length ? buildFaqSchema(faqs) : null);
   const schemaList = [schema];
   if (resolvedFaqSchema) schemaList.push(resolvedFaqSchema);
+  const {
+    nextSteps = [],
+    tools = [],
+    guides = [],
+    locations = [],
+    subtitle,
+  } = internalLinks;
+  const hasInternalLinks =
+    nextSteps.length || tools.length || guides.length || locations.length;
 
   return (
     <>
@@ -111,10 +126,11 @@ export default function NichePageTemplate({
               transition={{ duration: 0.6, delay: 0.15 }}
             >
               <div className="bg-cream rounded-lg p-6 shadow-2xl">
-                <img
-                  className="rounded-lg w-full h-80 object-cover"
-                  alt={hero.imageAlt}
-                  src={hero.imageSrc}
+                <VisualBlock
+                  variant={hero.visual?.variant}
+                  eyebrow={hero.visual?.eyebrow || "Specialty Service"}
+                  title={hero.visual?.title || hero.h1}
+                  subtitle={hero.visual?.subtitle || hero.subhead}
                 />
               </div>
             </motion.div>
@@ -152,16 +168,44 @@ export default function NichePageTemplate({
         </div>
       </section>
 
+      {hasInternalLinks ? (
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            {nextSteps.length ? (
+              <NextStepsBlock links={nextSteps} subtitle={subtitle} />
+            ) : null}
+            {tools.length ? (
+              <RelatedToolsBlock
+                links={tools}
+                subtitle="Estimate scopes, budget ranges, and timing."
+              />
+            ) : null}
+            {guides.length ? (
+              <RelatedGuidesBlock
+                links={guides}
+                subtitle="Supporting guidance for next-step decisions."
+              />
+            ) : null}
+            {locations.length ? (
+              <LocationsServedBlock
+                links={locations}
+                subtitle="Harney County and Mid-Willamette Valley teams."
+              />
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
       <FaqSection items={faqs} className="bg-white" />
 
       <section className="py-16 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-contractor-black mb-6">
-            Ready for a fast quote?
+            Ready for a documented estimate?
           </h2>
           <p className="text-xl text-restoration-gray mb-8">
-            Tell us what you are seeing and we will recommend the smallest, most
-            reliable fix first.
+            Tell us what you are seeing. We will recommend the smallest reliable
+            fix and document the scope for your records.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to={hero.primaryCtaHref}>

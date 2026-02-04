@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/lib/customSupabaseClient";
 import { useAuth } from "@/contexts/SupabaseAuthContext";
 import { Button } from "@/components/ui/button";
 import { isPhone, sanitizeText } from "@/lib/validators";
+import SEO from "@/components/SEO";
 
 const ClientCompleteProfile = () => {
   const navigate = useNavigate();
@@ -120,9 +120,11 @@ const ClientCompleteProfile = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Complete Profile | Client Portal</title>
-      </Helmet>
+      <SEO
+        title="Complete Profile"
+        description="Complete your client profile to unlock portal access."
+        robots="noindex, nofollow"
+      />
       <main className="min-h-screen bg-[#FAF6EE] py-16 px-4">
         <div className="max-w-2xl mx-auto bg-white border border-[#D4C5A5] p-8">
           <h1 className="text-2xl font-bold text-[#3C0008]">

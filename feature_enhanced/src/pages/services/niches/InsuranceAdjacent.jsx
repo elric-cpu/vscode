@@ -1,38 +1,50 @@
 import React from "react";
 import NichePageTemplate from "./NichePageTemplate";
 import { NICHE_MENUS } from "@/data/nicheMenus";
-import siteImages from "@/data/siteImages";
+import {
+  GEO_HUB_LINKS,
+  GUIDE_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 export default function InsuranceAdjacent() {
   const data = NICHE_MENUS.insurance_adjacent;
 
   const meta = {
-    title: data.title,
-    serviceType: data.title,
+    title: "Insurance Claims Repairs",
+    serviceType: "Insurance Claims Repairs",
     description:
-      "The fixer after the adjuster leaves: partial dry-outs, post-leak rebuilds, small mold remediation, and documentation support for denied or partial claims.",
+      "Partial dry-outs, post-leak rebuilds, small mold remediation, and documentation support for denied or partial claims.",
     seoTitle:
-      "Insurance-Adjacent Repairs Oregon | Post-Leak Rebuilds & Documentation",
+      "Insurance Claims Repairs Oregon | Post-Leak Rebuilds & Documentation",
     seoDescription:
-      "The fixer after the adjuster leaves: partial dry-outs, post-leak rebuilds, small mold remediation, and documentation support for denied or partial claims.",
+      "Partial dry-outs, post-leak rebuilds, small mold remediation, and documentation support for denied or partial claims.",
     keywords:
-      "post leak rebuild Oregon, partial dry out, insurance denied repairs, claim documentation support, small mold remediation, water damage repair",
+      "insurance claims repairs Oregon, post leak rebuild, insurance denied repairs, claim documentation support, small mold remediation, water damage repair",
   };
 
   const hero = {
-    badge: "Documentation-Heavy",
-    h1: "Insurance-Adjacent Specialty Work",
+    badge: "Documentation Support",
+    h1: "Insurance Claims Repairs",
     subhead:
-      "Too small for big restoration. Too complex for a handyman. We handle the gray zone.",
-    imageSrc: siteImages.placeholder,
-    imageAlt: "Documentation and repair planning after a leak",
+      "Targeted repairs and documentation support when claims are partial, delayed, or denied.",
+    visual: {
+      variant: "ink",
+      eyebrow: "Claims Support",
+      title: "Scope + Documentation",
+      subtitle:
+        "Photo logs, moisture data, and repair scopes that support claim clarity.",
+    },
     primaryCtaLabel: "Get a Triage Quote",
     primaryCtaHref: "/contact",
   };
 
   const faqs = [
     {
-      question: "What does \"insurance-adjacent\" mean?",
+      question: "What does insurance claims repairs cover?",
       answer:
         "We handle repairs that fall outside or after an insurance claim—partial approvals, denied claims, or small scopes.",
     },
@@ -73,6 +85,34 @@ export default function InsuranceAdjacent() {
     },
   ];
 
+  const internalLinks = {
+    subtitle: "Clarify scope, document repairs, and resolve coverage gaps.",
+    nextSteps: [
+      {
+        ...SERVICE_PILLAR_LINKS.water,
+        cta: "Mitigate water damage",
+      },
+      {
+        ...SERVICE_PILLAR_LINKS.mold,
+        cta: "Address mold risk",
+      },
+      {
+        ...SERVICE_PILLAR_LINKS.inspection,
+        cta: "Close repair items",
+      },
+      {
+        label: "request claim support",
+        to: "/contact",
+        description: "Get documentation-ready scopes and photo logs.",
+        intent: "contact",
+        cta: "Request service",
+      },
+    ],
+    tools: [TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[1], TOOLS_HUB_LINK],
+    guides: [GUIDE_LINKS[3], GUIDE_LINKS[2], GUIDE_LINKS[0]],
+    locations: GEO_HUB_LINKS,
+  };
+
   return (
     <NichePageTemplate
       meta={meta}
@@ -85,6 +125,7 @@ export default function InsuranceAdjacent() {
       faqs={faqs}
       menu={data.serviceMenu}
       pricing={data.pricingMatrix}
+      internalLinks={internalLinks}
     />
   );
 }

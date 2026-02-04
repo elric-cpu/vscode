@@ -16,6 +16,17 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const HiddenWaterDamageSigns = () => {
   const schema = {
@@ -41,6 +52,27 @@ const HiddenWaterDamageSigns = () => {
     description:
       "Don't let hidden leaks rot your home. Learn the 7 warning signs of water damage for homeowners in Burns, Sweet Home, Salem, and the Mid-Willamette Valley.",
   };
+  const nextSteps = [
+    {
+      ...SERVICE_PILLAR_LINKS.water,
+      cta: "Emergency response",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.mold,
+      cta: "Mold assessment",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Prevent repeat events",
+    },
+    {
+      label: "request service",
+      to: "/contact",
+      description: "Get a documented scope and moisture assessment.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   return (
     <>
@@ -55,12 +87,8 @@ const HiddenWaterDamageSigns = () => {
       <Breadcrumbs />
 
       <section className="bg-contractor-black text-white py-12 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src={siteImages.placeholder}
-            alt="Water damage inspection"
-            className="w-full h-full object-cover"
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
@@ -74,6 +102,14 @@ const HiddenWaterDamageSigns = () => {
             From the high desert of Burns to the rainy Willamette Valley, catch
             leaks before they destroy your home.
           </p>
+          <div className="max-w-lg mx-auto">
+            <VisualBlock
+              variant="slate"
+              eyebrow="Homeowner Guide"
+              title="Hidden Water Damage Signs"
+              subtitle="Early detection prevents mold, rot, and insurance disputes."
+            />
+          </div>
         </div>
       </section>
 
@@ -207,8 +243,8 @@ const HiddenWaterDamageSigns = () => {
               Service Areas: Harney, Linn, Marion, Polk & Yamhill Counties
             </h3>
             <p>
-              We provide water damage detection and mitigation to the entire
-              region:
+              We provide water damage detection and restoration planning across
+              the entire region:
             </p>
 
             <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 my-8 text-sm">
@@ -279,20 +315,20 @@ const HiddenWaterDamageSigns = () => {
               </h3>
               <nav className="space-y-3">
                 <Link
-                  to="/services/water-damage-mitigation"
+                  to="/water-damage-restoration"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
-                    Water Mitigation Services
+                    Water Damage Restoration Services
                   </span>
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
                 <Link
-                  to="/resources/water-damage-mitigation-guide"
+                  to="/resources/water-damage-restoration-guide"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
-                    Free Mitigation Guide
+                    Water Damage Guide
                   </span>
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
@@ -316,8 +352,24 @@ const HiddenWaterDamageSigns = () => {
           </aside>
         </div>
       </div>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Move from warning signs to a documented response plan."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[1], TOP_TOOL_LINKS[0], TOOLS_HUB_LINK]}
+            subtitle="Estimate budgets, replacement timing, and repair scope."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
     </>
   );
 };
 
 export default HiddenWaterDamageSigns;
+
+

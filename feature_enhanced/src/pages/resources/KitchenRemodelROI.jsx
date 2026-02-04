@@ -16,6 +16,17 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import siteImages from "@/data/siteImages";
+import VisualBlock from "@/components/VisualBlock";
+import NextStepsBlock from "@/components/internal-links/NextStepsBlock";
+import RelatedToolsBlock from "@/components/internal-links/RelatedToolsBlock";
+import LocationsServedBlock from "@/components/internal-links/LocationsServedBlock";
+import {
+  GEO_HUB_LINKS,
+  MAINTENANCE_LINKS,
+  SERVICE_PILLAR_LINKS,
+  TOP_TOOL_LINKS,
+  TOOLS_HUB_LINK,
+} from "@/data/internalLinks";
 
 const KitchenRemodelROI = () => {
   const schema = {
@@ -40,12 +51,37 @@ const KitchenRemodelROI = () => {
     description:
       "Calculate kitchen remodel ROI in Oregon. Market data for Harney, Linn, Marion, Polk & Yamhill counties. Maximize resale value with smart kitchen renovations.",
   };
+  const nextSteps = [
+    {
+      label: "kitchen remodels",
+      to: "/kitchen-remodels",
+      description: "Scope planning and professional remodeling.",
+      intent: "service",
+      cta: "Explore remodels",
+    },
+    {
+      ...MAINTENANCE_LINKS.home,
+      cta: "Protect the investment",
+    },
+    {
+      ...SERVICE_PILLAR_LINKS.inspection,
+      cta: "Bundle repairs",
+    },
+    {
+      label: "request a remodel scope",
+      to: "/contact",
+      description: "Confirm budget, finishes, and scheduling.",
+      intent: "contact",
+      cta: "Request service",
+    },
+  ];
 
   return (
     <>
       <SEO
         title="Kitchen Remodel ROI | Burns, Sweet Home, Salem, Albany"
         description="ROI guide for kitchen remodels in Oregon's Mid-Willamette Valley & Harney County. Cost vs. Value analysis for homeowners in Salem, Corvallis, Sweet Home."
+        keywords="kitchen remodel ROI Oregon, remodeling cost vs value, kitchen renovation ROI, Mid-Willamette Valley remodel costs, Harney County renovation"
         schema={schema}
         type="article"
         image={siteImages.ogDefault}
@@ -54,12 +90,8 @@ const KitchenRemodelROI = () => {
       <Breadcrumbs />
 
       <section className="bg-contractor-black text-white py-12 lg:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src={siteImages.placeholder}
-            alt="Modern kitchen renovation"
-            className="w-full h-full object-cover"
-          />
+        <div className="absolute inset-0 opacity-90">
+          <div className="h-full w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
@@ -76,6 +108,14 @@ const KitchenRemodelROI = () => {
             Newberg—maximize your home's value across the Willamette Valley &
             Harney County.
           </p>
+          <div className="max-w-lg mx-auto">
+            <VisualBlock
+              variant="moss"
+              eyebrow="ROI Guide"
+              title="Kitchen Remodel Returns"
+              subtitle="Scope, materials, and layout choices that protect resale value."
+            />
+          </div>
         </div>
       </section>
 
@@ -309,7 +349,7 @@ const KitchenRemodelROI = () => {
               </h3>
               <nav className="space-y-3">
                 <Link
-                  to="/services/kitchen-remodels"
+                  to="/kitchen-remodels"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
@@ -318,11 +358,11 @@ const KitchenRemodelROI = () => {
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
                 <Link
-                  to="/services/general-contracting"
+                  to="/inspection-repairs"
                   className="flex items-center justify-between p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors group"
                 >
                   <span className="text-sm font-medium text-gray-700 group-hover:text-maroon">
-                    General Contracting
+                    Inspection Repairs
                   </span>
                   <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-maroon" />
                 </Link>
@@ -346,8 +386,23 @@ const KitchenRemodelROI = () => {
           </aside>
         </div>
       </div>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <NextStepsBlock
+            links={nextSteps}
+            subtitle="Turn ROI research into a scoped remodel plan."
+          />
+          <RelatedToolsBlock
+            links={[TOP_TOOL_LINKS[2], TOP_TOOL_LINKS[0], TOP_TOOL_LINKS[1], TOOLS_HUB_LINK]}
+            subtitle="Budget, replacement timing, and ROI planning tools."
+          />
+          <LocationsServedBlock links={GEO_HUB_LINKS} />
+        </div>
+      </section>
     </>
   );
 };
 
 export default KitchenRemodelROI;
+
