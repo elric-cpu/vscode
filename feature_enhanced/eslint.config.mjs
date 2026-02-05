@@ -1,10 +1,25 @@
+import globals from "globals";
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import importPlugin from "eslint-plugin-import";
+
 export default [
+  {
+    ignores: [
+      "dist/**",
+      "playwright-report/**",
+      "test-results/**",
+      "node_modules/**",
+      ".tmp-*.mjs",
+      "**/.tmp-*.mjs",
+    ],
+  },
   {
     files: ["**/*.js", "**/*.jsx", "**/*.mjs"],
     plugins: {
-      react: react.configs.recommended,
-      "react-hooks": reactHooks.configs.recommended,
-      import: importPlugin.configs.recommended,
+      react,
+      "react-hooks": reactHooks,
+      import: importPlugin,
     },
     languageOptions: {
       ecmaVersion: "latest",
@@ -23,6 +38,9 @@ export default [
       },
     },
     rules: {
+      ...(react.configs?.recommended?.rules ?? {}),
+      ...(reactHooks.configs?.recommended?.rules ?? {}),
+      ...(importPlugin.configs?.recommended?.rules ?? {}),
       "react/prop-types": "off",
       "react/no-unescaped-entities": "off",
       "react/display-name": "off", // Non-critical, component works without displayName
@@ -44,8 +62,13 @@ export default [
       "scripts/**/*.{js,mjs}",
       "tools/**/*.{js,mjs}",
       "tailwind.config.js",
+      "vite.config.js",
     ],
     languageOptions: { globals: { ...globals.node, fetch: "readonly" } },
+    rules: {
+      "import/default": "off",
+      "import/namespace": "off",
+    },
   },
   {
     files: ["k6/**/*.js"],
@@ -57,4 +80,3 @@ export default [
     },
   },
 ];
-

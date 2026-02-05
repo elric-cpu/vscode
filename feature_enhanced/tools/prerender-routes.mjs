@@ -79,6 +79,10 @@ const resolvePort = () =>
   });
 
 const main = async () => {
+  if (process.env.SKIP_PRERENDER === "1") {
+    console.log("Prerender skipped: SKIP_PRERENDER=1");
+    return;
+  }
   const port = await resolvePort();
   const baseUrl = `http://${HOST}:${port}`;
   const previewProcess = startPreviewServer(port);
