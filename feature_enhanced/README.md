@@ -101,3 +101,4 @@ SUPABASE_URL=... SUPABASE_ANON_KEY=... SUPABASE_SERVICE_ROLE_KEY=... npm run tes
 - `supabase/functions/price-lookup/index.ts`
 - `src/components/estimating/EstimateWorkspace.tsx`
 - `src/lib/estimating/estimateApi.ts`
+
