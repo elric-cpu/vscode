@@ -12,7 +12,6 @@ export async function submitEstimatorLead(payload) {
   const endpoint = import.meta?.env?.VITE_ESTIMATOR_LEAD_ENDPOINT;
 
   if (!endpoint) {
-    // eslint-disable-next-line no-console
     const sanitizedPayload = sanitizeLeadPayload(payload);
     console.log("[estimator] lead captured (no endpoint configured):", sanitizedPayload);
     return { ok: true, mode: "console" };

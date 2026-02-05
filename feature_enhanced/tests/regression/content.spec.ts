@@ -23,9 +23,12 @@ test.describe("Regression: Content and Routes", () => {
   });
 
   test("service area route renders with params", async ({ page }) => {
-    await page.goto("/service-areas/oregon/salem");
+    await page.goto("/service-areas/mid-valley/salem");
     await expect(
-      page.getByRole("heading", { level: 1, name: /Water Damage Restoration/i }),
+      page.getByRole("heading", {
+        level: 1,
+        name: /Salem, OR Restoration/i,
+      }),
     ).toBeVisible();
   });
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,10 +7,6 @@ export default function QuestionEngine({ questions, onSubmit, loading }) {
   const [answers, setAnswers] = useState({});
 
   const buildKey = (question) => `${question.question_id}:${question.target_id || "global"}`;
-
-  useEffect(() => {
-    setAnswers({});
-  }, [questions]);
 
   const handleChange = (key, value) => {
     setAnswers((prev) => ({ ...prev, [key]: value }));

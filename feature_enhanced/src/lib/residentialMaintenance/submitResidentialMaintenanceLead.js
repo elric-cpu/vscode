@@ -16,7 +16,6 @@ export async function submitResidentialMaintenanceLead(payload) {
   const endpoint = residentialEndpoint || fallbackEndpoint;
 
   if (!endpoint) {
-    // eslint-disable-next-line no-console
     console.log(
       "[residential-maintenance] lead captured (no endpoint configured):",
       payload,

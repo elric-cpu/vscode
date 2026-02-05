@@ -24,7 +24,6 @@ const SubcontractorPortal = () => {
         const bundle = await getSubcontractorPortalBundle();
         setWorkOrders(bundle?.work_orders || []);
       } catch (error) {
-        // eslint-disable-next-line no-console
         console.error("Data load error:", error);
       }
     };

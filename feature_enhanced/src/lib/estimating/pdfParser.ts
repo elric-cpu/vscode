@@ -1,5 +1,5 @@
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
-import workerUrl from "pdfjs-dist/build/pdf.worker.min?url";
+import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import type { ParseResult } from "./types";
 
 GlobalWorkerOptions.workerSrc = workerUrl;

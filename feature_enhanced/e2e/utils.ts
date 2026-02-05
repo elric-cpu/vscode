@@ -15,6 +15,19 @@ export async function blockExternal(page: Page) {
 
 export async function mockSupabase(page: Page, user: any) {
   await page.addInitScript((userData) => {
+    const session = {
+      access_token: "token",
+      refresh_token: "refresh",
+      token_type: "bearer",
+      expires_in: 3600,
+      expires_at: Math.floor(Date.now() / 1000) + 3600,
+      user: userData,
+    };
+    const storageKeys = ["sb-127-auth-token", "sb-localhost-auth-token"];
+    storageKeys.forEach((key) => {
+      window.localStorage.setItem(key, JSON.stringify(session));
+    });
+
     const originalFetch = window.fetch;
     window.fetch = async (input, init = {}) => {
       const url = typeof input === "string" ? input : input.url;

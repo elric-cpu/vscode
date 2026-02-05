@@ -11,7 +11,7 @@ test.describe("Smoke: Primary Routes", () => {
     await page.goto(routes.services);
     await expectH1(
       page,
-      "Professional Construction & Restoration Services",
+      "Maintenance Plans, Restoration & Facility-Ready Services",
     );
   });
 
@@ -20,7 +20,7 @@ test.describe("Smoke: Primary Routes", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Your Complete Resource Guide/i,
+        name: /Practical Resources for Home Restoration in Oregon/i,
       }),
     ).toBeVisible();
   });

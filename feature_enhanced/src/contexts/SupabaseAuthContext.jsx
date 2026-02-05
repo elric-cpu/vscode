@@ -47,7 +47,6 @@ export const AuthProvider = ({ children }) => {
           });
         } catch (error) {
           welcomeRequested.current = false;
-          // eslint-disable-next-line no-console
           console.error("Failed to send welcome email:", error);
         }
       }

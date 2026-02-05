@@ -31,7 +31,6 @@ const ClientCompleteProfile = () => {
         .maybeSingle();
 
       if (error) {
-        // eslint-disable-next-line no-console
         console.error(error);
         return;
       }

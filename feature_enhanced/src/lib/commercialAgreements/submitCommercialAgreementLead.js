@@ -16,7 +16,6 @@ export async function submitCommercialAgreementLead(payload) {
   const endpoint = commercialEndpoint || fallbackEndpoint;
 
   if (!endpoint) {
-    // eslint-disable-next-line no-console
     console.log(
       "[commercial-agreement] lead captured (no endpoint configured):",
       payload,

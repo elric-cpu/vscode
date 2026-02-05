@@ -8,9 +8,7 @@ const formatCurrency = (value) =>
     : "—";
 
 export default function EstimateReview({ estimateData }) {
-  if (!estimateData) return null;
-
-  const { version, tasks, line_items: lineItems, excerpts } = estimateData;
+  const { version, tasks, line_items: lineItems, excerpts } = estimateData || {};
   const taskMap = useMemo(() => {
     return (tasks || []).reduce((acc, task) => {
       acc[task.id] = task;
@@ -34,6 +32,25 @@ export default function EstimateReview({ estimateData }) {
       return acc;
     }, {});
   }, [lineItems, taskMap]);
+
+  const taskSummaries = useMemo(() => {
+    return (lineItems || []).reduce((acc, item) => {
+      const task = taskMap[item.task_id];
+      if (!task) return acc;
+      if (!acc[item.task_id]) {
+        acc[item.task_id] = {
+          label: `${task.trade || "General"} · ${task.room || "General"}`,
+          hours: 0,
+          cost: 0,
+        };
+      }
+      acc[item.task_id].hours += Number(item.labor_hours || 0);
+      acc[item.task_id].cost += Number(item.labor_cost || 0);
+      return acc;
+    }, {});
+  }, [lineItems, taskMap]);
+
+  if (!estimateData) return null;
 
   return (
     <div className="space-y-6">
@@ -82,18 +99,7 @@ export default function EstimateReview({ estimateData }) {
             })}
           </div>
           <div className="text-sm text-gray-500">
-            {Object.entries(
-              (items || []).reduce((acc, item) => {
-                const task = taskMap[item.task_id];
-                if (!task) return acc;
-                if (!acc[item.task_id]) {
-                acc[item.task_id] = { label: `${task.trade} · ${task·room || "General"}`, hours: 0, cost: 0 };
-                }
-                acc[item.task_id].hours += Number(item.labor_hours || 0);
-                acc[item.task_id].cost += Number(item.labor_cost || 0);
-                return acc;
-              }, {}),
-            ).map(([taskId, summary]) => (
+            {Object.entries(taskSummaries).map(([taskId, summary]) => (
               <div key={taskId} className="flex justify-between">
                 <span>{summary.label}</span>
                 <span>{summary.hours.toFixed(2)} hrs · {formatCurrency(summary.cost)}</span>

@@ -48,7 +48,6 @@ const ClientPortal = () => {
         setDocuments(bundle?.documents || []);
         setInvoices(bundle?.invoices || []);
       } catch (error) {
-        // eslint-disable-next-line no-console
         console.error("Data load error:", error);
       } finally {
         setLoading(false);

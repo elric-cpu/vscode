@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -20,22 +20,30 @@ const appRoutes = [
   ...portalRoutes,
 ];
 
+const AppLayout = () => {
+  const location = useLocation();
+
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <Analytics />
+      <Header key={location.key} />
+      <main className="flex-grow">
+        <Routes>
+          {appRoutes.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </main>
+      <Footer />
+      <Toaster />
+    </div>
+  );
+};
+
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-white">
-        <Analytics />
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            {appRoutes.map((route) => (
-              <Route key={route.path} path={route.path} element={route.element} />
-            ))}
-          </Routes>
-        </main>
-        <Footer />
-        <Toaster />
-      </div>
+      <AppLayout />
     </Router>
   );
 }

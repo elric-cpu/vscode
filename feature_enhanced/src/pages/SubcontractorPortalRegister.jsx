@@ -111,7 +111,6 @@ const SubcontractorPortalRegister = () => {
         ]);
 
         if (subError) {
-          // eslint-disable-next-line no-console
           console.error("Subcontractor creation error:", subError);
           throw new Error("Failed to create subcontractor profile");
         }

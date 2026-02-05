@@ -25,6 +25,11 @@ export default function StaffPortal() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [questionLoading, setQuestionLoading] = useState(false);
+  const questionKey =
+    status?.estimate_version_id ||
+    status?.document_id ||
+    selectedProject?.id ||
+    "questions";
 
   const orgOptions = useMemo(() => organizations.map((org) => ({
     id: org.organization_id,
@@ -196,6 +201,7 @@ export default function StaffPortal() {
 
                   {questions.length > 0 && (
                     <QuestionEngine
+                      key={questionKey}
                       questions={questions}
                       onSubmit={handleSubmitAnswers}
                       loading={questionLoading}

@@ -9,7 +9,7 @@ test.describe("Maintenance Planner Modules", () => {
   test("residential page renders planner module", async ({ page }) => {
     await page.goto("/services/residential-maintenance");
     await expect(
-      page.getByRole("heading", { name: "ZIP-Smart Home Maintenance Planner" }),
+      page.getByRole("heading", { name: "Home Maintenance Planner" }),
     ).toBeVisible();
 
     await expect(page.getByLabel("ZIP code")).toBeVisible();
@@ -22,7 +22,7 @@ test.describe("Maintenance Planner Modules", () => {
     await page.goto("/services/commercial");
     await expect(
       page.getByRole("heading", {
-        name: "ZIP-Smart Commercial Maintenance Planner",
+        name: "Commercial Maintenance Planner",
       }),
     ).toBeVisible();
 

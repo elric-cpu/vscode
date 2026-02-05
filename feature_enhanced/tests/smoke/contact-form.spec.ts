@@ -9,7 +9,7 @@ test.describe("Smoke: Contact Form", () => {
 
   test("contact form fields are present", async ({ page }) => {
     await page.goto(routes.contact);
-    await expectH1(page, "Contact Us");
+    await expectH1(page, "Contact & Dispatch");
 
     await expect(page.getByLabel("Name")).toBeVisible();
     await expect(page.getByLabel("Phone")).toBeVisible();

@@ -4,9 +4,20 @@ import importPlugin from "eslint-plugin-import";
 import globals from "globals";
 
 export default [
-  { ignores: ["node_modules/**", "dist/**", "build/**", "vite.config.js"] },
   {
-    files: ["**/*.js", "**/*.jsx"],
+    ignores: [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "playwright-report/**",
+      "test-results/**",
+      "vite.config.js",
+      ".tmp-*.js",
+      ".tmp-*.mjs",
+    ],
+  },
+  {
+    files: ["**/*.js", "**/*.jsx", "**/*.mjs"],
     plugins: { react, "react-hooks": reactHooks, import: importPlugin },
     languageOptions: {
       ecmaVersion: "latest",
@@ -17,8 +28,11 @@ export default [
     settings: {
       react: { version: "detect" },
       "import/resolver": {
-        node: { extensions: [".js", ".jsx"] },
-        alias: { map: [["@", "./src"]], extensions: [".js", ".jsx"] },
+        node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx"] },
+        alias: {
+          map: [["@", "./src"]],
+          extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx"],
+        },
       },
     },
     rules: {
@@ -50,7 +64,21 @@ export default [
     },
   },
   {
-    files: ["tools/**/*.js", "tailwind.config.js"],
-    languageOptions: { globals: globals.node },
+    files: [
+      "ai-orchestrator/**/*.{js,mjs}",
+      "scripts/**/*.{js,mjs}",
+      "tools/**/*.{js,mjs}",
+      "tailwind.config.js",
+    ],
+    languageOptions: { globals: { ...globals.node, fetch: "readonly" } },
+  },
+  {
+    files: ["k6/**/*.js"],
+    languageOptions: {
+      globals: { ...globals.node, __ENV: "readonly", fetch: "readonly" },
+    },
+    rules: {
+      "import/no-unresolved": "off",
+    },
   },
 ];

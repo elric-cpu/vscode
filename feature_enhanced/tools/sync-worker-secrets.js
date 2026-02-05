@@ -58,7 +58,6 @@ const main = () => {
 
   requiredKeys.forEach((key) => {
     syncSecret(key, env[key]);
-    // eslint-disable-next-line no-console
     console.log(`Synced ${key}`);
   });
 };

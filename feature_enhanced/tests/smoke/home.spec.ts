@@ -8,7 +8,7 @@ test.describe("Smoke: Home", () => {
     await page.goto(routes.home);
     await expectH1(
       page,
-      "Professional Home Restoration & Remodeling Services in Oregon",
+      "Oregon Maintenance Plans, Restoration, and Repair Services",
     );
     await expect(page.getByRole("main")).toBeVisible();
   });

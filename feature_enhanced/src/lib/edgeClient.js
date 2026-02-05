@@ -1,8 +1,12 @@
 const workerBaseUrl = import.meta?.env?.VITE_WORKER_BASE_URL;
-const mode = import.meta?.env?.MODE || "production";
+const isProd = import.meta?.env?.PROD;
 
 if (!workerBaseUrl) {
-  throw new Error("Missing VITE_WORKER_BASE_URL in .env");
+  const message = "Missing VITE_WORKER_BASE_URL in .env";
+  if (isProd) {
+    throw new Error(message);
+  }
+  console.error(message);
 }
 
 const isLocalhostHost = (hostname) =>
@@ -16,14 +20,17 @@ const assertSafeWorkerBaseUrl = (value) => {
     throw new Error("Invalid VITE_WORKER_BASE_URL.");
   }
 
-  if (mode === "production" && url.protocol !== "https:" && !isLocalhostHost(url.hostname)) {
+  if (isProd && url.protocol !== "https:" && !isLocalhostHost(url.hostname)) {
     throw new Error("VITE_WORKER_BASE_URL must use https in production.");
   }
 
   return url.toString().replace(/\/$/, "");
 };
 
-const safeWorkerBaseUrl = assertSafeWorkerBaseUrl(workerBaseUrl);
+const fallbackWorkerUrl = "http://127.0.0.1:54321";
+const safeWorkerBaseUrl = assertSafeWorkerBaseUrl(
+  workerBaseUrl || fallbackWorkerUrl,
+);
 
 const normalizeWorkerPath = (path) => {
   if (typeof path !== "string" || path.length === 0) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { serviceAreaData } from "@/data/serviceAreas";
@@ -10,8 +10,6 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isAreasOpen, setIsAreasOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -20,12 +18,6 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-    setIsServicesOpen(false);
-    setIsAreasOpen(false);
-  }, [location]);
 
   const serviceGroups = [
     {
