@@ -1,0 +1,49 @@
+{
+    "claudeCodeChat.wsl.enabled": true,
+    "claudeCodeChat.wsl.distro": "Ubuntu",
+    "claudeCodeChat.wsl.nodePath": "/home/elricenson/.nvm/versions/node/v25.2.0/bin/node",
+    "claudeCodeChat.wsl.claudePath": "/usr/local/bin/claude",
+    "claudeCode.preferredLocation": "panel",
+    "chat.mcp.gallery.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "chat.instructionsFilesLocations": {
+        ".github/instructions": true,
+        "C:\\Users\\ElricBenson\\.aitk\\instructions\\": true,
+        "/home/elricenson/.aitk/instructions/": true
+    },
+    "azureResourceGroups.selectedSubscriptions": [],
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "gitlens.home.preview.enabled": false,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "chatgpt.runCodexInWindowsSubsystemForLinux": true,
+    "chatgpt.openOnStartup": true,
+    "workbench.startupEditor": "none",
+    "python.pydev.lint.ruff.use": true,
+    "python.analysis.typeCheckingMode": "standard",
+    "workbench.settings.applyToAllProfiles": [
+        "python.analysis.typeCheckingMode"
+    ],
+    "workbench.editor.alwaysShowEditorActions": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "remote.SSH.remotePlatform": {
+        "benson-ai": "linux"
+    },
+    "mssql.connectionGroups": [
+        {
+            "name": "ROOT",
+            "id": "335EE813-9C23-435B-A213-1EAD0E8905DF"
+        }
+    ],
+    "mssql.autoDisableNonTSqlLanguageService": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "vscode-aiconfig.version": "0.0.22",
+    "vscode-aiconfig.pythonInterpreter": "C:\\ProgramData\\miniconda3\\python.exe",
+    "debug.javascript.autoAttachFilter": "always"
+}
